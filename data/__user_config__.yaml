@@ -1,0 +1,10 @@
+commiter_name:
+  'qbbang'
+commiter_email:
+  'qbbang@gmail.com'
+github_account:
+  'qbbang'
+pull_request_title:
+  "New cocoapods library update"
+pull_request_body:
+  'pod 업데이트 내용이 있습니다!'
