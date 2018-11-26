@@ -134,7 +134,16 @@ f.g Update, 파일명 \n 상세내용
 #### CI Tool - Bitrise
 
 - 월화수목금토, 매일 8:00 master 빌드
-- pull
+  - ~~tachikoma - cocoa pods 업데이트 시 자동 PR 설정~~
+    - exec tachikoma - Run if previous Step failed
+  - ~~Danger~~
+    - Fail, Warning Rule 정해야함으로 패스
+  - ~~houston - local Push Notifications~~
+    - device_token print 안됨
+    - 앱ID, APNs SSL 인증서 생성 [링크](https://docs.aws.amazon.com/ko_kr/pinpoint/latest/developerguide/apns-setup-appid.html)
+    - capabilities ON [링크](https://stackoverflow.com/questions/40991477/didregisterforremotenotificationswithdevicetoken-not-getting-called-on-ios-10)
+  - tenma - 릴리즈 자동화 툴
+  - fastlane - 배포 자동화 툴, App Store 신청
 
 
 
