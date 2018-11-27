@@ -1,5 +1,5 @@
 //
-//  MasterViewController.swift
+//  MypageViewController.swift
 //  WoowahanFresh
 //
 //  Created by qbbang on 27/11/2018.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MasterViewController: UIViewController {
+class MypageViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

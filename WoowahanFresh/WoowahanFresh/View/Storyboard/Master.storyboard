@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="j1W-x1-OFC">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -10,20 +10,193 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Master View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="EbE-5n-ndF">
             <objects>
-                <viewController storyboardIdentifier="MasterViewController" id="CU5-48-HfR" customClass="MasterViewController" customModule="WoowahanFresh" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" id="CU5-48-HfR" customClass="HomeViewController" customModule="WoowahanFresh" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AAr-r8-xQj">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="홈" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a1Z-r7-pKh">
+                                <rect key="frame" x="180" y="376" width="15" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="a1Z-r7-pKh" firstAttribute="centerY" secondItem="dY4-B5-SfG" secondAttribute="centerY" id="Im4-tg-ASl"/>
+                            <constraint firstItem="a1Z-r7-pKh" firstAttribute="centerX" secondItem="dY4-B5-SfG" secondAttribute="centerX" id="WV8-kq-J5r"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="dY4-B5-SfG"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="" selectedImage="home" id="hmu-he-aaZ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bpL-Th-8sf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="186" y="73"/>
+            <point key="canvasLocation" x="1889" y="-243"/>
+        </scene>
+        <!--Mypage View Controller-->
+        <scene sceneID="wcy-mp-IPn">
+            <objects>
+                <viewController storyboardIdentifier="MypageViewController" id="KIS-jf-UnH" customClass="MypageViewController" customModule="WoowahanFresh" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jfu-Qd-hsk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="마이페이지" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jeg-8j-8nN">
+                                <rect key="frame" x="150.66666666666666" y="376" width="74" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Jeg-8j-8nN" firstAttribute="centerY" secondItem="53E-Cx-BvP" secondAttribute="centerY" id="UFb-mq-Lji"/>
+                            <constraint firstItem="Jeg-8j-8nN" firstAttribute="centerX" secondItem="53E-Cx-BvP" secondAttribute="centerX" id="zE1-pH-DW8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="53E-Cx-BvP"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" id="SkN-jO-D4e"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HZO-2G-JGj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1888.8" y="435.96059113300493"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="nFc-dB-OMz">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="j1W-x1-OFC" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uM7-i5-bzt">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="CU5-48-HfR" kind="relationship" relationship="viewControllers" id="1e6-Gf-9Id"/>
+                        <segue destination="PRE-2M-sZe" kind="relationship" relationship="viewControllers" id="VFI-Ly-ALj"/>
+                        <segue destination="KIS-jf-UnH" kind="relationship" relationship="viewControllers" id="F69-gg-IkI"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qfM-1s-5zB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1124" y="72.413793103448285"/>
+        </scene>
+        <!--Category View Controller-->
+        <scene sceneID="Fxy-AO-Nnm">
+            <objects>
+                <viewController storyboardIdentifier="CategoryViewController" id="PRE-2M-sZe" customClass="CategoryViewController" customModule="WoowahanFresh" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EV2-DJ-RJm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="카테고리" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OgT-gG-676">
+                                <rect key="frame" x="158" y="376.33333333333331" width="59" height="20.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Du0-pS-3te">
+                                <rect key="frame" x="16" y="44" width="125" height="685"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oe0-W2-Qc9">
+                                        <rect key="frame" x="43" y="0.0" width="39" height="57"/>
+                                        <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                        <state key="normal" title="밑반찬"/>
+                                        <connections>
+                                            <action selector="btnSideDish:" destination="PRE-2M-sZe" eventType="touchUpInside" id="5DS-wi-nFX"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RGg-0V-14f" userLabel="메인반찬">
+                                        <rect key="frame" x="36.666666666666664" y="57" width="51.999999999999993" height="57.333333333333343"/>
+                                        <state key="normal" title="메인반찬"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jAx-Re-xjx" userLabel="국・찌개・탕">
+                                        <rect key="frame" x="32" y="114.33333333333334" width="61" height="57"/>
+                                        <state key="normal" title="국・찌개・탕"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v4I-TY-D2H" userLabel="아이반찬">
+                                        <rect key="frame" x="36.666666666666664" y="171.33333333333334" width="51.999999999999993" height="57"/>
+                                        <state key="normal" title="아이반찬"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a9C-63-0aI" userLabel="육류 구이관">
+                                        <rect key="frame" x="28" y="228.33333333333331" width="69" height="57"/>
+                                        <state key="normal" title="육류 구이관"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6mp-oI-g4p" userLabel="김치・장아찌">
+                                        <rect key="frame" x="27.666666666666664" y="285.33333333333331" width="70" height="57.333333333333314"/>
+                                        <state key="normal" title="김치・장아찌"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c57-P7-wY4" userLabel="세계음식">
+                                        <rect key="frame" x="36.666666666666664" y="342.66666666666669" width="51.999999999999993" height="57"/>
+                                        <state key="normal" title="세계음식"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gZL-FB-GhN" userLabel="밥・죽・면">
+                                        <rect key="frame" x="38" y="399.66666666666669" width="49" height="57"/>
+                                        <state key="normal" title="밥・죽・면"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RI6-b6-rkq" userLabel="샐러드">
+                                        <rect key="frame" x="43" y="456.66666666666669" width="39" height="57.000000000000057"/>
+                                        <state key="normal" title="샐러드"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t2n-vK-nQM" userLabel="간식">
+                                        <rect key="frame" x="47.666666666666664" y="513.66666666666663" width="29.999999999999993" height="57.333333333333371"/>
+                                        <state key="normal" title="간식"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p3J-fH-T4s" userLabel="정기식단">
+                                        <rect key="frame" x="36.666666666666664" y="571" width="51.999999999999993" height="57"/>
+                                        <state key="normal" title="정기식단"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qPt-yE-CD0" userLabel="반찬브랜드">
+                                        <rect key="frame" x="30" y="628" width="65" height="57"/>
+                                        <state key="normal" title="반찬브랜드"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Du0-pS-3te" secondAttribute="height" multiplier="25:137" id="Fgp-eP-U9E"/>
+                                </constraints>
+                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PEc-AW-Qdr">
+                                <rect key="frame" x="158" y="44" width="207" height="668"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="Cell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="MQW-tR-jom">
+                                        <rect key="frame" x="0.0" y="28" width="207" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MQW-tR-jom" id="Sf0-MS-XBS">
+                                            <rect key="frame" x="0.0" y="0.0" width="207" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" red="0.55634254220000001" green="0.97934550050000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="OgT-gG-676" firstAttribute="centerX" secondItem="JBd-Lf-CNS" secondAttribute="centerX" id="15m-Up-dqH"/>
+                            <constraint firstItem="JBd-Lf-CNS" firstAttribute="bottom" secondItem="Du0-pS-3te" secondAttribute="bottom" id="2Bc-ix-7gl"/>
+                            <constraint firstItem="Du0-pS-3te" firstAttribute="leading" secondItem="JBd-Lf-CNS" secondAttribute="leading" constant="16" id="Dyf-BE-MDZ"/>
+                            <constraint firstItem="Du0-pS-3te" firstAttribute="top" secondItem="JBd-Lf-CNS" secondAttribute="top" id="WKZ-Cv-uhB"/>
+                            <constraint firstItem="OgT-gG-676" firstAttribute="centerY" secondItem="JBd-Lf-CNS" secondAttribute="centerY" id="o8d-7p-H5y"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="JBd-Lf-CNS"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" id="buz-vv-k79"/>
+                    <connections>
+                        <outlet property="TableView" destination="PEc-AW-Qdr" id="Dd9-AD-0oZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YYI-I2-YfK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2629.5999999999999" y="71.674876847290648"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="home" width="47" height="47"/>
+    </resources>
 </document>

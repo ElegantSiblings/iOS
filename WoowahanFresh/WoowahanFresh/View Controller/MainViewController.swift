@@ -42,21 +42,18 @@ class MainViewController: UIViewController {
   
   func countDown() {
     timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { (Timer) in
-      
-      
       let storyboard = UIStoryboard(name: "Master", bundle: nil)
       
-      let storyboardID = "MasterViewController"
-      let masterVC = storyboard.instantiateViewController(withIdentifier:   storyboardID)
+      let storyboardID = "HomeViewController"
+      let masterVC = storyboard.instantiateViewController(withIdentifier: storyboardID)
       
       self.present(masterVC, animated: false, completion: {
         print("masterVC로 전달 사항있니?")
       })
       
     }
-    
-    
   }
+  
 }
 
 

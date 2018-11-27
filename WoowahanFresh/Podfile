@@ -7,15 +7,15 @@ target 'WoowahanFresh' do
 
   # Pods for WoowahanFresh
 
-pod 'Alamofire'
-pod 'Realm'
-pod 'lottie-ios'
-pod 'SwiftLint'
-pod 'RxSwift'
+#pod 'Alamofire'
+#pod 'Realm'
+#pod 'lottie-ios'
+#pod 'SwiftLint'
+#pod 'RxSwift'
 
-pod 'FacebookCore'
-pod 'FacebookLogin'
-pod 'FacebookShare'
+#pod 'FacebookCore'
+#pod 'FacebookLogin'
+#pod 'FacebookShare'
 
 # pod 'FBSDKCoreKit'  
 # pod 'FBSDKLoginKit'

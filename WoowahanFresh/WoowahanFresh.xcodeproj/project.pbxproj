@@ -9,7 +9,10 @@
 /* Begin PBXBuildFile section */
 		5276FD3704746D283A690010 /* Pods_WoowahanFresh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D38C68F9480C21134AF9332 /* Pods_WoowahanFresh.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		E89AD4AA21AD546100D80702 /* Master.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E89AD4A921AD546100D80702 /* Master.storyboard */; };
-		E89AD4AC21AD548E00D80702 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89AD4AB21AD548E00D80702 /* MasterViewController.swift */; };
+		E89AD4AC21AD548E00D80702 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89AD4AB21AD548E00D80702 /* HomeViewController.swift */; };
+		E8A81C6A21AD5E76000A7922 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A81C6921AD5E76000A7922 /* HomeView.swift */; };
+		E8A81C6C21AD612C000A7922 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A81C6B21AD612C000A7922 /* CategoryViewController.swift */; };
+		E8A81C6E21AD6156000A7922 /* MypageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A81C6D21AD6156000A7922 /* MypageViewController.swift */; };
 		E8E9405721ABD0050017620A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E9405621ABD0050017620A /* AppDelegate.swift */; };
 		E8E9405921ABD0050017620A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E9405821ABD0050017620A /* MainViewController.swift */; };
 		E8E9405C21ABD0050017620A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8E9405A21ABD0050017620A /* Main.storyboard */; };
@@ -23,7 +26,10 @@
 		E7FAB44BE72481638898E6CB /* Pods-WoowahanFresh.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WoowahanFresh.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WoowahanFresh/Pods-WoowahanFresh.debug.xcconfig"; sourceTree = "<group>"; };
 		E88B693421AC22E7007C9766 /* WoowahanFresh.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WoowahanFresh.entitlements; sourceTree = "<group>"; };
 		E89AD4A921AD546100D80702 /* Master.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Master.storyboard; sourceTree = "<group>"; };
-		E89AD4AB21AD548E00D80702 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		E89AD4AB21AD548E00D80702 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		E8A81C6921AD5E76000A7922 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		E8A81C6B21AD612C000A7922 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		E8A81C6D21AD6156000A7922 /* MypageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageViewController.swift; sourceTree = "<group>"; };
 		E8E9405321ABD0050017620A /* WoowahanFresh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WoowahanFresh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8E9405621ABD0050017620A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8E9405821ABD0050017620A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -66,7 +72,9 @@
 			isa = PBXGroup;
 			children = (
 				E8E9405821ABD0050017620A /* MainViewController.swift */,
-				E89AD4AB21AD548E00D80702 /* MasterViewController.swift */,
+				E89AD4AB21AD548E00D80702 /* HomeViewController.swift */,
+				E8A81C6B21AD612C000A7922 /* CategoryViewController.swift */,
+				E8A81C6D21AD6156000A7922 /* MypageViewController.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -75,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				E8993CB721ACF263000E8889 /* Storyboard */,
+				E8A81C6921AD5E76000A7922 /* HomeView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -163,7 +172,6 @@
 				E8E9404F21ABD0050017620A /* Sources */,
 				E8E9405021ABD0050017620A /* Frameworks */,
 				E8E9405121ABD0050017620A /* Resources */,
-				51F45E5BC086CBC41303B17C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -227,50 +235,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		51F45E5BC086CBC41303B17C /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-WoowahanFresh/Pods-WoowahanFresh-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
-				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
-				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
-				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
-				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
-				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
-				"${BUILT_PRODUCTS_DIR}/FacebookShare/FacebookShare.framework",
-				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
-				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
-				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookShare.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WoowahanFresh/Pods-WoowahanFresh-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		8932711CB929434051B91AD6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -300,9 +264,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8A81C6C21AD612C000A7922 /* CategoryViewController.swift in Sources */,
 				E8E9405921ABD0050017620A /* MainViewController.swift in Sources */,
 				E8E9405721ABD0050017620A /* AppDelegate.swift in Sources */,
-				E89AD4AC21AD548E00D80702 /* MasterViewController.swift in Sources */,
+				E8A81C6E21AD6156000A7922 /* MypageViewController.swift in Sources */,
+				E8A81C6A21AD5E76000A7922 /* HomeView.swift in Sources */,
+				E89AD4AC21AD548E00D80702 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
