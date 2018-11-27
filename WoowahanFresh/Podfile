@@ -13,4 +13,16 @@ pod 'lottie-ios'
 pod 'SwiftLint'
 pod 'RxSwift'
 
+pod 'FacebookCore'
+pod 'FacebookLogin'
+pod 'FacebookShare'
+
+#pod 'FBSDKCoreKit'  
+#pod 'FBSDKLoginKit'
+#pod 'FBSDKShareKit'
+
+#pod 'FBSDKPlacesKit'
+#pod 'FBSDKMessengerShareKit'
+
 end
+
