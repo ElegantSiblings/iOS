@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5276FD3704746D283A690010 /* Pods_WoowahanFresh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D38C68F9480C21134AF9332 /* Pods_WoowahanFresh.framework */; };
+		5276FD3704746D283A690010 /* Pods_WoowahanFresh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D38C68F9480C21134AF9332 /* Pods_WoowahanFresh.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		E8E9405721ABD0050017620A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E9405621ABD0050017620A /* AppDelegate.swift */; };
-		E8E9405921ABD0050017620A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E9405821ABD0050017620A /* ViewController.swift */; };
+		E8E9405921ABD0050017620A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E9405821ABD0050017620A /* MainViewController.swift */; };
 		E8E9405C21ABD0050017620A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8E9405A21ABD0050017620A /* Main.storyboard */; };
 		E8E9405E21ABD0070017620A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8E9405D21ABD0070017620A /* Assets.xcassets */; };
 		E8E9406121ABD0070017620A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8E9405F21ABD0070017620A /* LaunchScreen.storyboard */; };
@@ -22,7 +22,7 @@
 		E88B693421AC22E7007C9766 /* WoowahanFresh.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WoowahanFresh.entitlements; sourceTree = "<group>"; };
 		E8E9405321ABD0050017620A /* WoowahanFresh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WoowahanFresh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8E9405621ABD0050017620A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E8E9405821ABD0050017620A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E8E9405821ABD0050017620A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E8E9405B21ABD0050017620A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E8E9405D21ABD0070017620A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E8E9406021ABD0070017620A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -58,6 +58,63 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E8993CB321ACF1DF000E8889 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E8E9405821ABD0050017620A /* MainViewController.swift */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		E8993CB421ACF1E4000E8889 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E8993CB721ACF263000E8889 /* Storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E8993CB521ACF203000E8889 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E8993CB621ACF24F000E8889 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E8E9405D21ABD0070017620A /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E8993CB721ACF263000E8889 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				E8E9405A21ABD0050017620A /* Main.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		E8993CB821ACF274000E8889 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E8E9406221ABD0070017620A /* Info.plist */,
+				E8E9405F21ABD0070017620A /* LaunchScreen.storyboard */,
+				E8993CB921ACF2A3000E8889 /* Certificate */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E8993CB921ACF2A3000E8889 /* Certificate */ = {
+			isa = PBXGroup;
+			children = (
+				E88B693421AC22E7007C9766 /* WoowahanFresh.entitlements */,
+			);
+			path = Certificate;
+			sourceTree = "<group>";
+		};
 		E8E9404A21ABD0050017620A = {
 			isa = PBXGroup;
 			children = (
@@ -79,13 +136,12 @@
 		E8E9405521ABD0050017620A /* WoowahanFresh */ = {
 			isa = PBXGroup;
 			children = (
-				E88B693421AC22E7007C9766 /* WoowahanFresh.entitlements */,
 				E8E9405621ABD0050017620A /* AppDelegate.swift */,
-				E8E9405821ABD0050017620A /* ViewController.swift */,
-				E8E9405A21ABD0050017620A /* Main.storyboard */,
-				E8E9405D21ABD0070017620A /* Assets.xcassets */,
-				E8E9405F21ABD0070017620A /* LaunchScreen.storyboard */,
-				E8E9406221ABD0070017620A /* Info.plist */,
+				E8993CB521ACF203000E8889 /* Model */,
+				E8993CB421ACF1E4000E8889 /* View */,
+				E8993CB321ACF1DF000E8889 /* View Controller */,
+				E8993CB821ACF274000E8889 /* Supporting Files */,
+				E8993CB621ACF24F000E8889 /* Resources */,
 			);
 			path = WoowahanFresh;
 			sourceTree = "<group>";
@@ -174,6 +230,13 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-WoowahanFresh/Pods-WoowahanFresh-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookShare/FacebookShare.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
@@ -184,6 +247,13 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookShare.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
@@ -223,7 +293,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E8E9405921ABD0050017620A /* ViewController.swift in Sources */,
+				E8E9405921ABD0050017620A /* MainViewController.swift in Sources */,
 				E8E9405721ABD0050017620A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -305,6 +375,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -359,6 +430,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -371,10 +443,11 @@
 			baseConfigurationReference = E7FAB44BE72481638898E6CB /* Pods-WoowahanFresh.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = WoowahanFresh/WoowahanFresh.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G4MM77V7NH;
-				INFOPLIST_FILE = WoowahanFresh/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/WoowahanFresh/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -382,6 +455,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.qbbang.WoowahanFresh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -392,10 +466,11 @@
 			baseConfigurationReference = 899FE9545CE43B845AD55647 /* Pods-WoowahanFresh.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = WoowahanFresh/WoowahanFresh.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G4MM77V7NH;
-				INFOPLIST_FILE = WoowahanFresh/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/WoowahanFresh/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -403,6 +478,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.qbbang.WoowahanFresh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

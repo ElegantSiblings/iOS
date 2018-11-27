@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import FacebookCore
+//import FacebookLogin
+//import FacebookShare
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,6 +24,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     return true
   }
 
+  // 페이스북 로그인
+  func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+    
+    return SDKApplicationDelegate.shared.application(app, open: url, options: options)
+  }
+  
   // 디바이스 토큰 정보
   func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
     let   tokenString = deviceToken.reduce("", {$0 + String(format: "%02X", $1)})
