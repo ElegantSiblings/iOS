@@ -14,6 +14,8 @@ class CategoryViewController: UIViewController {
   
   private var items = [String]()
   
+  var homeViewTop: HomeViewTop!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     tableView.delegate = self
@@ -22,6 +24,12 @@ class CategoryViewController: UIViewController {
     
     
     items = [ "전체보기", "무침", "나물", "볶음", "조림", "젓갈・장・소스", "세트"]
+    
+    homeViewTop =  HomeViewTop(frame: CGRect.zero)
+    view.addSubview(homeViewTop)
+    homeViewTop.translatesAutoresizingMaskIntoConstraints = false
+    homeViewTop.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
+    
   }
   
   // 버튼 이벤트

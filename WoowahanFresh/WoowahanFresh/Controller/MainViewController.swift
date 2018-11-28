@@ -44,8 +44,13 @@ class MainViewController: UIViewController {
     timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { (Timer) in
       let storyboard = UIStoryboard(name: "Master", bundle: nil)
       
-      let storyboardID = "HomeViewController"
+      /*
+      // Master스토리보드의 aaa Id를 가진 애로 가랏
+      let storyboardID = "aaa"
       let masterVC = storyboard.instantiateViewController(withIdentifier: storyboardID)
+      */
+      //  해당 스토리보드의 inial로 가라!
+      let masterVC = storyboard.instantiateInitialViewController()!
       
       self.present(masterVC, animated: false, completion: {
         print("masterVC로 전달 사항있니?")
