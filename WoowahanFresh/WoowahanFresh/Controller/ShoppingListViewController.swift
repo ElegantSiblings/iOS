@@ -1,14 +1,14 @@
 //
-//  MasterViewController.swift
+//  ShoppingListViewController.swift
 //  WoowahanFresh
 //
-//  Created by qbbang on 27/11/2018.
+//  Created by qbbang on 28/11/2018.
 //  Copyright © 2018 qbbang. All rights reserved.
 //
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class ShoppingListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,7 +16,16 @@ class HomeViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+  @IBAction func btnAthome(_ sender: Any) {
+    let storyboard = UIStoryboard(name: "Master", bundle: nil)
+    
+    let masterVC = storyboard.instantiateInitialViewController()!
+    
+    self.present(masterVC, animated: true, completion: {
+      print("ShoppingListView -> HomeView")
+    })
+  }
+  
     /*
     // MARK: - Navigation
 

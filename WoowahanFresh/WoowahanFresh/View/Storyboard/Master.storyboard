@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home View Controller-->
+        <!--홈-->
         <scene sceneID="EbE-5n-ndF">
             <objects>
                 <viewController storyboardIdentifier="HomeViewController" id="CU5-48-HfR" customClass="HomeViewController" customModule="WoowahanFresh" customModuleProvider="target" sceneMemberID="viewController">
@@ -32,13 +32,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dY4-B5-SfG"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" systemItem="bookmarks" id="hmu-he-aaZ"/>
+                    <tabBarItem key="tabBarItem" title="홈" image="home" id="hmu-he-aaZ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bpL-Th-8sf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1889" y="-243"/>
+            <point key="canvasLocation" x="1888.8" y="-243.10344827586209"/>
         </scene>
-        <!--Mypage View Controller-->
+        <!--마이페이지-->
         <scene sceneID="wcy-mp-IPn">
             <objects>
                 <viewController storyboardIdentifier="MypageViewController" id="KIS-jf-UnH" customClass="MypageViewController" customModule="WoowahanFresh" customModuleProvider="target" sceneMemberID="viewController">
@@ -60,7 +60,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="53E-Cx-BvP"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" id="SkN-jO-D4e"/>
+                    <tabBarItem key="tabBarItem" title="마이페이지" image="mypage" id="SkN-jO-D4e"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HZO-2G-JGj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -69,7 +69,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="nFc-dB-OMz">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="j1W-x1-OFC" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="aaa" automaticallyAdjustsScrollViewInsets="NO" id="j1W-x1-OFC" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uM7-i5-bzt">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -86,7 +86,7 @@
             </objects>
             <point key="canvasLocation" x="1124" y="72.413793103448285"/>
         </scene>
-        <!--Category View Controller-->
+        <!--카테고리-->
         <scene sceneID="Fxy-AO-Nnm">
             <objects>
                 <viewController storyboardIdentifier="CategoryViewController" id="PRE-2M-sZe" customClass="CategoryViewController" customModule="WoowahanFresh" customModuleProvider="target" sceneMemberID="viewController">
@@ -241,7 +241,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="JBd-Lf-CNS"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" id="buz-vv-k79"/>
+                    <tabBarItem key="tabBarItem" title="카테고리" image="category" id="buz-vv-k79"/>
                     <connections>
                         <outlet property="tableView" destination="PEc-AW-Qdr" id="Dd9-AD-0oZ"/>
                     </connections>
@@ -251,4 +251,9 @@
             <point key="canvasLocation" x="2629.5999999999999" y="71.674876847290648"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="category" width="54" height="54"/>
+        <image name="home" width="54" height="54"/>
+        <image name="mypage" width="54" height="54"/>
+    </resources>
 </document>
