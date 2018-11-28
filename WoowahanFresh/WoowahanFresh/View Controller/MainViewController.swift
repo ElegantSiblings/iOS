@@ -7,114 +7,55 @@
 //
 
 import UIKit
-import FacebookCore
-import FacebookLogin
 
 class MainViewController: UIViewController {
   
-  let myLoginButton = UIButton(type: .custom)
-  let loginButton = LoginButton(readPermissions: [ .publicProfile ])
+  let loadingView = UIActivityIndicatorView(style: .whiteLarge)
+  let logoView = UIImageView()
+  var timer = Timer()
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    loginButton.center = view.center
+    // MARK: 3초 뒤에 다음 화면으로 이동,
+    // 나중에는 데이터 적재 후 이동하는 것으로 변경 할 것
+    countDown()
     
-//
-//    let loginButton = LoginButton(readPermissions: [ .publicProfile ])
-//    loginButton.center = view.center
-//
-//    view.addSubview(loginButton)
+    // MARK: Logo - 배민찬
+    logoView.frame = CGRect(x: 0, y: 0, width: 375, height: 120)
+    logoView.image = UIImage(named: "logoView")
+    logoView.center = view.center
     
-    // Add a custom login button to your app
-    myLoginButton.backgroundColor = UIColor.darkGray
-    myLoginButton.frame = CGRect(x: 0, y: 0, width: 180, height: 40)
-    myLoginButton.center = view.center;
-    myLoginButton.setTitle("My Login Button", for: .normal)
+    // MARK: Indicatior
+    loadingView.center = CGPoint(
+      x: view.center.x,
+      y: view.center.y + (logoView.frame.height / 2) + 50)
+    loadingView.color = UIColor.orange
+    loadingView.startAnimating()
     
-    // Handle clicks on the button
-    myLoginButton.addTarget(
-      self, action: #selector(loginButtonClicked), for: .touchUpInside
-    )
     
-    //view.addSubview(loginButton)
+    view.addSubview(logoView)
+    view.addSubview(loadingView)
     
-    // Add the button to the view
-    view.addSubview(myLoginButton)
-    
-    if let accessToken = AccessToken.current {
-      // User is logged in, use 'accessToken' here.
-//      accessToken.appId
-      print(accessToken.userId)
-    }
     
   }
   
-  // Once the button is clicked, show the login dialog
-  @objc private func loginButtonClicked(_ sender: UIButton) {
-    let loginManager = LoginManager()
-    loginManager.logIn(readPermissions: [.publicProfile], viewController: self) { LoginResult in
-      switch LoginResult {
-      case .failed(let error):
-        print(error)
-      case .cancelled:
-        print("User cancelled login.")
-      case .success(let grantedPermissions, let declinedPermissions, let accessToken):
-        print("Logged in!")
-        print("-==============")
-        print("-==============")
-        if let accessToken = AccessToken.current {
-          print(accessToken.userId)
-          print(accessToken.authenticationToken)
-          print(accessToken.appId)
-        }
-        print("-==============")
-        print("-==============")
-//        print("grant: ", grantedPermissions)
-//        print("declined: ", declinedPermissions)
-//        print("token: ", accessToken)
-        
-      }
+  func countDown() {
+    timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { (Timer) in
+      let storyboard = UIStoryboard(name: "Master", bundle: nil)
+      
+      let storyboardID = "HomeViewController"
+      let masterVC = storyboard.instantiateViewController(withIdentifier: storyboardID)
+      
+      self.present(masterVC, animated: false, completion: {
+        print("masterVC로 전달 사항있니?")
+      })
       
     }
-    
   }
+  
 }
 
 
-/*
- override func viewDidLoad() {
- super.viewDidLoad()
- // Do any additional setup after loading the view, typically from a nib.
- 
- 
- // Add a custom login button to your app
- let myLoginButton = UIButton(type: .custom)
- myLoginButton.backgroundColor = UIColor.darkGray
- myLoginButton.frame = CGRect(x: 0, y: 0, width: 180, height: 40)
- myLoginButton.center = view.center
- myLoginButton.setTitle("My Login Button", for: .normal)
- 
- // Handle clicks on the button
- myLoginButton.addTarget(self, action: Selector, action: @selector(self.loginButtonClicked) forControlEvents: .TouchUpInside)
- 
- // Add the button to the view
- view.addSubview(myLoginButton)
- }
- 
- // Once the button is clicked, show the login dialog
- @objc func loginButtonClicked() {
- let loginManager = LoginManager()
- loginManager.logIn([ .publicProfile ], viewController: self) { loginResult in
- switch loginResult {
- case .Failed(let error):
- print(error)
- case .Cancelled:
- print("User cancelled login.")
- case .Success(let grantedPermissions, let declinedPermissions, let accessToken):
- print("Logged in!")
- }
- 
- 
- }
- */
+
+
