@@ -14,7 +14,13 @@ class HomeViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    homeViewTop =  HomeViewTop(frame: CGRect(x: 0, y: 50, width: 375, height: 42))
+    homeViewTop =  HomeViewTop(frame: CGRect(
+      x: 0,
+      y: 100,
+      width: view.frame.width,
+      height: view.frame.height / 20))
+    
+    
     view.addSubview(homeViewTop)
     
     // 기본값 false, ture이면, 부모뷰 밖이라도 보여줌.
