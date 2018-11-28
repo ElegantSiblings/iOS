@@ -32,7 +32,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dY4-B5-SfG"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" selectedImage="home" id="hmu-he-aaZ"/>
+                    <tabBarItem key="tabBarItem" title="" systemItem="bookmarks" id="hmu-he-aaZ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bpL-Th-8sf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -100,11 +100,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Du0-pS-3te">
-                                <rect key="frame" x="16" y="44" width="125" height="685"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Du0-pS-3te">
+                                <rect key="frame" x="16.000000000000007" y="85" width="117.66666666666669" height="644"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oe0-W2-Qc9">
-                                        <rect key="frame" x="43" y="0.0" width="39" height="57"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="117.66666666666667" height="30"/>
                                         <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                         <state key="normal" title="밑반찬"/>
                                         <connections>
@@ -112,84 +112,138 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RGg-0V-14f" userLabel="메인반찬">
-                                        <rect key="frame" x="36.666666666666664" y="57" width="51.999999999999993" height="57.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="55.666666666666657" width="117.66666666666667" height="30"/>
                                         <state key="normal" title="메인반찬"/>
+                                        <connections>
+                                            <action selector="btnMainDish:" destination="PRE-2M-sZe" eventType="touchUpInside" id="9PU-AA-j10"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jAx-Re-xjx" userLabel="국・찌개・탕">
-                                        <rect key="frame" x="32" y="114.33333333333334" width="61" height="57"/>
+                                        <rect key="frame" x="0.0" y="111.66666666666666" width="117.66666666666667" height="30"/>
                                         <state key="normal" title="국・찌개・탕"/>
+                                        <connections>
+                                            <action selector="btnSoup:" destination="PRE-2M-sZe" eventType="touchUpInside" id="5rF-v4-2mh"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v4I-TY-D2H" userLabel="아이반찬">
-                                        <rect key="frame" x="36.666666666666664" y="171.33333333333334" width="51.999999999999993" height="57"/>
+                                        <rect key="frame" x="0.0" y="167.33333333333334" width="117.66666666666667" height="30"/>
                                         <state key="normal" title="아이반찬"/>
+                                        <connections>
+                                            <action selector="btnKidDish:" destination="PRE-2M-sZe" eventType="touchUpInside" id="8DV-2j-ddm"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a9C-63-0aI" userLabel="육류 구이관">
-                                        <rect key="frame" x="28" y="228.33333333333331" width="69" height="57"/>
+                                        <rect key="frame" x="0.0" y="223.33333333333331" width="117.66666666666667" height="30"/>
                                         <state key="normal" title="육류 구이관"/>
+                                        <connections>
+                                            <action selector="btnMeat:" destination="PRE-2M-sZe" eventType="touchUpInside" id="TJL-f1-7yv"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6mp-oI-g4p" userLabel="김치・장아찌">
-                                        <rect key="frame" x="27.666666666666664" y="285.33333333333331" width="70" height="57.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="279" width="117.66666666666667" height="30"/>
                                         <state key="normal" title="김치・장아찌"/>
+                                        <connections>
+                                            <action selector="btnKimchi:" destination="PRE-2M-sZe" eventType="touchUpInside" id="uUZ-aH-F2F"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c57-P7-wY4" userLabel="세계음식">
-                                        <rect key="frame" x="36.666666666666664" y="342.66666666666669" width="51.999999999999993" height="57"/>
+                                        <rect key="frame" x="0.0" y="335" width="117.66666666666667" height="30"/>
                                         <state key="normal" title="세계음식"/>
+                                        <connections>
+                                            <action selector="btnGlobal:" destination="PRE-2M-sZe" eventType="touchUpInside" id="L34-Re-VjO"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gZL-FB-GhN" userLabel="밥・죽・면">
-                                        <rect key="frame" x="38" y="399.66666666666669" width="49" height="57"/>
+                                        <rect key="frame" x="0.0" y="390.66666666666669" width="117.66666666666667" height="30"/>
                                         <state key="normal" title="밥・죽・면"/>
+                                        <connections>
+                                            <action selector="btnRice:" destination="PRE-2M-sZe" eventType="touchUpInside" id="qx9-dq-ovl"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RI6-b6-rkq" userLabel="샐러드">
-                                        <rect key="frame" x="43" y="456.66666666666669" width="39" height="57.000000000000057"/>
+                                        <rect key="frame" x="0.0" y="446.66666666666663" width="117.66666666666667" height="30"/>
                                         <state key="normal" title="샐러드"/>
+                                        <connections>
+                                            <action selector="btnSalad:" destination="PRE-2M-sZe" eventType="touchUpInside" id="gpA-CL-fUE"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t2n-vK-nQM" userLabel="간식">
-                                        <rect key="frame" x="47.666666666666664" y="513.66666666666663" width="29.999999999999993" height="57.333333333333371"/>
+                                        <rect key="frame" x="0.0" y="502.33333333333337" width="117.66666666666667" height="30"/>
                                         <state key="normal" title="간식"/>
+                                        <connections>
+                                            <action selector="btnSnack:" destination="PRE-2M-sZe" eventType="touchUpInside" id="mB4-Sv-vB1"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p3J-fH-T4s" userLabel="정기식단">
-                                        <rect key="frame" x="36.666666666666664" y="571" width="51.999999999999993" height="57"/>
+                                        <rect key="frame" x="0.0" y="558.33333333333337" width="117.66666666666667" height="30"/>
                                         <state key="normal" title="정기식단"/>
+                                        <connections>
+                                            <action selector="btnRegularDiet:" destination="PRE-2M-sZe" eventType="touchUpInside" id="4Yf-ni-5AO"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qPt-yE-CD0" userLabel="반찬브랜드">
-                                        <rect key="frame" x="30" y="628" width="65" height="57"/>
+                                        <rect key="frame" x="0.0" y="614" width="117.66666666666667" height="30"/>
                                         <state key="normal" title="반찬브랜드"/>
+                                        <connections>
+                                            <action selector="btnBrand:" destination="PRE-2M-sZe" eventType="touchUpInside" id="J7s-G9-X3N"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="jAx-Re-xjx" firstAttribute="width" secondItem="Du0-pS-3te" secondAttribute="width" id="28I-Zj-3Vo"/>
                                     <constraint firstAttribute="width" secondItem="Du0-pS-3te" secondAttribute="height" multiplier="25:137" id="Fgp-eP-U9E"/>
+                                    <constraint firstItem="a9C-63-0aI" firstAttribute="width" secondItem="Du0-pS-3te" secondAttribute="width" id="IMX-pz-3pe"/>
+                                    <constraint firstItem="RGg-0V-14f" firstAttribute="width" secondItem="Du0-pS-3te" secondAttribute="width" id="Rhl-lg-IqF"/>
+                                    <constraint firstItem="oe0-W2-Qc9" firstAttribute="width" secondItem="Du0-pS-3te" secondAttribute="width" id="Sg0-jR-0aL"/>
+                                    <constraint firstItem="v4I-TY-D2H" firstAttribute="width" secondItem="Du0-pS-3te" secondAttribute="width" id="XLc-jc-2Q6"/>
+                                    <constraint firstItem="qPt-yE-CD0" firstAttribute="width" secondItem="Du0-pS-3te" secondAttribute="width" id="f58-VX-0L8"/>
+                                    <constraint firstItem="RI6-b6-rkq" firstAttribute="width" secondItem="Du0-pS-3te" secondAttribute="width" id="fdP-Gd-TE2"/>
+                                    <constraint firstItem="p3J-fH-T4s" firstAttribute="width" secondItem="Du0-pS-3te" secondAttribute="width" id="hMv-ik-B9d"/>
+                                    <constraint firstItem="c57-P7-wY4" firstAttribute="width" secondItem="Du0-pS-3te" secondAttribute="width" id="ndU-xC-BEy"/>
+                                    <constraint firstItem="6mp-oI-g4p" firstAttribute="width" secondItem="Du0-pS-3te" secondAttribute="width" id="tQI-XL-Hb1"/>
+                                    <constraint firstItem="t2n-vK-nQM" firstAttribute="width" secondItem="Du0-pS-3te" secondAttribute="width" id="zZM-IR-w9x"/>
+                                    <constraint firstItem="gZL-FB-GhN" firstAttribute="width" secondItem="Du0-pS-3te" secondAttribute="width" id="zqg-8S-r2X"/>
                                 </constraints>
                             </stackView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PEc-AW-Qdr">
-                                <rect key="frame" x="158" y="44" width="207" height="668"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PEc-AW-Qdr">
+                                <rect key="frame" x="157.33333333333337" y="89" width="207.66666666666663" height="623"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="PEc-AW-Qdr" secondAttribute="height" multiplier="200:600" id="0oT-oe-kag"/>
+                                </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="Cell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="MQW-tR-jom">
-                                        <rect key="frame" x="0.0" y="28" width="207" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="wDA-Ix-UC8">
+                                        <rect key="frame" x="0.0" y="28" width="207.66666666666663" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MQW-tR-jom" id="Sf0-MS-XBS">
-                                            <rect key="frame" x="0.0" y="0.0" width="207" height="43.666666666666664"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wDA-Ix-UC8" id="4Cv-Tq-H5i">
+                                            <rect key="frame" x="0.0" y="0.0" width="207.66666666666663" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" red="0.55634254220000001" green="0.97934550050000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="PRE-2M-sZe" id="wtN-Uu-ek7"/>
+                                    <outlet property="delegate" destination="PRE-2M-sZe" id="gxX-V6-Fu8"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="OgT-gG-676" firstAttribute="centerX" secondItem="JBd-Lf-CNS" secondAttribute="centerX" id="15m-Up-dqH"/>
                             <constraint firstItem="JBd-Lf-CNS" firstAttribute="bottom" secondItem="Du0-pS-3te" secondAttribute="bottom" id="2Bc-ix-7gl"/>
+                            <constraint firstItem="JBd-Lf-CNS" firstAttribute="bottom" secondItem="PEc-AW-Qdr" secondAttribute="bottom" constant="17" id="3J1-mV-CPZ"/>
                             <constraint firstItem="Du0-pS-3te" firstAttribute="leading" secondItem="JBd-Lf-CNS" secondAttribute="leading" constant="16" id="Dyf-BE-MDZ"/>
-                            <constraint firstItem="Du0-pS-3te" firstAttribute="top" secondItem="JBd-Lf-CNS" secondAttribute="top" id="WKZ-Cv-uhB"/>
+                            <constraint firstItem="Du0-pS-3te" firstAttribute="top" secondItem="JBd-Lf-CNS" secondAttribute="top" constant="41" id="WKZ-Cv-uhB"/>
+                            <constraint firstItem="JBd-Lf-CNS" firstAttribute="trailing" secondItem="PEc-AW-Qdr" secondAttribute="trailing" constant="10" id="dsh-kv-hOd"/>
+                            <constraint firstItem="PEc-AW-Qdr" firstAttribute="top" secondItem="JBd-Lf-CNS" secondAttribute="top" constant="45" id="kz1-g1-E1y"/>
                             <constraint firstItem="OgT-gG-676" firstAttribute="centerY" secondItem="JBd-Lf-CNS" secondAttribute="centerY" id="o8d-7p-H5y"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="JBd-Lf-CNS"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" id="buz-vv-k79"/>
                     <connections>
-                        <outlet property="TableView" destination="PEc-AW-Qdr" id="Dd9-AD-0oZ"/>
+                        <outlet property="tableView" destination="PEc-AW-Qdr" id="Dd9-AD-0oZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YYI-I2-YfK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -197,7 +251,4 @@
             <point key="canvasLocation" x="2629.5999999999999" y="71.674876847290648"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="home" width="47" height="47"/>
-    </resources>
 </document>
