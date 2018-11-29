@@ -13,6 +13,7 @@
 		E819696A21AE7073001670E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E819696921AE7073001670E0 /* Assets.xcassets */; };
 		E819696C21AE75A0001670E0 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E819696B21AE75A0001670E0 /* Search.storyboard */; };
 		E819696E21AE75F1001670E0 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E819696D21AE75F1001670E0 /* SearchViewController.swift */; };
+		E824F3BB21AF9CB8001CBC88 /* FirstCellNoticeInfiniteScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E824F3BA21AF9CB8001CBC88 /* FirstCellNoticeInfiniteScrollView.swift */; };
 		E82B003E21AF287500E682E4 /* test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E82B003D21AF287500E682E4 /* test.storyboard */; };
 		E89AD4AA21AD546100D80702 /* Master.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E89AD4A921AD546100D80702 /* Master.storyboard */; };
 		E89AD4AC21AD548E00D80702 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89AD4AB21AD548E00D80702 /* HomeViewController.swift */; };
@@ -37,6 +38,7 @@
 		E819696921AE7073001670E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E819696B21AE75A0001670E0 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		E819696D21AE75F1001670E0 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		E824F3BA21AF9CB8001CBC88 /* FirstCellNoticeInfiniteScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstCellNoticeInfiniteScrollView.swift; sourceTree = "<group>"; };
 		E82B003D21AF287500E682E4 /* test.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = test.storyboard; sourceTree = "<group>"; };
 		E88B693421AC22E7007C9766 /* WoowahanFresh.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WoowahanFresh.entitlements; sourceTree = "<group>"; };
 		E89AD4A921AD546100D80702 /* Master.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Master.storyboard; sourceTree = "<group>"; };
@@ -92,6 +94,14 @@
 			path = Singletons;
 			sourceTree = "<group>";
 		};
+		E824F3BC21AF9CC8001CBC88 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E824F3BA21AF9CB8001CBC88 /* FirstCellNoticeInfiniteScrollView.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		E8993CB321ACF1DF000E8889 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -110,8 +120,9 @@
 			isa = PBXGroup;
 			children = (
 				E8A81C6921AD5E76000A7922 /* HomeViewTop.swift */,
-				E8E6389321AECB30006AD3A0 /* HomeContentsView.swift */,
 				E8993CB721ACF263000E8889 /* Storyboard */,
+				E824F3BC21AF9CC8001CBC88 /* Cell */,
+				E8E6389321AECB30006AD3A0 /* HomeContentsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -322,6 +333,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E824F3BB21AF9CB8001CBC88 /* FirstCellNoticeInfiniteScrollView.swift in Sources */,
 				E8A81C6C21AD612C000A7922 /* CategoryViewController.swift in Sources */,
 				E80649CA21AEFE32009794FC /* testViewController.swift in Sources */,
 				E819696E21AE75F1001670E0 /* SearchViewController.swift in Sources */,

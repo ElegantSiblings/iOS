@@ -17,6 +17,9 @@ class HomeViewTop: UIView {
   var btnSearch: UIButton!
   var btnShopping: UIButton!
   
+  var btntest: UIButton!
+  var btntestt: UIButton!
+  
   let screenSize = UIScreen.main.bounds
   let imageBtnHome = UIImage(named: "BMC")
   let imageBtnSearch = UIImage(named: "search")
@@ -28,6 +31,24 @@ class HomeViewTop: UIView {
     
     makeTopView()
     addTopViewButton()
+    
+    btntest = UIButton(frame: CGRect(
+      x: screenSize.minX,
+      y: screenSize.minY + 42,
+      width: screenSize.width / 4.8,
+      height: screenSize.height / 19
+    ))
+    btntest.backgroundColor = .black
+    self.addSubview(btntest)
+    
+    btntestt = UIButton(frame: CGRect(
+      x: screenSize.minX + 150,
+      y: screenSize.minY + 42,
+      width: screenSize.width / 4.8,
+      height: screenSize.height / 19
+    ))
+    btntestt.backgroundColor = .green
+    self.addSubview(btntestt)
    }
    
   required init?(coder aDecoder: NSCoder) {
