@@ -26,6 +26,7 @@ class MainViewController: UIViewController {
     logoView.image = UIImage(named: "logoView")
     logoView.center = view.center
     
+    print(view.safeAreaInsets)
     // MARK: Indicatior
     loadingView.center = CGPoint(
       x: view.center.x,
