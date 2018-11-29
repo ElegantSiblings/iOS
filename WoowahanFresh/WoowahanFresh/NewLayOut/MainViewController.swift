@@ -43,7 +43,7 @@ class MainViewController: UIViewController {
   
   func countDown() {
     timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { (Timer) in
-      let storyboard = UIStoryboard(name: "Master", bundle: nil)
+      let storyboard = UIStoryboard(name: "Home", bundle: nil)
       
       /*
       // Master스토리보드의 aaa Id를 가진 애로 가랏

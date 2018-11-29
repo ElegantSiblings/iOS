@@ -21,7 +21,7 @@ class StatusTableViewCell: UITableViewCell {
   }
 }
 
-class HomeViewController: UIViewController {
+class MasterViewController: UIViewController {
   
   var homeViewTop: HomeViewTop!
   var homeContentsView: HomeContentsView!
@@ -138,7 +138,7 @@ class HomeViewController: UIViewController {
 
 
 
-extension HomeViewController: UITableViewDataSource {
+extension MasterViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     print(section)
     return 10
@@ -186,7 +186,7 @@ extension HomeViewController: UITableViewDataSource {
   
 }
 
-extension HomeViewController: UITableViewDelegate {
+extension MasterViewController: UITableViewDelegate {
   
 }
 
