@@ -8,10 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		5276FD3704746D283A690010 /* Pods_WoowahanFresh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D38C68F9480C21134AF9332 /* Pods_WoowahanFresh.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		E819696A21AE7073001670E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E819696921AE7073001670E0 /* Assets.xcassets */; };
+		E823E1BC21B0D7720076592C /* BestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E823E1BB21B0D7720076592C /* BestTableViewController.swift */; };
+		E823E1BE21B0DE890076592C /* ShoppingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E823E1BD21B0DE890076592C /* ShoppingTableViewController.swift */; };
+		E823E1C021B0DEAB0076592C /* BrandCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E823E1BF21B0DEAB0076592C /* BrandCollectionViewController.swift */; };
+		E823E1C221B0DED70076592C /* ThemaCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E823E1C121B0DED70076592C /* ThemaCollectionViewController.swift */; };
+		E823E1C421B0DEE60076592C /* EventCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E823E1C321B0DEE60076592C /* EventCollectionViewController.swift */; };
+		E823E1C821B0DF500076592C /* Content.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E823E1C721B0DF500076592C /* Content.storyboard */; };
+		E823E1CA21B0E09C0076592C /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E823E1C921B0E09C0076592C /* Home.storyboard */; };
+		E823E1CC21B0E0A60076592C /* Best.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E823E1CB21B0E0A60076592C /* Best.storyboard */; };
+		E823E1CE21B0E0B60076592C /* Shopping.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E823E1CD21B0E0B60076592C /* Shopping.storyboard */; };
+		E823E1D121B0E0CE0076592C /* Brand.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E823E1D021B0E0CE0076592C /* Brand.storyboard */; };
+		E823E1D321B0E0E20076592C /* Thema.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E823E1D221B0E0E20076592C /* Thema.storyboard */; };
+		E823E1D521B0E0F00076592C /* Event.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E823E1D421B0E0F00076592C /* Event.storyboard */; };
+		E823E1D821B0E53F0076592C /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E823E1D721B0E53F0076592C /* CategoryViewController.swift */; };
+		E823E1DA21B0E5490076592C /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E823E1D921B0E5490076592C /* MyPageViewController.swift */; };
+		E823E1DF21B0E6930076592C /* Category.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E823E1DE21B0E6930076592C /* Category.storyboard */; };
+		E823E1E121B0E6A00076592C /* MyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E823E1E021B0E6A00076592C /* MyPage.storyboard */; };
+		E824F40221AFFBCB001CBC88 /* First.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E824F40121AFFBCB001CBC88 /* First.storyboard */; };
+		E824F40521B006E9001CBC88 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E824F40421B006E9001CBC88 /* FirstViewController.swift */; };
+		E824F40721B02360001CBC88 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E824F40621B02360001CBC88 /* HomeTableViewController.swift */; };
+		E824F40921B02626001CBC88 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E824F40821B02626001CBC88 /* ContentViewController.swift */; };
 		E8E9405721ABD0050017620A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E9405621ABD0050017620A /* AppDelegate.swift */; };
 		E8E9405921ABD0050017620A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E9405821ABD0050017620A /* MainViewController.swift */; };
 		E8E9405C21ABD0050017620A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8E9405A21ABD0050017620A /* Main.storyboard */; };
-		E8E9405E21ABD0070017620A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8E9405D21ABD0070017620A /* Assets.xcassets */; };
 		E8E9406121ABD0070017620A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8E9405F21ABD0070017620A /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -19,12 +39,32 @@
 		4D38C68F9480C21134AF9332 /* Pods_WoowahanFresh.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WoowahanFresh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		899FE9545CE43B845AD55647 /* Pods-WoowahanFresh.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WoowahanFresh.release.xcconfig"; path = "Pods/Target Support Files/Pods-WoowahanFresh/Pods-WoowahanFresh.release.xcconfig"; sourceTree = "<group>"; };
 		E7FAB44BE72481638898E6CB /* Pods-WoowahanFresh.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WoowahanFresh.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WoowahanFresh/Pods-WoowahanFresh.debug.xcconfig"; sourceTree = "<group>"; };
+		E819696921AE7073001670E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E823E1BB21B0D7720076592C /* BestTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestTableViewController.swift; sourceTree = "<group>"; };
+		E823E1BD21B0DE890076592C /* ShoppingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingTableViewController.swift; sourceTree = "<group>"; };
+		E823E1BF21B0DEAB0076592C /* BrandCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandCollectionViewController.swift; sourceTree = "<group>"; };
+		E823E1C121B0DED70076592C /* ThemaCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemaCollectionViewController.swift; sourceTree = "<group>"; };
+		E823E1C321B0DEE60076592C /* EventCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCollectionViewController.swift; sourceTree = "<group>"; };
+		E823E1C721B0DF500076592C /* Content.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Content.storyboard; sourceTree = "<group>"; };
+		E823E1C921B0E09C0076592C /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		E823E1CB21B0E0A60076592C /* Best.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Best.storyboard; sourceTree = "<group>"; };
+		E823E1CD21B0E0B60076592C /* Shopping.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Shopping.storyboard; sourceTree = "<group>"; };
+		E823E1D021B0E0CE0076592C /* Brand.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Brand.storyboard; sourceTree = "<group>"; };
+		E823E1D221B0E0E20076592C /* Thema.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Thema.storyboard; sourceTree = "<group>"; };
+		E823E1D421B0E0F00076592C /* Event.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Event.storyboard; sourceTree = "<group>"; };
+		E823E1D721B0E53F0076592C /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		E823E1D921B0E5490076592C /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
+		E823E1DE21B0E6930076592C /* Category.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Category.storyboard; sourceTree = "<group>"; };
+		E823E1E021B0E6A00076592C /* MyPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyPage.storyboard; sourceTree = "<group>"; };
+		E824F40121AFFBCB001CBC88 /* First.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = First.storyboard; sourceTree = "<group>"; };
+		E824F40421B006E9001CBC88 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		E824F40621B02360001CBC88 /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
+		E824F40821B02626001CBC88 /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		E88B693421AC22E7007C9766 /* WoowahanFresh.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WoowahanFresh.entitlements; sourceTree = "<group>"; };
 		E8E9405321ABD0050017620A /* WoowahanFresh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WoowahanFresh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8E9405621ABD0050017620A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8E9405821ABD0050017620A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E8E9405B21ABD0050017620A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		E8E9405D21ABD0070017620A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E8E9406021ABD0070017620A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E8E9406221ABD0070017620A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -58,43 +98,89 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		E8993CB321ACF1DF000E8889 /* View Controller */ = {
+		E819694621AE4D0A001670E0 /* Singletons */ = {
+			isa = PBXGroup;
+			children = (
+				E8E9405621ABD0050017620A /* AppDelegate.swift */,
+			);
+			path = Singletons;
+			sourceTree = "<group>";
+		};
+		E823E1C521B0DEF00076592C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				E8E9405821ABD0050017620A /* MainViewController.swift */,
+				E824F40421B006E9001CBC88 /* FirstViewController.swift */,
+				E823E1DB21B0E5530076592C /* Content */,
+				E823E1DC21B0E5670076592C /* TabBar */,
 			);
-			path = "View Controller";
+			name = Controller;
+			path = NewLayOut/Controller;
 			sourceTree = "<group>";
 		};
-		E8993CB421ACF1E4000E8889 /* View */ = {
+		E823E1C621B0DF1E0076592C /* View */ = {
 			isa = PBXGroup;
 			children = (
-				E8993CB721ACF263000E8889 /* Storyboard */,
+				E8E9405A21ABD0050017620A /* Main.storyboard */,
+				E824F40121AFFBCB001CBC88 /* First.storyboard */,
+				E823E1C721B0DF500076592C /* Content.storyboard */,
+				E823E1D621B0E11D0076592C /* Content */,
+				E823E1DD21B0E6750076592C /* TabBar */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		E8993CB521ACF203000E8889 /* Model */ = {
+		E823E1D621B0E11D0076592C /* Content */ = {
 			isa = PBXGroup;
 			children = (
+				E823E1C921B0E09C0076592C /* Home.storyboard */,
+				E823E1CB21B0E0A60076592C /* Best.storyboard */,
+				E823E1CD21B0E0B60076592C /* Shopping.storyboard */,
+				E823E1D021B0E0CE0076592C /* Brand.storyboard */,
+				E823E1D221B0E0E20076592C /* Thema.storyboard */,
+				E823E1D421B0E0F00076592C /* Event.storyboard */,
 			);
-			path = Model;
+			path = Content;
+			sourceTree = "<group>";
+		};
+		E823E1DB21B0E5530076592C /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				E824F40621B02360001CBC88 /* HomeTableViewController.swift */,
+				E824F40821B02626001CBC88 /* ContentViewController.swift */,
+				E823E1BB21B0D7720076592C /* BestTableViewController.swift */,
+				E823E1BD21B0DE890076592C /* ShoppingTableViewController.swift */,
+				E823E1BF21B0DEAB0076592C /* BrandCollectionViewController.swift */,
+				E823E1C121B0DED70076592C /* ThemaCollectionViewController.swift */,
+				E823E1C321B0DEE60076592C /* EventCollectionViewController.swift */,
+			);
+			path = Content;
+			sourceTree = "<group>";
+		};
+		E823E1DC21B0E5670076592C /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				E823E1D721B0E53F0076592C /* CategoryViewController.swift */,
+				E823E1D921B0E5490076592C /* MyPageViewController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		E823E1DD21B0E6750076592C /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				E823E1DE21B0E6930076592C /* Category.storyboard */,
+				E823E1E021B0E6A00076592C /* MyPage.storyboard */,
+			);
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 		E8993CB621ACF24F000E8889 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				E8E9405D21ABD0070017620A /* Assets.xcassets */,
+				E819696921AE7073001670E0 /* Assets.xcassets */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		E8993CB721ACF263000E8889 /* Storyboard */ = {
-			isa = PBXGroup;
-			children = (
-				E8E9405A21ABD0050017620A /* Main.storyboard */,
-			);
-			path = Storyboard;
 			sourceTree = "<group>";
 		};
 		E8993CB821ACF274000E8889 /* Supporting Files */ = {
@@ -113,6 +199,13 @@
 				E88B693421AC22E7007C9766 /* WoowahanFresh.entitlements */,
 			);
 			path = Certificate;
+			sourceTree = "<group>";
+		};
+		E89AD4AD21AD54C000D80702 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		E8E9404A21ABD0050017620A = {
@@ -136,10 +229,10 @@
 		E8E9405521ABD0050017620A /* WoowahanFresh */ = {
 			isa = PBXGroup;
 			children = (
-				E8E9405621ABD0050017620A /* AppDelegate.swift */,
-				E8993CB521ACF203000E8889 /* Model */,
-				E8993CB421ACF1E4000E8889 /* View */,
-				E8993CB321ACF1DF000E8889 /* View Controller */,
+				E819694621AE4D0A001670E0 /* Singletons */,
+				E89AD4AD21AD54C000D80702 /* Model */,
+				E823E1C621B0DF1E0076592C /* View */,
+				E823E1C521B0DEF00076592C /* Controller */,
 				E8993CB821ACF274000E8889 /* Supporting Files */,
 				E8993CB621ACF24F000E8889 /* Resources */,
 			);
@@ -157,7 +250,7 @@
 				E8E9404F21ABD0050017620A /* Sources */,
 				E8E9405021ABD0050017620A /* Frameworks */,
 				E8E9405121ABD0050017620A /* Resources */,
-				51F45E5BC086CBC41303B17C /* [CP] Embed Pods Frameworks */,
+				E63DC687C9477C27792B6354 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -211,59 +304,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E823E1CA21B0E09C0076592C /* Home.storyboard in Resources */,
+				E823E1E121B0E6A00076592C /* MyPage.storyboard in Resources */,
+				E823E1D321B0E0E20076592C /* Thema.storyboard in Resources */,
+				E823E1D121B0E0CE0076592C /* Brand.storyboard in Resources */,
+				E823E1CC21B0E0A60076592C /* Best.storyboard in Resources */,
 				E8E9406121ABD0070017620A /* LaunchScreen.storyboard in Resources */,
-				E8E9405E21ABD0070017620A /* Assets.xcassets in Resources */,
+				E819696A21AE7073001670E0 /* Assets.xcassets in Resources */,
+				E823E1DF21B0E6930076592C /* Category.storyboard in Resources */,
+				E823E1CE21B0E0B60076592C /* Shopping.storyboard in Resources */,
 				E8E9405C21ABD0050017620A /* Main.storyboard in Resources */,
+				E823E1C821B0DF500076592C /* Content.storyboard in Resources */,
+				E823E1D521B0E0F00076592C /* Event.storyboard in Resources */,
+				E824F40221AFFBCB001CBC88 /* First.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		51F45E5BC086CBC41303B17C /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-WoowahanFresh/Pods-WoowahanFresh-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
-				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
-				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
-				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
-				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
-				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
-				"${BUILT_PRODUCTS_DIR}/FacebookShare/FacebookShare.framework",
-				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
-				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
-				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookShare.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WoowahanFresh/Pods-WoowahanFresh-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		8932711CB929434051B91AD6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -286,6 +345,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		E63DC687C9477C27792B6354 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-WoowahanFresh/Pods-WoowahanFresh-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WoowahanFresh/Pods-WoowahanFresh-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -293,8 +374,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E823E1C021B0DEAB0076592C /* BrandCollectionViewController.swift in Sources */,
+				E823E1C421B0DEE60076592C /* EventCollectionViewController.swift in Sources */,
+				E824F40721B02360001CBC88 /* HomeTableViewController.swift in Sources */,
+				E823E1C221B0DED70076592C /* ThemaCollectionViewController.swift in Sources */,
+				E823E1BE21B0DE890076592C /* ShoppingTableViewController.swift in Sources */,
 				E8E9405921ABD0050017620A /* MainViewController.swift in Sources */,
 				E8E9405721ABD0050017620A /* AppDelegate.swift in Sources */,
+				E824F40921B02626001CBC88 /* ContentViewController.swift in Sources */,
+				E823E1D821B0E53F0076592C /* CategoryViewController.swift in Sources */,
+				E823E1DA21B0E5490076592C /* MyPageViewController.swift in Sources */,
+				E823E1BC21B0D7720076592C /* BestTableViewController.swift in Sources */,
+				E824F40521B006E9001CBC88 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
