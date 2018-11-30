@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Gri-ij-C0K">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--카테고리-->
+        <scene sceneID="UJi-yT-yRm">
+            <objects>
+                <viewController storyboardIdentifier="CategoryViewController" id="Gri-ij-C0K" customClass="CategoryViewController" customModule="WoowahanFresh" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QZj-zH-mJh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="EwQ-9w-3K5">
+                                <rect key="frame" x="16" y="61" width="101.5" height="557"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a1w-dF-FQZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="101.5" height="30"/>
+                                        <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                        <state key="normal" title="밑반찬"/>
+                                        <connections>
+                                            <action selector="btnSideDish:" destination="Gri-ij-C0K" eventType="touchUpInside" id="gFQ-gD-PS7"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h9f-kb-IHA" userLabel="메인반찬">
+                                        <rect key="frame" x="0.0" y="48" width="101.5" height="30"/>
+                                        <state key="normal" title="메인반찬"/>
+                                        <connections>
+                                            <action selector="btnMainDish:" destination="Gri-ij-C0K" eventType="touchUpInside" id="laY-hU-ldx"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="76x-QI-CV8" userLabel="국・찌개・탕">
+                                        <rect key="frame" x="0.0" y="96" width="101.5" height="30"/>
+                                        <state key="normal" title="국・찌개・탕"/>
+                                        <connections>
+                                            <action selector="btnSoup:" destination="Gri-ij-C0K" eventType="touchUpInside" id="Z6C-Sp-HpM"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NAf-Ze-cp2" userLabel="아이반찬">
+                                        <rect key="frame" x="0.0" y="143.5" width="101.5" height="30"/>
+                                        <state key="normal" title="아이반찬"/>
+                                        <connections>
+                                            <action selector="btnKidDish:" destination="Gri-ij-C0K" eventType="touchUpInside" id="kzI-uh-1m1"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dxh-Cm-pU9" userLabel="육류 구이관">
+                                        <rect key="frame" x="0.0" y="191.5" width="101.5" height="30"/>
+                                        <state key="normal" title="육류 구이관"/>
+                                        <connections>
+                                            <action selector="btnMeat:" destination="Gri-ij-C0K" eventType="touchUpInside" id="Ffv-Bi-R5c"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wmM-vv-opy" userLabel="김치・장아찌">
+                                        <rect key="frame" x="0.0" y="239.5" width="101.5" height="30"/>
+                                        <state key="normal" title="김치・장아찌"/>
+                                        <connections>
+                                            <action selector="btnKimchi:" destination="Gri-ij-C0K" eventType="touchUpInside" id="HQL-JT-Elv"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ayc-lx-XkL" userLabel="세계음식">
+                                        <rect key="frame" x="0.0" y="287.5" width="101.5" height="30"/>
+                                        <state key="normal" title="세계음식"/>
+                                        <connections>
+                                            <action selector="btnGlobal:" destination="Gri-ij-C0K" eventType="touchUpInside" id="aJH-CX-vCu"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d9Y-tb-Rcc" userLabel="밥・죽・면">
+                                        <rect key="frame" x="0.0" y="335.5" width="101.5" height="30"/>
+                                        <state key="normal" title="밥・죽・면"/>
+                                        <connections>
+                                            <action selector="btnRice:" destination="Gri-ij-C0K" eventType="touchUpInside" id="0fB-rF-4Id"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ir-j4-HC4" userLabel="샐러드">
+                                        <rect key="frame" x="0.0" y="383.5" width="101.5" height="30"/>
+                                        <state key="normal" title="샐러드"/>
+                                        <connections>
+                                            <action selector="btnSalad:" destination="Gri-ij-C0K" eventType="touchUpInside" id="uqL-Q0-YG6"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W8b-fM-Yco" userLabel="간식">
+                                        <rect key="frame" x="0.0" y="431" width="101.5" height="30"/>
+                                        <state key="normal" title="간식"/>
+                                        <connections>
+                                            <action selector="btnSnack:" destination="Gri-ij-C0K" eventType="touchUpInside" id="gev-Os-WmL"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fje-92-XM0" userLabel="정기식단">
+                                        <rect key="frame" x="0.0" y="479" width="101.5" height="30"/>
+                                        <state key="normal" title="정기식단"/>
+                                        <connections>
+                                            <action selector="btnRegularDiet:" destination="Gri-ij-C0K" eventType="touchUpInside" id="373-xf-2zR"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sn4-X3-f7f" userLabel="반찬브랜드">
+                                        <rect key="frame" x="0.0" y="527" width="101.5" height="30"/>
+                                        <state key="normal" title="반찬브랜드"/>
+                                        <connections>
+                                            <action selector="btnBrand:" destination="Gri-ij-C0K" eventType="touchUpInside" id="RIr-wJ-faZ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="W8b-fM-Yco" firstAttribute="width" secondItem="EwQ-9w-3K5" secondAttribute="width" id="0d3-Ng-ZyZ"/>
+                                    <constraint firstAttribute="width" secondItem="EwQ-9w-3K5" secondAttribute="height" multiplier="25:137" id="1WK-ed-MPb"/>
+                                    <constraint firstItem="sn4-X3-f7f" firstAttribute="width" secondItem="EwQ-9w-3K5" secondAttribute="width" id="29g-tp-uGj"/>
+                                    <constraint firstItem="wmM-vv-opy" firstAttribute="width" secondItem="EwQ-9w-3K5" secondAttribute="width" id="3YD-LB-KfN"/>
+                                    <constraint firstItem="d9Y-tb-Rcc" firstAttribute="width" secondItem="EwQ-9w-3K5" secondAttribute="width" id="8nl-mu-T8Y"/>
+                                    <constraint firstItem="Fje-92-XM0" firstAttribute="width" secondItem="EwQ-9w-3K5" secondAttribute="width" id="MrY-H7-h5Z"/>
+                                    <constraint firstItem="8Ir-j4-HC4" firstAttribute="width" secondItem="EwQ-9w-3K5" secondAttribute="width" id="QGc-bl-6P3"/>
+                                    <constraint firstItem="dxh-Cm-pU9" firstAttribute="width" secondItem="EwQ-9w-3K5" secondAttribute="width" id="d4e-g1-0wj"/>
+                                    <constraint firstItem="Ayc-lx-XkL" firstAttribute="width" secondItem="EwQ-9w-3K5" secondAttribute="width" id="h15-8W-8Pi"/>
+                                    <constraint firstItem="76x-QI-CV8" firstAttribute="width" secondItem="EwQ-9w-3K5" secondAttribute="width" id="icI-oZ-uXn"/>
+                                    <constraint firstItem="NAf-Ze-cp2" firstAttribute="width" secondItem="EwQ-9w-3K5" secondAttribute="width" id="lTK-Xn-EOP"/>
+                                    <constraint firstItem="a1w-dF-FQZ" firstAttribute="width" secondItem="EwQ-9w-3K5" secondAttribute="width" id="ptD-pd-ADj"/>
+                                    <constraint firstItem="h9f-kb-IHA" firstAttribute="width" secondItem="EwQ-9w-3K5" secondAttribute="width" id="uHh-ij-IoK"/>
+                                </constraints>
+                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RXy-0H-SFP">
+                                <rect key="frame" x="186.5" y="65" width="178.5" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="RXy-0H-SFP" secondAttribute="height" multiplier="200:600" id="g8w-e5-9PG"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="K1F-g8-GB6">
+                                        <rect key="frame" x="0.0" y="28" width="178.5" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="K1F-g8-GB6" id="fUc-XA-vL0">
+                                            <rect key="frame" x="0.0" y="0.0" width="178.5" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Gri-ij-C0K" id="7wl-OB-COi"/>
+                                    <outlet property="delegate" destination="Gri-ij-C0K" id="mGn-Dh-Vbl"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="TGE-Aj-Q2A" firstAttribute="bottom" secondItem="EwQ-9w-3K5" secondAttribute="bottom" id="ICx-PM-smS"/>
+                            <constraint firstItem="RXy-0H-SFP" firstAttribute="top" secondItem="TGE-Aj-Q2A" secondAttribute="top" constant="45" id="Q15-ws-DCJ"/>
+                            <constraint firstItem="TGE-Aj-Q2A" firstAttribute="bottom" secondItem="RXy-0H-SFP" secondAttribute="bottom" constant="17" id="RYw-47-uOd"/>
+                            <constraint firstItem="EwQ-9w-3K5" firstAttribute="top" secondItem="TGE-Aj-Q2A" secondAttribute="top" constant="41" id="fRK-uO-jko"/>
+                            <constraint firstItem="TGE-Aj-Q2A" firstAttribute="trailing" secondItem="RXy-0H-SFP" secondAttribute="trailing" constant="10" id="fXb-nn-UzD"/>
+                            <constraint firstItem="EwQ-9w-3K5" firstAttribute="leading" secondItem="TGE-Aj-Q2A" secondAttribute="leading" constant="16" id="oTC-gX-ECY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="TGE-Aj-Q2A"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="카테고리" image="category" id="sMt-ig-NlD"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="RXy-0H-SFP" id="6Em-Xz-G5h"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O4Q-r7-qYF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="255" y="109"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="category" width="36" height="36"/>
+    </resources>
+</document>

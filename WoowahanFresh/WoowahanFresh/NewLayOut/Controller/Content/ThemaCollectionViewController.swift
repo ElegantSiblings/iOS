@@ -1,14 +1,14 @@
 //
-//  HomeViewController.swift
+//  ThemaCollectionViewController.swift
 //  WoowahanFresh
 //
-//  Created by qbbang on 29/11/2018.
+//  Created by qbbang on 30/11/2018.
 //  Copyright © 2018 qbbang. All rights reserved.
 //
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class ThemaCollectionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
