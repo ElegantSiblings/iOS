@@ -8,90 +8,116 @@
 
 import UIKit
 
+var sectionData = ["", "이럴 땐 이 상품", "이 시간 베스트", "배민찬 추천", "이런 것도 있어요",
+                   "오늘의 반찬가게", "후기로 검증된 인기반찬", "곧 할인 종료!"]
+
 class HomeTableViewController: UIViewController {
-
+  
   @IBOutlet weak var tableView: UITableView!
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-      
-      tableView.delegate = self
-      tableView.dataSource = self
-      tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
-    }
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    
+    tableView.delegate = self
+    tableView.dataSource = self
+    tableView.separatorStyle = .none
+    
+    let nibInfi = UINib(nibName: "InfiniteScrollViewCell", bundle: nil)
+    tableView.register(nibInfi, forCellReuseIdentifier: "InfiniteScrollViewCell")
+    tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+  }
 }
 
 extension HomeTableViewController: UITableViewDataSource {
+  
+  //MARK: Section 개수
+  func numberOfSections(in tableView: UITableView) -> Int {
+    return HomeSection().list.count
+  }
+  
+  //MARK: Section의 이름
+  func tableView(_ tableView: UITableView,
+                 titleForHeaderInSection section: Int) -> String? {
+    return HomeSection().list[section]
+  }
+  
+  //MARK: Cell의 갯수
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 5
+    return 1
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
-    var cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-    
-    switch indexPath.row {
-    case 0 :
-//      cell = tableView.dequeueReusableCell(withIdentifier: "test", for: indexPath)
-      cell.textLabel?.text = "\(indexPath.row)"
-      cell.backgroundColor = .red
-      cell.contentView
-      //cell.addSubview(InfiniteScrollView())
-    case 1 :
-      cell.textLabel?.text = "\(indexPath.row)"
-      cell.backgroundColor = .orange
-    case 2 :
-      cell.textLabel?.text = "\(indexPath.row)"
-      cell.backgroundColor = .yellow
-    case 3 :
-      cell.textLabel?.text = "\(indexPath.row)"
-      cell.backgroundColor = .green
-    case 4 :
-      cell.textLabel?.text = "\(indexPath.row)"
-      cell.backgroundColor = .blue
-    case 5 :
-      cell.textLabel?.text = "\(indexPath.row)"
-      cell.backgroundColor = #colorLiteral(red: 0.7490196078, green: 0.3529411765, blue: 0.9490196078, alpha: 1)
-    default:
-      print("\(indexPath.row) ... default")
+    //MARK:
+    if indexPath.section == 0 {
+      let cell = tableView.dequeueReusableCell(withIdentifier: "InfiniteScrollViewCell", for: indexPath) as! InfiniteScrollViewCell
+      cell.textLabel?.text = "\(indexPath.section) & \(indexPath.row)"
+      return cell
+      
+    } else if indexPath.section == 1 {
+      
+      let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+      cell.textLabel?.text = "\(indexPath.section) & \(indexPath.row)"
+      
+      return cell
+    } else {
+      let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+      return cell
     }
     
     
-    cell.textLabel?.text = "\(indexPath.row)"
-    
-    return cell
+    /*
+     if indexPath.section == 1{
+     let cell = tableView.dequeueReusableCell(withIdentifier: "InfiniteScrollViewCell", for: indexPath) as! InfiniteScrollViewCell
+     
+     return cell
+     } else{
+     
+     let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+     
+     
+     cell.textLabel?.text = "\(indexPath.row)"
+     
+     return cell
+     }
+     switch indexPath.row {
+     case 0 :
+     let cell = tableView.dequeueReusableCell(withIdentifier: "InfiniteScrollViewCell", for: indexPath) as! InfiniteScrollViewCell
+     
+     return cell
+     case 1 :
+     break
+     case 2 :
+     break
+     case 3 :
+     break
+     case 4 :
+     break
+     case 5 :
+     break
+     default:
+     let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+     
+     
+     cell.textLabel?.text = "\(indexPath.row)"
+     
+     return cell
+     }
+     }
+     */
   }
   
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     
-    switch indexPath.row {
+    switch indexPath.section {
     case 0 :
-      print("\(indexPath.row)")
-      return 100
-    case 1 :
-      print("\(indexPath.row)")
-      return 200
-    case 2 :
-      print("\(indexPath.row)")
-      return 300
-    case 3 :
-      print("\(indexPath.row)")
+      print(self.view.frame.size)
       return 400
-    case 4 :
-      print("\(indexPath.row)")
-      return 300
-    case 5 :
-      print("\(indexPath.row)")
-      return 200
     default:
-      print("\(indexPath.row) ... default")
       return 100
     }
     
-    // MARK: 기본 셀 높이
-    //return 100
   }
-  
 }
 
 extension HomeTableViewController: UITableViewDelegate {
