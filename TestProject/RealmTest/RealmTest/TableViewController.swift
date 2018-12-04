@@ -1,25 +1,20 @@
 //
-//  MyPageViewController.swift
-//  WoowahanFresh
+//  TableViewController.swift
+//  RealmTest
 //
-//  Created by qbbang on 30/11/2018.
+//  Created by qbbang on 03/12/2018.
 //  Copyright © 2018 qbbang. All rights reserved.
 //
 
 import UIKit
 
-class MyPageViewController: UIViewController {
+class TableViewController: UIViewController {
 
-  @IBOutlet weak var testImage: UIImageView!
-  
-  override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-    guard FixedBaner().mainBanner != nil else { return }
-    
-   
-  }
+    }
     
 
     /*

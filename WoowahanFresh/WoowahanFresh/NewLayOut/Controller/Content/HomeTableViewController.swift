@@ -8,7 +8,7 @@
 
 import UIKit
 
-var sectionData = ["", "이럴 땐 이 상품", "이 시간 베스트", "배민찬 추천", "이런 것도 있어요",
+var sectionData = ["", "", "이럴 땐 이 상품", "이 시간 베스트", "배민찬 추천", "이런 것도 있어요",
                    "오늘의 반찬가게", "후기로 검증된 인기반찬", "곧 할인 종료!"]
 
 class HomeTableViewController: UIViewController {
@@ -18,13 +18,15 @@ class HomeTableViewController: UIViewController {
     super.viewDidLoad()
     
     
-    tableView.delegate = self
-    tableView.dataSource = self
-    tableView.separatorStyle = .none
-    
-    let nibInfi = UINib(nibName: "InfiniteScrollViewCell", bundle: nil)
-    tableView.register(nibInfi, forCellReuseIdentifier: "InfiniteScrollViewCell")
-    tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+//    tableView.delegate = self
+//    tableView.dataSource = self
+//    tableView.separatorStyle = .none
+//    
+//    tableView.register(UINib(nibName: "InfiniteScrollViewCell", bundle: nil), forCellReuseIdentifier: "InfiniteScrollViewCell")
+//    tableView.register(UINib(nibName: "CategoriesHomeCell", bundle: nil), forCellReuseIdentifier: "CategoriesHomeCell")
+//    tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+//    
+//    tableView.reloadData()
   }
 }
 
@@ -56,63 +58,32 @@ extension HomeTableViewController: UITableViewDataSource {
       
     } else if indexPath.section == 1 {
       
-      let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+      let cell = tableView.dequeueReusableCell(withIdentifier: "CategoriesHomeCell", for: indexPath)
       cell.textLabel?.text = "\(indexPath.section) & \(indexPath.row)"
       
       return cell
+      
     } else {
       let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
       return cell
     }
     
-    
-    /*
-     if indexPath.section == 1{
-     let cell = tableView.dequeueReusableCell(withIdentifier: "InfiniteScrollViewCell", for: indexPath) as! InfiniteScrollViewCell
-     
-     return cell
-     } else{
-     
-     let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-     
-     
-     cell.textLabel?.text = "\(indexPath.row)"
-     
-     return cell
-     }
-     switch indexPath.row {
-     case 0 :
-     let cell = tableView.dequeueReusableCell(withIdentifier: "InfiniteScrollViewCell", for: indexPath) as! InfiniteScrollViewCell
-     
-     return cell
-     case 1 :
-     break
-     case 2 :
-     break
-     case 3 :
-     break
-     case 4 :
-     break
-     case 5 :
-     break
-     default:
-     let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-     
-     
-     cell.textLabel?.text = "\(indexPath.row)"
-     
-     return cell
-     }
-     }
-     */
   }
   
+  //MARK: taview
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     
     switch indexPath.section {
     case 0 :
-      print(self.view.frame.size)
-      return 400
+      let size = CGFloat( ( Int(self.view.frame.maxY) / 5) * 3 )
+      print(size)
+      return size
+      
+    case 1 :
+      let size = CGFloat( ( Int(self.view.frame.maxY) / 5) * 1 )
+      print(size)
+      return size
+      
     default:
       return 100
     }

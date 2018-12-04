@@ -1,27 +1,28 @@
 //
-//  MyPageViewController.swift
+//  ItemViewController.swift
 //  WoowahanFresh
 //
-//  Created by qbbang on 30/11/2018.
+//  Created by qbbang on 04/12/2018.
 //  Copyright © 2018 qbbang. All rights reserved.
 //
 
 import UIKit
 
-class MyPageViewController: UIViewController {
+class ItemViewController: UIViewController {
 
-  @IBOutlet weak var testImage: UIImageView!
-  
-  override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-    guard FixedBaner().mainBanner != nil else { return }
+    }
     
-   
+  @IBAction func btnClose(_ sender: Any) {
+    print("-----btn")
+      self.dismiss(animated: true) {
+        print("쇼핑리스트 화면 닫으면서 전달 사항 있니?")
+      }
   }
-    
-
+  
     /*
     // MARK: - Navigation
 

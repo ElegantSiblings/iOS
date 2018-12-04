@@ -8,6 +8,8 @@
 
 import UIKit
 
+import RealmSwift
+
 class InfiniteScrollViewCell: UITableViewCell {
   
   let scrollView = UIScrollView()
@@ -44,6 +46,7 @@ class InfiniteScrollViewCell: UITableViewCell {
     )
     let imageView = UIImageView(frame: pageFrame)
     imageView.image = UIImage(named: image)
+    
     scrollView.addSubview(imageView)
     
     scrollView.contentSize.width += self.frame.width
