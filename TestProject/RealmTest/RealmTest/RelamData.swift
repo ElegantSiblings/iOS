@@ -7,3 +7,11 @@
 //
 
 import Foundation
+import RealmSwift
+
+class CityLib: Object {
+  @objc dynamic var cityName = ""
+  @objc dynamic var proviceName = ""
+  @objc dynamic var conturyName = ""
+  
+}
