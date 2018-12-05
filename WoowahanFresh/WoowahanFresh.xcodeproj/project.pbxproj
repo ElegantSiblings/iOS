@@ -37,10 +37,21 @@
 		E8A7958221B4CE14007E9CEA /* InfiniteScrollViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8A7958021B4CE14007E9CEA /* InfiniteScrollViewCell.xib */; };
 		E8A7958421B4E8E5007E9CEA /* HomeSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A7958321B4E8E5007E9CEA /* HomeSection.swift */; };
 		E8A7958621B50C9C007E9CEA /* FixedBaner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A7958521B50C9C007E9CEA /* FixedBaner.swift */; };
+		E8A795CA21B61C7A007E9CEA /* CategoriesHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A795C921B61C7A007E9CEA /* CategoriesHome.swift */; };
+		E8A795D321B62F5F007E9CEA /* CategoriesHomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A795D121B62F5F007E9CEA /* CategoriesHomeCell.swift */; };
+		E8A795D421B62F5F007E9CEA /* CategoriesHomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8A795D221B62F5F007E9CEA /* CategoriesHomeCell.xib */; };
+		E8A795D621B63D98007E9CEA /* HomeTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A795D521B63D98007E9CEA /* HomeTestViewController.swift */; };
+		E8A795D821B63EB7007E9CEA /* ItemList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8A795D721B63EB7007E9CEA /* ItemList.storyboard */; };
+		E8A795DA21B64155007E9CEA /* ItemListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A795D921B64155007E9CEA /* ItemListViewController.swift */; };
 		E8E9405721ABD0050017620A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E9405621ABD0050017620A /* AppDelegate.swift */; };
 		E8E9405921ABD0050017620A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E9405821ABD0050017620A /* MainViewController.swift */; };
 		E8E9405C21ABD0050017620A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8E9405A21ABD0050017620A /* Main.storyboard */; };
 		E8E9406121ABD0070017620A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8E9405F21ABD0070017620A /* LaunchScreen.storyboard */; };
+		E8FCD6EB21B6889500209322 /* ImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FCD6E921B6889500209322 /* ImageViewCell.swift */; };
+		E8FCD6EC21B6889500209322 /* ImageViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8FCD6EA21B6889500209322 /* ImageViewCell.xib */; };
+		E8FCD6EF21B6892600209322 /* CollectionCategoriesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FCD6ED21B6892600209322 /* CollectionCategoriesCell.swift */; };
+		E8FCD6F021B6892600209322 /* CollectionCategoriesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8FCD6EE21B6892600209322 /* CollectionCategoriesCell.xib */; };
+		E8FCD6F221B6904C00209322 /* Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FCD6F121B6904C00209322 /* Codable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,12 +88,23 @@
 		E8A7958021B4CE14007E9CEA /* InfiniteScrollViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfiniteScrollViewCell.xib; sourceTree = "<group>"; };
 		E8A7958321B4E8E5007E9CEA /* HomeSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSection.swift; sourceTree = "<group>"; };
 		E8A7958521B50C9C007E9CEA /* FixedBaner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedBaner.swift; sourceTree = "<group>"; };
+		E8A795C921B61C7A007E9CEA /* CategoriesHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesHome.swift; sourceTree = "<group>"; };
+		E8A795D121B62F5F007E9CEA /* CategoriesHomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesHomeCell.swift; sourceTree = "<group>"; };
+		E8A795D221B62F5F007E9CEA /* CategoriesHomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoriesHomeCell.xib; sourceTree = "<group>"; };
+		E8A795D521B63D98007E9CEA /* HomeTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTestViewController.swift; sourceTree = "<group>"; };
+		E8A795D721B63EB7007E9CEA /* ItemList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ItemList.storyboard; sourceTree = "<group>"; };
+		E8A795D921B64155007E9CEA /* ItemListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListViewController.swift; sourceTree = "<group>"; };
 		E8E9405321ABD0050017620A /* WoowahanFresh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WoowahanFresh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8E9405621ABD0050017620A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8E9405821ABD0050017620A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E8E9405B21ABD0050017620A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E8E9406021ABD0070017620A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E8E9406221ABD0070017620A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E8FCD6E921B6889500209322 /* ImageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewCell.swift; sourceTree = "<group>"; };
+		E8FCD6EA21B6889500209322 /* ImageViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageViewCell.xib; sourceTree = "<group>"; };
+		E8FCD6ED21B6892600209322 /* CollectionCategoriesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCategoriesCell.swift; sourceTree = "<group>"; };
+		E8FCD6EE21B6892600209322 /* CollectionCategoriesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionCategoriesCell.xib; sourceTree = "<group>"; };
+		E8FCD6F121B6904C00209322 /* Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Codable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +147,7 @@
 		E823E1C521B0DEF00076592C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E8A795D921B64155007E9CEA /* ItemListViewController.swift */,
 				E8E9405821ABD0050017620A /* MainViewController.swift */,
 				E824F40421B006E9001CBC88 /* FirstViewController.swift */,
 				E876B8DF21B390D200C86C4D /* Navication */,
@@ -138,6 +161,7 @@
 		E823E1C621B0DF1E0076592C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E8A795D721B63EB7007E9CEA /* ItemList.storyboard */,
 				E876B8E421B39B5900C86C4D /* ViewCell */,
 				E8E9405A21ABD0050017620A /* Main.storyboard */,
 				E824F40121AFFBCB001CBC88 /* First.storyboard */,
@@ -165,6 +189,7 @@
 		E823E1DB21B0E5530076592C /* Content */ = {
 			isa = PBXGroup;
 			children = (
+				E8A795D521B63D98007E9CEA /* HomeTestViewController.swift */,
 				E824F40621B02360001CBC88 /* HomeTableViewController.swift */,
 				E824F40821B02626001CBC88 /* ContentViewController.swift */,
 				E823E1BB21B0D7720076592C /* BestTableViewController.swift */,
@@ -217,6 +242,12 @@
 			children = (
 				E8A7957F21B4CE14007E9CEA /* InfiniteScrollViewCell.swift */,
 				E8A7958021B4CE14007E9CEA /* InfiniteScrollViewCell.xib */,
+				E8A795D121B62F5F007E9CEA /* CategoriesHomeCell.swift */,
+				E8A795D221B62F5F007E9CEA /* CategoriesHomeCell.xib */,
+				E8FCD6E921B6889500209322 /* ImageViewCell.swift */,
+				E8FCD6EA21B6889500209322 /* ImageViewCell.xib */,
+				E8FCD6ED21B6892600209322 /* CollectionCategoriesCell.swift */,
+				E8FCD6EE21B6892600209322 /* CollectionCategoriesCell.xib */,
 			);
 			path = ViewCell;
 			sourceTree = "<group>";
@@ -252,6 +283,8 @@
 			children = (
 				E8A7958321B4E8E5007E9CEA /* HomeSection.swift */,
 				E8A7958521B50C9C007E9CEA /* FixedBaner.swift */,
+				E8A795C921B61C7A007E9CEA /* CategoriesHome.swift */,
+				E8FCD6F121B6904C00209322 /* Codable.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -358,12 +391,16 @@
 				E823E1D121B0E0CE0076592C /* Brand.storyboard in Resources */,
 				E876B8DC21B28BE600C86C4D /* Search.storyboard in Resources */,
 				E823E1CC21B0E0A60076592C /* Best.storyboard in Resources */,
+				E8A795D421B62F5F007E9CEA /* CategoriesHomeCell.xib in Resources */,
 				E8E9406121ABD0070017620A /* LaunchScreen.storyboard in Resources */,
 				E819696A21AE7073001670E0 /* Assets.xcassets in Resources */,
+				E8FCD6EC21B6889500209322 /* ImageViewCell.xib in Resources */,
 				E823E1DF21B0E6930076592C /* Category.storyboard in Resources */,
 				E823E1CE21B0E0B60076592C /* Shopping.storyboard in Resources */,
 				E8E9405C21ABD0050017620A /* Main.storyboard in Resources */,
 				E8A7958221B4CE14007E9CEA /* InfiniteScrollViewCell.xib in Resources */,
+				E8A795D821B63EB7007E9CEA /* ItemList.storyboard in Resources */,
+				E8FCD6F021B6892600209322 /* CollectionCategoriesCell.xib in Resources */,
 				E876B8DE21B28C2600C86C4D /* ShoppingList.storyboard in Resources */,
 				E823E1C821B0DF500076592C /* Content.storyboard in Resources */,
 				E823E1D521B0E0F00076592C /* Event.storyboard in Resources */,
@@ -406,12 +443,16 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-WoowahanFresh/Pods-WoowahanFresh-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -425,7 +466,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8A795D321B62F5F007E9CEA /* CategoriesHomeCell.swift in Sources */,
 				E823E1C021B0DEAB0076592C /* BrandCollectionViewController.swift in Sources */,
+				E8FCD6F221B6904C00209322 /* Codable.swift in Sources */,
 				E823E1C421B0DEE60076592C /* EventCollectionViewController.swift in Sources */,
 				E824F40721B02360001CBC88 /* HomeTableViewController.swift in Sources */,
 				E823E1C221B0DED70076592C /* ThemaCollectionViewController.swift in Sources */,
@@ -435,12 +478,17 @@
 				E876B8E321B3911C00C86C4D /* ShoppingListNavicationViewController.swift in Sources */,
 				E8E9405721ABD0050017620A /* AppDelegate.swift in Sources */,
 				E824F40921B02626001CBC88 /* ContentViewController.swift in Sources */,
+				E8A795D621B63D98007E9CEA /* HomeTestViewController.swift in Sources */,
 				E8A7958421B4E8E5007E9CEA /* HomeSection.swift in Sources */,
 				E823E1D821B0E53F0076592C /* CategoryViewController.swift in Sources */,
+				E8A795DA21B64155007E9CEA /* ItemListViewController.swift in Sources */,
+				E8A795CA21B61C7A007E9CEA /* CategoriesHome.swift in Sources */,
 				E876B8E121B3910900C86C4D /* SearchNavicationViewController.swift in Sources */,
+				E8FCD6EF21B6892600209322 /* CollectionCategoriesCell.swift in Sources */,
 				E823E1DA21B0E5490076592C /* MyPageViewController.swift in Sources */,
 				E8A7958621B50C9C007E9CEA /* FixedBaner.swift in Sources */,
 				E823E1BC21B0D7720076592C /* BestTableViewController.swift in Sources */,
+				E8FCD6EB21B6889500209322 /* ImageViewCell.swift in Sources */,
 				E824F40521B006E9001CBC88 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

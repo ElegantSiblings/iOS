@@ -10,11 +10,16 @@ import UIKit
 
 class MyPageViewController: UIViewController {
 
-    override func viewDidLoad() {
+  @IBOutlet weak var testImage: UIImageView!
+  
+  override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-    }
+    guard FixedBaner().mainBanner != nil else { return }
+    
+   
+  }
     
 
     /*
