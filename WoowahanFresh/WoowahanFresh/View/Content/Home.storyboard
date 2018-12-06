@@ -17,60 +17,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V7F-iT-j97">
-                                <rect key="frame" x="16" y="44" width="70" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="밑반찬"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="f8D-Zj-pWt">
+                                <rect key="frame" x="16" y="44" width="343" height="589"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
-                                    <action selector="밑반찬:" destination="gxl-Az-WL5" eventType="touchUpInside" id="Nfd-0y-VJc"/>
+                                    <outlet property="dataSource" destination="gxl-Az-WL5" id="vkP-K0-s6N"/>
+                                    <outlet property="delegate" destination="gxl-Az-WL5" id="SLh-pf-4VO"/>
                                 </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h0n-bo-bsc">
-                                <rect key="frame" x="94" y="44" width="70" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="메인반찬"/>
-                                <connections>
-                                    <action selector="메인반찬:" destination="gxl-Az-WL5" eventType="touchUpInside" id="eKf-y6-2VW"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C8s-89-wyF">
-                                <rect key="frame" x="172" y="44" width="70" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="국찌개탕"/>
-                                <connections>
-                                    <action selector="국찌개탕:" destination="gxl-Az-WL5" eventType="touchUpInside" id="BnG-4f-m6c"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rJU-Od-5q5">
-                                <rect key="frame" x="172" y="132" width="70" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="아이반찬"/>
-                                <connections>
-                                    <action selector="아이반찬:" destination="gxl-Az-WL5" eventType="touchUpInside" id="Yz3-qD-I7u"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dhK-g5-9X8">
-                                <rect key="frame" x="250" y="132" width="70" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="밥죽면"/>
-                                <connections>
-                                    <action selector="밥죽면:" destination="gxl-Az-WL5" eventType="touchUpInside" id="9Jf-wX-lUp"/>
-                                </connections>
-                            </button>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="f8D-Zj-pWt" secondAttribute="trailing" id="29R-xl-Jv7"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="f8D-Zj-pWt" secondAttribute="bottom" id="76T-CB-knr"/>
+                            <constraint firstItem="f8D-Zj-pWt" firstAttribute="leading" secondItem="F3o-hn-b85" secondAttribute="leadingMargin" id="KLc-4A-pMz"/>
+                            <constraint firstItem="f8D-Zj-pWt" firstAttribute="top" secondItem="F3o-hn-b85" secondAttribute="topMargin" id="bMb-Pw-uYk"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="bQ5-QB-lFj"/>
                     <size key="freeformSize" width="375" height="667"/>
+                    <connections>
+                        <outlet property="tableView" destination="f8D-Zj-pWt" id="22d-rI-7yv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ilu-lj-duI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4447.1999999999998" y="462.192118226601"/>
+            <point key="canvasLocation" x="4205.6000000000004" y="423.76847290640399"/>
         </scene>
     </scenes>
 </document>

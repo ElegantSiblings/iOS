@@ -21,13 +21,6 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dw8-cb-tbC">
                                 <rect key="frame" x="0.0" y="0.0" width="2256" height="593"/>
                                 <subviews>
-                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="toa-pb-OnN" userLabel="1Container View">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="593"/>
-                                        <color key="backgroundColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <connections>
-                                            <segue destination="SFT-0C-vcC" kind="embed" id="OYj-Cx-3jX"/>
-                                        </connections>
-                                    </containerView>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n9n-OJ-Eaw" userLabel="2Container View">
                                         <rect key="frame" x="376" y="0.0" width="375" height="593"/>
                                         <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -61,6 +54,13 @@
                                         <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <segue destination="P5f-oV-2kk" kind="embed" id="Pfd-h6-mgg"/>
+                                        </connections>
+                                    </containerView>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="toa-pb-OnN" userLabel="1Container View">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="593"/>
+                                        <color key="backgroundColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <segue destination="SFT-0C-vcC" kind="embed" id="z1G-Ao-7Z7"/>
                                         </connections>
                                     </containerView>
                                 </subviews>
