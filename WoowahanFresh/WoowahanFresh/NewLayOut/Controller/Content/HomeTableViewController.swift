@@ -18,16 +18,21 @@ class HomeTableViewController: UIViewController {
     super.viewDidLoad()
     
     
-//    tableView.delegate = self
-//    tableView.dataSource = self
-//    tableView.separatorStyle = .none
-//    
-//    tableView.register(UINib(nibName: "InfiniteScrollViewCell", bundle: nil), forCellReuseIdentifier: "InfiniteScrollViewCell")
-//    tableView.register(UINib(nibName: "CategoriesHomeCell", bundle: nil), forCellReuseIdentifier: "CategoriesHomeCell")
-//    tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
-//    
-//    tableView.reloadData()
+    tableView.delegate = self
+    tableView.dataSource = self
+    tableView.separatorStyle = .none
+    
+    tableView.register(UINib(nibName: "InfiniteScrollViewCell", bundle: nil), forCellReuseIdentifier: "InfiniteScrollViewCell")
+    tableView.register(UINib(nibName: "CategoriesHomeCell", bundle: nil), forCellReuseIdentifier: "CategoriesHomeCell")
+    tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+    
+    tableView.reloadData()
   }
+  
+  func pageChange() {
+    print("111")
+  }
+  
 }
 
 extension HomeTableViewController: UITableViewDataSource {
@@ -58,8 +63,9 @@ extension HomeTableViewController: UITableViewDataSource {
       
     } else if indexPath.section == 1 {
       
-      let cell = tableView.dequeueReusableCell(withIdentifier: "CategoriesHomeCell", for: indexPath)
-      cell.textLabel?.text = "\(indexPath.section) & \(indexPath.row)"
+      let cell = tableView.dequeueReusableCell(withIdentifier: "CategoriesHomeCell", for: indexPath) as! CategoriesHomeCell
+      
+      cell.delegate = self
       
       return cell
       
@@ -92,5 +98,63 @@ extension HomeTableViewController: UITableViewDataSource {
 }
 
 extension HomeTableViewController: UITableViewDelegate {
+  
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    print(indexPath.section)
+    
+  }
+  
+}
+
+extension HomeTableViewController: CategoriesHomeCellDelegate {
+  func DidTabSubDish() {
+    
+    let storyboard = UIStoryboard(name: "SubDishList", bundle: nil)
+    let masterVC = storyboard.instantiateInitialViewController()!
+    //let nextVC = storyboard.instantiateViewController(withIdentifier: "DishTableViewController") as! DishTableViewController
+    
+    self.present(masterVC, animated: true, completion: {
+//      DispatchQueue.main.async {
+//        nextVC.testString = "밑반찬"
+//        nextVC.navigationItem.title = "밑반찬"
+    })
+  }
+  
+  func DidTabMainDish() {
+    let storyboard = UIStoryboard(name: "SubDishList", bundle: nil)
+    let masterVC = storyboard.instantiateInitialViewController()!
+    
+    self.present(masterVC, animated: true, completion: {
+      masterVC.navigationItem.title = " 111 "
+    })
+  }
+  
+  func DidTabSoup() {
+    let storyboard = UIStoryboard(name: "DishList", bundle: nil)
+    let masterVC = storyboard.instantiateInitialViewController()!
+    
+    self.present(masterVC, animated: true, completion: {
+      masterVC.navigationItem.title = " 111 "
+    })
+  }
+  
+  func DidTabKids() {
+    let storyboard = UIStoryboard(name: "DishList", bundle: nil)
+    let masterVC = storyboard.instantiateInitialViewController()!
+    
+    self.present(masterVC, animated: true, completion: {
+      masterVC.navigationItem.title = " 111 "
+    })
+  }
+  
+  func DidTabRice() {
+    let storyboard = UIStoryboard(name: "DishList", bundle: nil)
+    let masterVC = storyboard.instantiateInitialViewController()!
+    
+    self.present(masterVC, animated: true, completion: {
+      masterVC.navigationItem.title = " 111 "
+    })
+  }
+  
   
 }

@@ -44,6 +44,7 @@ class InfiniteScrollViewCell: UITableViewCell {
       origin: CGPoint(x: scrollView.contentSize.width, y: 0),
       size: scrollView.frame.size
     )
+    
     let imageView = UIImageView(frame: pageFrame)
     imageView.image = UIImage(named: image)
     

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -12,27 +12,102 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="CategoriesHomeCell" customModule="WoowahanFresh" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="CategoriesHomeCell" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="CategoriesHomeCell" customModule="WoowahanFresh" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="99.666666666666671"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C99-Hw-czl">
-                        <rect key="frame" x="166" y="0.0" width="68" height="44"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </view>
-                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jyH-8X-aa7">
-                        <rect key="frame" x="63" y="0.0" width="68" height="44"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" name="systemBlueColor" catalog="System" colorSpace="catalog"/>
-                    </view>
+                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MfP-Uv-H9M">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="99.666666666666671"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FES-fY-QAp" userLabel="밑반찬">
+                                <rect key="frame" x="0.0" y="0.0" width="75" height="99.666666666666671"/>
+                                <state key="normal" title="Button" image="btnSubDish"/>
+                                <connections>
+                                    <action selector="btnSubDish:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="hRZ-nA-OsO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T0A-jv-g8o" userLabel="메인반찬">
+                                <rect key="frame" x="80" y="0.0" width="75" height="99.666666666666671"/>
+                                <state key="normal" title="Button" image="btnMainDish"/>
+                                <connections>
+                                    <action selector="btnMainDish:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="2gb-Ve-gie"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MOg-Xa-N0n" userLabel="국찌개탕">
+                                <rect key="frame" x="160" y="0.0" width="75" height="99.666666666666671"/>
+                                <state key="normal" title="Button" image="btnSoup"/>
+                                <connections>
+                                    <action selector="btnSoup:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="hMm-7V-MgU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pxw-w0-W5x" userLabel="밥">
+                                <rect key="frame" x="320" y="0.0" width="75" height="99.666666666666671"/>
+                                <state key="normal" title="Button" image="btnRice"/>
+                                <connections>
+                                    <action selector="btnRice:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ppa-l1-qsy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Q2-9i-s4c" userLabel="아이반찬">
+                                <rect key="frame" x="240" y="0.0" width="75" height="99.666666666666671"/>
+                                <state key="normal" title="Button" image="btnKidDish"/>
+                                <connections>
+                                    <action selector="btnKids:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="fLp-51-yrw"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="pxw-w0-W5x" firstAttribute="leading" secondItem="9Q2-9i-s4c" secondAttribute="trailing" constant="5" id="5Nh-0S-hcN"/>
+                            <constraint firstItem="pxw-w0-W5x" firstAttribute="width" secondItem="FES-fY-QAp" secondAttribute="width" id="9Kd-h2-Eug"/>
+                            <constraint firstItem="9Q2-9i-s4c" firstAttribute="leading" secondItem="MOg-Xa-N0n" secondAttribute="trailing" constant="5" id="9s4-s6-JEG"/>
+                            <constraint firstItem="9Q2-9i-s4c" firstAttribute="top" secondItem="MfP-Uv-H9M" secondAttribute="top" id="9w0-R1-ICH"/>
+                            <constraint firstItem="MOg-Xa-N0n" firstAttribute="height" secondItem="FES-fY-QAp" secondAttribute="height" id="AU5-ue-6VL"/>
+                            <constraint firstAttribute="bottom" secondItem="MOg-Xa-N0n" secondAttribute="bottom" id="CUX-la-2Dg"/>
+                            <constraint firstAttribute="bottom" secondItem="T0A-jv-g8o" secondAttribute="bottom" id="Cth-MZ-tHc"/>
+                            <constraint firstItem="9Q2-9i-s4c" firstAttribute="width" secondItem="FES-fY-QAp" secondAttribute="width" id="OEj-U8-v3I"/>
+                            <constraint firstAttribute="trailing" secondItem="pxw-w0-W5x" secondAttribute="trailing" id="OEx-pl-UGU"/>
+                            <constraint firstItem="MOg-Xa-N0n" firstAttribute="top" secondItem="MfP-Uv-H9M" secondAttribute="top" id="PJa-Mr-BOb"/>
+                            <constraint firstItem="pxw-w0-W5x" firstAttribute="height" secondItem="FES-fY-QAp" secondAttribute="height" id="S5w-53-SeI"/>
+                            <constraint firstItem="T0A-jv-g8o" firstAttribute="width" secondItem="FES-fY-QAp" secondAttribute="width" id="TD1-An-UaV"/>
+                            <constraint firstItem="FES-fY-QAp" firstAttribute="top" secondItem="MfP-Uv-H9M" secondAttribute="top" id="TI0-cX-Nn2"/>
+                            <constraint firstItem="FES-fY-QAp" firstAttribute="height" secondItem="MfP-Uv-H9M" secondAttribute="height" id="XNd-G2-3Xf"/>
+                            <constraint firstAttribute="bottom" secondItem="FES-fY-QAp" secondAttribute="bottom" id="Y96-W5-aZ1"/>
+                            <constraint firstAttribute="bottom" secondItem="9Q2-9i-s4c" secondAttribute="bottom" id="ZbL-qO-qlf"/>
+                            <constraint firstItem="T0A-jv-g8o" firstAttribute="height" secondItem="FES-fY-QAp" secondAttribute="height" id="b8y-0T-dGQ"/>
+                            <constraint firstItem="T0A-jv-g8o" firstAttribute="leading" secondItem="FES-fY-QAp" secondAttribute="trailing" constant="5" id="eLc-PN-Guh"/>
+                            <constraint firstItem="MOg-Xa-N0n" firstAttribute="width" secondItem="FES-fY-QAp" secondAttribute="width" id="gkL-2N-Gmc"/>
+                            <constraint firstItem="FES-fY-QAp" firstAttribute="leading" secondItem="MfP-Uv-H9M" secondAttribute="leading" id="h9s-cg-gLR"/>
+                            <constraint firstItem="T0A-jv-g8o" firstAttribute="top" secondItem="MfP-Uv-H9M" secondAttribute="top" id="jQ5-er-fPE"/>
+                            <constraint firstItem="MOg-Xa-N0n" firstAttribute="leading" secondItem="T0A-jv-g8o" secondAttribute="trailing" constant="5" id="owa-Xq-P2D"/>
+                            <constraint firstItem="9Q2-9i-s4c" firstAttribute="height" secondItem="FES-fY-QAp" secondAttribute="height" id="sYk-W0-HVz"/>
+                            <constraint firstItem="FES-fY-QAp" firstAttribute="width" secondItem="MfP-Uv-H9M" secondAttribute="width" multiplier="1/5" id="vKm-PL-KRz"/>
+                            <constraint firstItem="pxw-w0-W5x" firstAttribute="top" secondItem="MfP-Uv-H9M" secondAttribute="top" id="yPy-C1-eUE"/>
+                            <constraint firstAttribute="bottom" secondItem="pxw-w0-W5x" secondAttribute="bottom" id="znd-ye-b9o"/>
+                        </constraints>
+                    </scrollView>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="MfP-Uv-H9M" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" id="TdV-Bw-Oaj"/>
+                    <constraint firstAttribute="trailing" secondItem="MfP-Uv-H9M" secondAttribute="trailing" id="ZR0-yJ-22u"/>
+                    <constraint firstAttribute="bottom" secondItem="MfP-Uv-H9M" secondAttribute="bottom" id="cHi-VN-Fg8"/>
+                    <constraint firstItem="MfP-Uv-H9M" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="f4S-oz-ZbQ"/>
+                    <constraint firstItem="MfP-Uv-H9M" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="hlE-GQ-fCs"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <point key="canvasLocation" x="180.80000000000001" y="-10.794602698650676"/>
+            <connections>
+                <outlet property="scrollView" destination="MfP-Uv-H9M" id="lnb-JF-WDt"/>
+            </connections>
+            <point key="canvasLocation" x="208.80000000000001" y="-11.083743842364532"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="btnKidDish" width="75" height="95"/>
+        <image name="btnMainDish" width="75" height="95"/>
+        <image name="btnRice" width="75" height="95"/>
+        <image name="btnSoup" width="75" height="95"/>
+        <image name="btnSubDish" width="75" height="95"/>
+    </resources>
 </document>
