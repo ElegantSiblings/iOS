@@ -19,11 +19,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="314.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G8D-MT-ozV">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="217"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </imageView>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jGa-4Z-ahc">
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jGa-4Z-ahc" userLabel="shopping">
                         <rect key="frame" x="273" y="268" width="86" height="36"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" red="0.37294507026672363" green="0.74524956941604614" blue="0.72941499948501587" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -32,46 +28,58 @@
                             <action selector="btnShopping:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="8gu-nc-RPu"/>
                         </connections>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GPz-ka-2TU" userLabel="discount_rate">
-                        <rect key="frame" x="0.0" y="0.0" width="58" height="35"/>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g8U-Jo-ly4">
+                        <rect key="frame" x="16" y="11" width="291" height="253"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                        <connections>
+                            <action selector="btnCell:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Xa2-uL-cqk"/>
+                        </connections>
+                    </button>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G8D-MT-ozV">
+                        <rect key="frame" x="16" y="11" width="343" height="206"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="[채움반찬] 느타리굴소스복음 (2인분) 170g 입니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M1Z-R3-RA2" userLabel="[company] + Item_name">
-                        <rect key="frame" x="8" y="225" width="351" height="35"/>
+                        <rect key="frame" x="16" y="225" width="343" height="35"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="4000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lND-A7-QzV">
-                        <rect key="frame" x="8" y="268" width="81" height="36"/>
+                        <rect key="frame" x="16" y="268" width="73" height="36"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                         <color key="textColor" red="0.37294507026672363" green="0.74524956941604614" blue="0.72941499948501587" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="4500원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3vN-pf-DRW">
-                        <rect key="frame" x="80" y="268" width="81" height="36"/>
+                        <rect key="frame" x="97" y="267" width="81" height="36"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mUq-iQ-Deu">
-                        <rect key="frame" x="340" y="0.0" width="35" height="35"/>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mUq-iQ-Deu" userLabel="heart">
+                        <rect key="frame" x="315" y="19" width="35" height="35"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <state key="normal" image="heart"/>
                         <connections>
                             <action selector="btnHeart:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="8fI-f2-9zZ"/>
                         </connections>
                     </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GPz-ka-2TU" userLabel="discount_rate">
+                        <rect key="frame" x="16" y="11" width="65" height="35"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="btnheart" destination="mUq-iQ-Deu" id="gdc-Kl-URC"/>
                 <outlet property="discountRate" destination="GPz-ka-2TU" id="Xik-uC-S03"/>
                 <outlet property="listThumbnail" destination="G8D-MT-ozV" id="TLb-ag-Whr"/>
                 <outlet property="originPrice" destination="3vN-pf-DRW" id="22p-ZU-NZL"/>
