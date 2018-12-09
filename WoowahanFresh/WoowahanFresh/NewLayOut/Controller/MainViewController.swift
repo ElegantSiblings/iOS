@@ -8,14 +8,29 @@
 
 import UIKit
 
+import Alamofire
+import RealmSwift
+
 class MainViewController: UIViewController {
   
   let loadingView = UIActivityIndicatorView(style: .whiteLarge)
   let logoView = UIImageView()
   var timer = Timer()
   
+  let url = "https://s3.ap-northeast-2.amazonaws.com/wps-9th-chajeehyung-practice/media/items/main_banner_01.jpg"
+  
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    requestData(url: url) { (Data) in
+      print(Data)
+      print("콜백테스트")
+      
+        
+      DispatchQueue.main.async {
+        self.logoView.image = UIImage(data: Data)
+      }
+    }
     
     // MARK: 3초 뒤에 다음 화면으로 이동,
     // 나중에는 데이터 적재 후 이동하는 것으로 변경 할 것
@@ -41,15 +56,35 @@ class MainViewController: UIViewController {
     
   }
   
+  
+  func requestData(url: String, handler: @escaping (Data) -> Void) {
+    //MARK: 이미지 데이터 요청
+    Alamofire.request(url, method: .get)
+      .validate()
+      .responseData { (response) in
+        print(Alamofire.request(url, method: .get))
+        switch response.result {
+        case .success(let value):
+          
+          handler(value)
+          
+        case .failure(let error):
+          print("error = ", error.localizedDescription)
+        }
+        
+    }
+  }
+  
+  
   func countDown() {
     timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { (Timer) in
       let storyboard = UIStoryboard(name: "First", bundle: nil)
       
       /*
-      // Master스토리보드의 aaa Id를 가진 애로 가랏
-      let storyboardID = "aaa"
-      let masterVC = storyboard.instantiateViewController(withIdentifier: storyboardID)
-      */
+       // Master스토리보드의 aaa Id를 가진 애로 가랏
+       let storyboardID = "aaa"
+       let masterVC = storyboard.instantiateViewController(withIdentifier: storyboardID)
+       */
       //  해당 스토리보드의 inial로 가라!
       let masterVC = storyboard.instantiateInitialViewController()!
       

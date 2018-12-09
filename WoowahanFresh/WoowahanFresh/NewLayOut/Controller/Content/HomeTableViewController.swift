@@ -8,92 +8,153 @@
 
 import UIKit
 
+var sectionData = ["", "", "이럴 땐 이 상품", "이 시간 베스트", "배민찬 추천", "이런 것도 있어요",
+                   "오늘의 반찬가게", "후기로 검증된 인기반찬", "곧 할인 종료!"]
+
 class HomeTableViewController: UIViewController {
-
+  
   @IBOutlet weak var tableView: UITableView!
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-      
-      tableView.delegate = self
-      tableView.dataSource = self
-      tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
-    }
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    
+    tableView.delegate = self
+    tableView.dataSource = self
+    tableView.separatorStyle = .none
+    
+    tableView.register(UINib(nibName: "InfiniteScrollViewCell", bundle: nil), forCellReuseIdentifier: "InfiniteScrollViewCell")
+    tableView.register(UINib(nibName: "CategoriesHomeCell", bundle: nil), forCellReuseIdentifier: "CategoriesHomeCell")
+    tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+    
+    tableView.reloadData()
+  }
+  
+  func pageChange() {
+    print("111")
+  }
+  
 }
 
 extension HomeTableViewController: UITableViewDataSource {
+  
+  //MARK: Section 개수
+  func numberOfSections(in tableView: UITableView) -> Int {
+    return HomeSection().list.count
+  }
+  
+  //MARK: Section의 이름
+  func tableView(_ tableView: UITableView,
+                 titleForHeaderInSection section: Int) -> String? {
+    return HomeSection().list[section]
+  }
+  
+  //MARK: Cell의 갯수
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 5
+    return 1
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
-    var cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-    
-    switch indexPath.row {
-    case 0 :
-//      cell = tableView.dequeueReusableCell(withIdentifier: "test", for: indexPath)
-      cell.textLabel?.text = "\(indexPath.row)"
-      cell.backgroundColor = .red
-      cell.contentView
-      //cell.addSubview(InfiniteScrollView())
-    case 1 :
-      cell.textLabel?.text = "\(indexPath.row)"
-      cell.backgroundColor = .orange
-    case 2 :
-      cell.textLabel?.text = "\(indexPath.row)"
-      cell.backgroundColor = .yellow
-    case 3 :
-      cell.textLabel?.text = "\(indexPath.row)"
-      cell.backgroundColor = .green
-    case 4 :
-      cell.textLabel?.text = "\(indexPath.row)"
-      cell.backgroundColor = .blue
-    case 5 :
-      cell.textLabel?.text = "\(indexPath.row)"
-      cell.backgroundColor = #colorLiteral(red: 0.7490196078, green: 0.3529411765, blue: 0.9490196078, alpha: 1)
-    default:
-      print("\(indexPath.row) ... default")
+    //MARK:
+    if indexPath.section == 0 {
+      let cell = tableView.dequeueReusableCell(withIdentifier: "InfiniteScrollViewCell", for: indexPath) as! InfiniteScrollViewCell
+      cell.textLabel?.text = "\(indexPath.section) & \(indexPath.row)"
+      return cell
+      
+    } else if indexPath.section == 1 {
+      
+      let cell = tableView.dequeueReusableCell(withIdentifier: "CategoriesHomeCell", for: indexPath) as! CategoriesHomeCell
+      
+      cell.delegate = self
+      
+      return cell
+      
+    } else {
+      let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+      return cell
     }
     
-    
-    cell.textLabel?.text = "\(indexPath.row)"
-    
-    return cell
   }
   
+  //MARK: taview
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     
-    switch indexPath.row {
+    switch indexPath.section {
     case 0 :
-      print("\(indexPath.row)")
-      return 100
+      let size = CGFloat( ( Int(self.view.frame.maxY) / 5) * 3 )
+      print(size)
+      return size
+      
     case 1 :
-      print("\(indexPath.row)")
-      return 200
-    case 2 :
-      print("\(indexPath.row)")
-      return 300
-    case 3 :
-      print("\(indexPath.row)")
-      return 400
-    case 4 :
-      print("\(indexPath.row)")
-      return 300
-    case 5 :
-      print("\(indexPath.row)")
-      return 200
+      let size = CGFloat( ( Int(self.view.frame.maxY) / 5) * 1 )
+      print(size)
+      return size
+      
     default:
-      print("\(indexPath.row) ... default")
       return 100
     }
     
-    // MARK: 기본 셀 높이
-    //return 100
+  }
+}
+
+extension HomeTableViewController: UITableViewDelegate {
+  
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    print(indexPath.section)
+    
   }
   
 }
 
-extension HomeTableViewController: UITableViewDelegate {
+extension HomeTableViewController: CategoriesHomeCellDelegate {
+  func DidTabSubDish() {
+    
+    let storyboard = UIStoryboard(name: "SubDishList", bundle: nil)
+    let masterVC = storyboard.instantiateInitialViewController()!
+    //let nextVC = storyboard.instantiateViewController(withIdentifier: "DishTableViewController") as! DishTableViewController
+    
+    self.present(masterVC, animated: true, completion: {
+//      DispatchQueue.main.async {
+//        nextVC.testString = "밑반찬"
+//        nextVC.navigationItem.title = "밑반찬"
+    })
+  }
+  
+  func DidTabMainDish() {
+    let storyboard = UIStoryboard(name: "SubDishList", bundle: nil)
+    let masterVC = storyboard.instantiateInitialViewController()!
+    
+    self.present(masterVC, animated: true, completion: {
+      masterVC.navigationItem.title = " 111 "
+    })
+  }
+  
+  func DidTabSoup() {
+    let storyboard = UIStoryboard(name: "DishList", bundle: nil)
+    let masterVC = storyboard.instantiateInitialViewController()!
+    
+    self.present(masterVC, animated: true, completion: {
+      masterVC.navigationItem.title = " 111 "
+    })
+  }
+  
+  func DidTabKids() {
+    let storyboard = UIStoryboard(name: "DishList", bundle: nil)
+    let masterVC = storyboard.instantiateInitialViewController()!
+    
+    self.present(masterVC, animated: true, completion: {
+      masterVC.navigationItem.title = " 111 "
+    })
+  }
+  
+  func DidTabRice() {
+    let storyboard = UIStoryboard(name: "DishList", bundle: nil)
+    let masterVC = storyboard.instantiateInitialViewController()!
+    
+    self.present(masterVC, animated: true, completion: {
+      masterVC.navigationItem.title = " 111 "
+    })
+  }
+  
   
 }

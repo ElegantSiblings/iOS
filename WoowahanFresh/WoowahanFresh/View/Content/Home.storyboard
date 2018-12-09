@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gxl-Az-WL5">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -18,31 +18,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dL1-Od-GZq">
-                                <rect key="frame" x="16" y="20" width="343" height="647"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="f8D-Zj-pWt">
+                                <rect key="frame" x="16" y="44" width="343" height="589"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
-                                    <outlet property="dataSource" destination="gxl-Az-WL5" id="dAD-Ja-Jjr"/>
-                                    <outlet property="delegate" destination="gxl-Az-WL5" id="fYZ-Mw-vT6"/>
+                                    <outlet property="dataSource" destination="gxl-Az-WL5" id="vkP-K0-s6N"/>
+                                    <outlet property="delegate" destination="gxl-Az-WL5" id="SLh-pf-4VO"/>
                                 </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="dL1-Od-GZq" secondAttribute="trailing" id="Dfk-aY-4MU"/>
-                            <constraint firstItem="dL1-Od-GZq" firstAttribute="top" secondItem="F3o-hn-b85" secondAttribute="topMargin" id="Mh8-ct-HYp"/>
-                            <constraint firstItem="dL1-Od-GZq" firstAttribute="leading" secondItem="F3o-hn-b85" secondAttribute="leadingMargin" id="oIt-lS-1r0"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="dL1-Od-GZq" secondAttribute="bottom" id="rD9-DV-foR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="f8D-Zj-pWt" secondAttribute="trailing" id="29R-xl-Jv7"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="f8D-Zj-pWt" secondAttribute="bottom" id="76T-CB-knr"/>
+                            <constraint firstItem="f8D-Zj-pWt" firstAttribute="leading" secondItem="F3o-hn-b85" secondAttribute="leadingMargin" id="KLc-4A-pMz"/>
+                            <constraint firstItem="f8D-Zj-pWt" firstAttribute="top" secondItem="F3o-hn-b85" secondAttribute="topMargin" id="bMb-Pw-uYk"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="VkE-u9-8Pt"/>
+                        <viewLayoutGuide key="safeArea" id="LRw-ck-c8c"/>
                     </view>
+                    <navigationItem key="navigationItem" id="bQ5-QB-lFj"/>
+                    <size key="freeformSize" width="375" height="667"/>
                     <connections>
-                        <outlet property="tableView" destination="dL1-Od-GZq" id="jJs-sw-DLB"/>
+                        <outlet property="tableView" destination="f8D-Zj-pWt" id="22d-rI-7yv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ilu-lj-duI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3505" y="463"/>
+            <point key="canvasLocation" x="4205.6000000000004" y="423.76847290640399"/>
         </scene>
     </scenes>
 </document>

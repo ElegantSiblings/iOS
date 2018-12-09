@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Yrf-22-3et">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Item View Controller-->
+        <scene sceneID="3Fk-GB-Ljz">
+            <objects>
+                <viewController id="Dxd-SJ-BGd" customClass="ItemViewController" customModule="WoowahanFresh" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DtE-fk-R5R">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ny1-DF-b3T">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="728"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Dxd-SJ-BGd" id="bSD-SR-Toc"/>
+                                    <outlet property="delegate" destination="Dxd-SJ-BGd" id="RPg-0G-cyn"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="63N-C5-Opt">
+                                <rect key="frame" x="0.0" y="728" width="75" height="50"/>
+                                <color key="backgroundColor" red="0.55634254220000001" green="0.97934550050000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="heart"/>
+                                <connections>
+                                    <action selector="btnHeart:" destination="Dxd-SJ-BGd" eventType="touchUpInside" id="vMu-rK-keW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k25-Gd-jm0">
+                                <rect key="frame" x="75" y="728" width="300" height="50"/>
+                                <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="장바구니 담기"/>
+                                <connections>
+                                    <action selector="btnAddShoppingList:" destination="Dxd-SJ-BGd" eventType="touchUpInside" id="BYK-fr-g4h"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="k25-Gd-jm0" firstAttribute="top" secondItem="ny1-DF-b3T" secondAttribute="bottom" id="0Dn-0E-m7C"/>
+                            <constraint firstItem="63N-C5-Opt" firstAttribute="leading" secondItem="bgJ-R4-Xct" secondAttribute="leading" id="7iC-ft-61k"/>
+                            <constraint firstItem="k25-Gd-jm0" firstAttribute="width" secondItem="DtE-fk-R5R" secondAttribute="width" multiplier="4/5" id="CWB-Q7-gcC"/>
+                            <constraint firstItem="ny1-DF-b3T" firstAttribute="leading" secondItem="bgJ-R4-Xct" secondAttribute="leading" id="Iic-mi-jXz"/>
+                            <constraint firstItem="k25-Gd-jm0" firstAttribute="leading" secondItem="63N-C5-Opt" secondAttribute="trailing" id="Jdm-Cq-912"/>
+                            <constraint firstItem="63N-C5-Opt" firstAttribute="bottom" secondItem="bgJ-R4-Xct" secondAttribute="bottom" id="Lhv-gB-Ahy"/>
+                            <constraint firstItem="ny1-DF-b3T" firstAttribute="top" secondItem="DtE-fk-R5R" secondAttribute="top" id="Nbg-7o-XCF"/>
+                            <constraint firstItem="bgJ-R4-Xct" firstAttribute="bottom" secondItem="k25-Gd-jm0" secondAttribute="bottom" id="RlO-zs-kmb"/>
+                            <constraint firstItem="bgJ-R4-Xct" firstAttribute="trailing" secondItem="k25-Gd-jm0" secondAttribute="trailing" id="YAN-nM-bnK"/>
+                            <constraint firstItem="63N-C5-Opt" firstAttribute="top" secondItem="ny1-DF-b3T" secondAttribute="bottom" id="fJE-SF-3SJ"/>
+                            <constraint firstItem="ny1-DF-b3T" firstAttribute="bottom" secondItem="bgJ-R4-Xct" secondAttribute="bottom" constant="-50" id="ms6-4C-2np"/>
+                            <constraint firstItem="ny1-DF-b3T" firstAttribute="trailing" secondItem="bgJ-R4-Xct" secondAttribute="trailing" id="sVS-RV-8aj"/>
+                            <constraint firstItem="63N-C5-Opt" firstAttribute="height" secondItem="k25-Gd-jm0" secondAttribute="height" id="vhz-Ef-y0E"/>
+                            <constraint firstItem="63N-C5-Opt" firstAttribute="width" secondItem="DtE-fk-R5R" secondAttribute="width" multiplier="1/5" id="zwg-Bh-0B2"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bgJ-R4-Xct"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="BHM-1q-8y3">
+                        <barButtonItem key="leftBarButtonItem" image="arrow" id="r3d-Vb-UkL">
+                            <connections>
+                                <action selector="btnBack:" destination="Dxd-SJ-BGd" id="YAP-7Y-YA5"/>
+                            </connections>
+                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Item" image="shopping" id="OWZ-cR-eOT">
+                                <connections>
+                                    <action selector="btnShopping:" destination="Dxd-SJ-BGd" id="7qx-WK-snv"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="공유" id="zSP-9n-5i5">
+                                <connections>
+                                    <action selector="btnShare:" destination="Dxd-SJ-BGd" id="gQq-Ps-6DN"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="ny1-DF-b3T" id="U2d-O5-rht"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8sy-Nx-ivl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="874.39999999999998" y="178.81773399014779"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="UKC-Hg-EQ0">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Yrf-22-3et" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3R6-7R-gvq">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Dxd-SJ-BGd" kind="relationship" relationship="rootViewController" id="CAr-ER-hQM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ru3-TP-C5h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-68" y="178.81773399014779"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="arrow" width="54" height="54"/>
+        <image name="heart" width="54" height="54"/>
+        <image name="shopping" width="54" height="54"/>
+    </resources>
+</document>
