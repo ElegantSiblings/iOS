@@ -28,13 +28,6 @@
                             <action selector="btnShopping:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="8gu-nc-RPu"/>
                         </connections>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g8U-Jo-ly4">
-                        <rect key="frame" x="16" y="11" width="291" height="253"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <connections>
-                            <action selector="btnCell:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Xa2-uL-cqk"/>
-                        </connections>
-                    </button>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G8D-MT-ozV">
                         <rect key="frame" x="16" y="11" width="343" height="206"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>

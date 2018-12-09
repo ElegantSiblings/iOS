@@ -238,8 +238,6 @@ extension SubDishTableViewController: UITableViewDataSource, ItemCellDelegate {
   }
   
   func DidTabHeart() {
-    let cell = UINib(nibName: "ItemCell", bundle: nil)  as ItemCell
-    cell.btnheart.backgroundColor = .red
     print("heart")
   }
   
@@ -249,5 +247,21 @@ extension SubDishTableViewController: UITableViewDataSource, ItemCellDelegate {
 }
 
 extension SubDishTableViewController: UITableViewDelegate {
+  
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    
+    print("\(indexPath.section) + \(indexPath.row)")
+    
+    let storyboard = UIStoryboard(name: "Item", bundle: nil)
+    let masterVC = storyboard.instantiateInitialViewController()!
+    //let nextVC = storyboard.instantiateViewController(withIdentifier: "DishTableViewController") as! DishTableViewController
+    
+    self.present(masterVC, animated: true, completion: {
+      //      DispatchQueue.main.async {
+      //        nextVC.testString = "밑반찬"
+      //        nextVC.navigationItem.title = "밑반찬"
+    })
+    
+  }
   
 }
