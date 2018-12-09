@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Sfu-9j-x6r">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uOn-aX-wgn">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -10,45 +10,69 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--마이페이지-->
+        <!--My Page View Controller-->
         <scene sceneID="YLa-Jw-NvU">
             <objects>
                 <viewController id="Sfu-9j-x6r" customClass="MyPageViewController" customModule="WoowahanFresh" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MpK-bK-C54">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="마이페이지" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="71e-g5-UKP">
-                                <rect key="frame" x="122.5" y="301" width="130" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h9P-2j-9l5">
-                                <rect key="frame" x="67" y="87" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.55634254220000001" green="0.97934550050000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="gEo-2n-29D">
+                                <rect key="frame" x="0.0" y="88" width="375" height="641"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Sfu-9j-x6r" id="NoK-p5-E4h"/>
+                                    <outlet property="delegate" destination="Sfu-9j-x6r" id="J74-pW-vrV"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="71e-g5-UKP" firstAttribute="centerX" secondItem="Ids-v0-7lA" secondAttribute="centerX" id="VOb-7A-h2C"/>
-                            <constraint firstItem="71e-g5-UKP" firstAttribute="centerY" secondItem="Ids-v0-7lA" secondAttribute="centerY" id="yoH-yH-Cys"/>
+                            <constraint firstItem="gEo-2n-29D" firstAttribute="top" secondItem="Ids-v0-7lA" secondAttribute="top" id="Ppp-03-O9e"/>
+                            <constraint firstItem="gEo-2n-29D" firstAttribute="leading" secondItem="Ids-v0-7lA" secondAttribute="leading" id="gHq-bN-hFf"/>
+                            <constraint firstItem="Ids-v0-7lA" firstAttribute="trailing" secondItem="gEo-2n-29D" secondAttribute="trailing" id="o64-Ke-gT9"/>
+                            <constraint firstItem="Ids-v0-7lA" firstAttribute="bottom" secondItem="gEo-2n-29D" secondAttribute="bottom" id="zyx-nZ-scX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ids-v0-7lA"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="마이페이지" image="mypage" id="Htw-d6-nZO"/>
+                    <navigationItem key="navigationItem" id="yqz-bI-i5d">
+                        <barButtonItem key="leftBarButtonItem" title="설정" id="11U-hZ-noh"/>
+                        <rightBarButtonItems>
+                            <barButtonItem title="장바구니" id="ohx-JL-F8L"/>
+                            <barButtonItem title="검색" id="Qy6-Ax-aOv"/>
+                        </rightBarButtonItems>
+                    </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="testImage" destination="h9P-2j-9l5" id="PUX-gS-dcp"/>
+                        <outlet property="tableView" destination="gEo-2n-29D" id="uqf-xb-CVw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fej-6E-tXQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-785" y="-3"/>
+            <point key="canvasLocation" x="156" y="-3.6945812807881775"/>
+        </scene>
+        <!--마이페이지-->
+        <scene sceneID="vFo-LR-JZ0">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uOn-aX-wgn" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="마이페이지" image="mypage" id="Htw-d6-nZO"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Fb1-z3-3Gt">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Sfu-9j-x6r" kind="relationship" relationship="rootViewController" id="S0l-yd-fNh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L8X-VP-tXG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-786.39999999999998" y="-3.6945812807881775"/>
         </scene>
     </scenes>
     <resources>
-        <image name="mypage" width="36" height="36"/>
+        <image name="mypage" width="54" height="54"/>
     </resources>
 </document>
