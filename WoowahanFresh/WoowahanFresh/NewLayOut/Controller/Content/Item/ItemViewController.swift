@@ -278,6 +278,7 @@ extension ItemViewController: UITableViewDataSource {
       }
     } else {
       let cell = tableView.dequeueReusableCell(withIdentifier: "ItemDetailCell", for: indexPath) as! ItemDetailCell
+      
       requestImage(url: itemDeTalier[indexPath.row]) { (Data) in
         
         guard let img = UIImage(data: Data) else { fatalError("Bad data") }

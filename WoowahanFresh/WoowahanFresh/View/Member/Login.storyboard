@@ -69,6 +69,9 @@
                                 <rect key="frame" x="307" y="455" width="52" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="회원가입"/>
+                                <connections>
+                                    <action selector="btnSignUp:" destination="ofs-8U-bsS" eventType="touchUpInside" id="MUc-eW-xpK"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CtP-ff-D2f">
                                 <rect key="frame" x="146" y="455" width="82" height="30"/>

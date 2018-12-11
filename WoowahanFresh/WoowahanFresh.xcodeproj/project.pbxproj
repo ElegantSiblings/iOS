@@ -52,6 +52,8 @@
 		E876B8DE21B28C2600C86C4D /* ShoppingList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E876B8DD21B28C2600C86C4D /* ShoppingList.storyboard */; };
 		E876B8E121B3910900C86C4D /* SearchNavicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E876B8E021B3910900C86C4D /* SearchNavicationViewController.swift */; };
 		E876B8E321B3911C00C86C4D /* ShoppingListNavicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E876B8E221B3911C00C86C4D /* ShoppingListNavicationViewController.swift */; };
+		E895682421BF8384004E56AC /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E895682321BF8384004E56AC /* SignUp.storyboard */; };
+		E895682621BF8635004E56AC /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E895682521BF8635004E56AC /* SignUpViewController.swift */; };
 		E8984C6B21BA39C20090571E /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8984C6921BA39C20090571E /* ItemCell.swift */; };
 		E8984C6C21BA39C20090571E /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8984C6A21BA39C20090571E /* ItemCell.xib */; };
 		E8A7958121B4CE14007E9CEA /* InfiniteScrollViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A7957F21B4CE14007E9CEA /* InfiniteScrollViewCell.swift */; };
@@ -126,6 +128,8 @@
 		E876B8E021B3910900C86C4D /* SearchNavicationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNavicationViewController.swift; sourceTree = "<group>"; };
 		E876B8E221B3911C00C86C4D /* ShoppingListNavicationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListNavicationViewController.swift; sourceTree = "<group>"; };
 		E88B693421AC22E7007C9766 /* WoowahanFresh.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WoowahanFresh.entitlements; sourceTree = "<group>"; };
+		E895682321BF8384004E56AC /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
+		E895682521BF8635004E56AC /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		E8984C6921BA39C20090571E /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		E8984C6A21BA39C20090571E /* ItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCell.xib; sourceTree = "<group>"; };
 		E8A7957F21B4CE14007E9CEA /* InfiniteScrollViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfiniteScrollViewCell.swift; sourceTree = "<group>"; };
@@ -324,6 +328,7 @@
 			isa = PBXGroup;
 			children = (
 				E83116A221BD536D003CF96E /* Login.storyboard */,
+				E895682321BF8384004E56AC /* SignUp.storyboard */,
 			);
 			path = Member;
 			sourceTree = "<group>";
@@ -332,6 +337,7 @@
 			isa = PBXGroup;
 			children = (
 				E83116A521BD53E8003CF96E /* LoginViewController.swift */,
+				E895682521BF8635004E56AC /* SignUpViewController.swift */,
 			);
 			path = Member;
 			sourceTree = "<group>";
@@ -535,6 +541,7 @@
 				E8E9406121ABD0070017620A /* LaunchScreen.storyboard in Resources */,
 				E819696A21AE7073001670E0 /* Assets.xcassets in Resources */,
 				E8FCD6EC21B6889500209322 /* ImageViewCell.xib in Resources */,
+				E895682421BF8384004E56AC /* SignUp.storyboard in Resources */,
 				E811E80D21BA23E40076F1FE /* SubDishList.storyboard in Resources */,
 				E831169A21BD23F4003CF96E /* ItemDeliveryCell.xib in Resources */,
 				E83116A321BD536D003CF96E /* Login.storyboard in Resources */,
@@ -592,6 +599,9 @@
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookShare/FacebookShare.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 			);
@@ -604,6 +614,9 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookShare.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 			);
@@ -643,6 +656,7 @@
 				E8FCD73B21B7A24800209322 /* NetworkManager.swift in Sources */,
 				E8A795DA21B64155007E9CEA /* ItemListViewController.swift in Sources */,
 				E8A795CA21B61C7A007E9CEA /* CategoriesHome.swift in Sources */,
+				E895682621BF8635004E56AC /* SignUpViewController.swift in Sources */,
 				E876B8E121B3910900C86C4D /* SearchNavicationViewController.swift in Sources */,
 				E8FCD6EF21B6892600209322 /* CollectionCategoriesCell.swift in Sources */,
 				E823E1DA21B0E5490076592C /* MyPageViewController.swift in Sources */,
