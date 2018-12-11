@@ -13,7 +13,6 @@ class SubDishTableViewController: UIViewController {
   
   @IBOutlet weak var tableView: UITableView!
   var itemValue: ItemList?
-  var itemValueListThumbnail = [ItemListElement]()
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -31,15 +30,6 @@ class SubDishTableViewController: UIViewController {
     
     requestCategoryPK(pk: "1") { (ItemList) in
       self.tableView.reloadData()
-      
-      //      let inUrl = self.itemValue?.itemList[1].listThumbnail ?? "nil"
-      //      self.requestImage(url: inUrl, handler: { (Data) in
-      //        print("데이터 -> 이미지 ", Data)
-      //        self.itemValueListThumbnail.append(Data)
-      //        self.tableView.reloadData()
-      //      })
-      
-      print("콜백백백============== ")
     }
     
     
@@ -89,28 +79,12 @@ class SubDishTableViewController: UIViewController {
         case .success(let value):
           self.itemValue = try! JSONDecoder().decode(ItemList.self, from: value)
           handler(self.itemValue!)
-          
-          /*
-           for idx in 0..<(self.itemValue?.itemList.count ?? 0) {
-           guard let urlIn = self.itemValue?.itemList[idx].listThumbnail else {return}
-           self.requestImage(url: urlIn, handler: { (Data) in
-           //                  print("콜백완료")
-           //                  print("==Data == : ", Data)
-           //                  print("==Data.count == : ", idx)
-           //              self.itemValueListThumbnail += [Data]
-           print("============", Data)
-           
-           })
-           }
-           print("============== 이미지 완료")
-           */
-          //          self.tableView.reloadData()
-          
         case .failure(let error):
           print(error)
         }
     }
   }
+  
 }
 
 
@@ -141,66 +115,56 @@ extension SubDishTableViewController: UITableViewDataSource, ItemCellDelegate {
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
     if indexPath.section == 1 {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as! ItemCell
-    
-    //MARK: Item pk
-    cell.itemPkNumber = itemValue?.itemList[indexPath.row].itemPk ?? "nil"
-    //MARK: Item 제목 회사 + 아이템 이름
-    cell.titel.text = "[\(itemValue?.itemList[indexPath.row].company ?? "nil") ] " + "\(itemValue?.itemList[indexPath.row].itemName ?? "nil")]"
-    //MARK: Item 세일가격
-    cell.salePrice.text = String(itemValue?.itemList[indexPath.row].salePrice ?? 0)// ?? "nil"
-    //MARK: Item 원래 가격
-    cell.originPrice.text = String(itemValue?.itemList[indexPath.row].originPrice ?? 0)
-    //MARK: Item discount
-    if let discountRateValue = itemValue?.itemList[indexPath.row].discountRate {
+      let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as! ItemCell
       
-      switch discountRateValue {
-      case 0:
-        break
-      case 0.05:
-        cell.discountRate.text = "5%"
-        cell.discountRate.backgroundColor = .red
+      //MARK: Item pk
+      cell.itemPkNumber = itemValue?.itemList[indexPath.row].itemPk ?? "nil"
+      //MARK: Item 제목 회사 + 아이템 이름
+      cell.titel.text = "[\(itemValue?.itemList[indexPath.row].company ?? "nil") ] " + "\(itemValue?.itemList[indexPath.row].itemName ?? "nil")]"
+      //MARK: Item 세일가격
+      cell.salePrice.text = String(itemValue?.itemList[indexPath.row].salePrice ?? 0)// ?? "nil"
+      //MARK: Item 원래 가격
+      cell.originPrice.text = String(itemValue?.itemList[indexPath.row].originPrice ?? 0)
+      //MARK: Item discount
+      if let discountRateValue = itemValue?.itemList[indexPath.row].discountRate {
         
-      case 0.1:
-        cell.discountRate.text = "10%"
-        cell.discountRate.backgroundColor = .red
+        switch discountRateValue {
+        case 0:
+          break
+        case 0.05:
+          cell.discountRate.text = "5%"
+          cell.discountRate.backgroundColor = .red
+          
+        case 0.1:
+          cell.discountRate.text = "10%"
+          cell.discountRate.backgroundColor = .red
+          
+        case 0.25:
+          cell.discountRate.text = "25%"
+          cell.discountRate.backgroundColor = .red
+        default:
+          break
+        }
+      }
+      
+      
+      //MARK: Item Thumbnail
+      //    cell.listThumbnail.image = UIImage(data: itemValueListThumbnail[indexPath.row])
+      
+      if let url = itemValue?.itemList[indexPath.row].listThumbnail {
         
-      case 0.25:
-        cell.discountRate.text = "25%"
-        cell.discountRate.backgroundColor = .red
-      default:
-        break
+        requestImage(url: url) { (Data) in
+          print("이미지 요청 콜백", Data)
+          cell.listThumbnail.image = UIImage(data: Data)
+          //     tableView.reloadData()
+        }
       }
-    }
-    
-    
-    //MARK: Item Thumbnail
-    //    cell.listThumbnail.image = UIImage(data: itemValueListThumbnail[indexPath.row])
-    
-    if let url = itemValue?.itemList[indexPath.row].listThumbnail {
       
-      requestImage(url: url) { (Data) in
-        print("이미지 요청 콜백", Data)
-        cell.listThumbnail.image = UIImage(data: Data)
-        //     tableView.reloadData()
-      }
-    }
-    
-    /*
-     if checkThumbnail {
-     print(indexPath.row)
-     print(itemValueListThumbnail.count)
-     cell.listThumbnail.image = UIImage(data: itemValueListThumbnail[0])
-     print(indexPath.row)
-     } else {
-     cell.listThumbnail.image = UIImage(data: itemValueListThumbnail[0])
-     }
-     */
-    cell.delegate = self
-    
+      cell.delegate = self
       
       
-    return cell
+      
+      return cell
     } else {
       
       let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
@@ -250,18 +214,16 @@ extension SubDishTableViewController: UITableViewDelegate {
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     
-    print("\(indexPath.section) + \(indexPath.row)")
-    
+    //MARK: 네비게이션 바가 있는 스토리보드 데이터 전송
     let storyboard = UIStoryboard(name: "Item", bundle: nil)
-    let masterVC = storyboard.instantiateInitialViewController()!
-    //let nextVC = storyboard.instantiateViewController(withIdentifier: "DishTableViewController") as! DishTableViewController
+    let ItemVC = storyboard.instantiateViewController(withIdentifier: "ItemViewController") as! ItemViewController
     
-    self.present(masterVC, animated: true, completion: {
-      //      DispatchQueue.main.async {
-      //        nextVC.testString = "밑반찬"
-      //        nextVC.navigationItem.title = "밑반찬"
-    })
-    
+    ItemVC.itemPk = String(indexPath.row + 1)
+    navigationController?.pushViewController(ItemVC, animated: true)
   }
   
+  
 }
+
+
+

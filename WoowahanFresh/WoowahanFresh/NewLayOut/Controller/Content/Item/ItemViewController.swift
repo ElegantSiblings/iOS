@@ -7,10 +7,20 @@
 //
 
 import UIKit
+import Alamofire
+
 
 class ItemViewController: UIViewController {
   
   @IBOutlet weak var tableView: UITableView!
+  
+  var timer = Timer()
+  var itemPk: String? = nil
+  var itemValue: ItemDetails?
+  var itemThumbnail: [String] = []
+  var itemThumbnailImage: [UIImage] = []
+  var itemDeTalier: [String] = []
+  
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -18,14 +28,84 @@ class ItemViewController: UIViewController {
     tableView.delegate = self
     tableView.dataSource = self
     tableView.separatorStyle = .none
-    
     //MARK: Section1 - 상품 정보 Custom Cell. 4개
     tableView.register(UINib(nibName: "ScrollViewImageCell", bundle: nil), forCellReuseIdentifier: "ScrollViewImageCell")
     tableView.register(UINib(nibName: "ItemTitleCell", bundle: nil), forCellReuseIdentifier: "ItemTitleCell")
     tableView.register(UINib(nibName: "ItemDeliveryCell", bundle: nil), forCellReuseIdentifier: "ItemDeliveryCell")
     tableView.register(UINib(nibName: "OtherItemCell", bundle: nil), forCellReuseIdentifier: "OtherItemCell")
+    tableView.register(UINib(nibName: "ItemDetailCell", bundle: nil), forCellReuseIdentifier: "ItemDetailCell")
     tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
     
+    guard let itemPkOptionalRemove = itemPk else {
+      return
+    }
+    
+    requestItemPK(pk: itemPkOptionalRemove) { (ItemDetails) in
+      self.tableView.reloadData()
+      
+      let count = self.itemValue?.itemimageSet.count ?? 0
+      
+      for idx in 0..<count {
+        if self.itemValue?.itemimageSet[idx].photoType == "T" {
+          let urlString = self.itemValue?.itemimageSet[idx].photo ?? "nil"
+          self.itemThumbnail.append(urlString)
+          
+        } else {
+          let urlString = self.itemValue?.itemimageSet[idx].photo ?? "nil"
+          self.itemDeTalier.append(urlString)
+        
+        }
+          
+      }
+      print(self.itemDeTalier.count)
+      print(self.itemThumbnail.count)
+      self.tableView.reloadData()
+      
+    }
+  }
+  
+    
+  //MARK: item_pk 요청
+  func requestItemPK(
+    pk: String,
+    handler: @escaping (ItemDetails) -> Void
+    ) {
+    let url = "https://api.elegantsiblings.xyz/item/"
+    
+    let params: Parameters = [
+      "item_pk": pk
+      //"is_ios" : "true"
+    ]
+    
+    Alamofire.request(url, method: .get, parameters: params)
+      .validate()
+      .responseData { response in
+        switch response.result {
+        case .success(let value):
+          self.itemValue = try! JSONDecoder().decode(ItemDetails.self, from: value)
+          handler(self.itemValue!)
+          
+        case .failure(let error):
+          print(error)
+        }
+    }
+  }
+  
+  //MARK: 이미지 데이터 요청
+  func requestImage(url: String, handler: @escaping (Data) -> Void) {
+    Alamofire.request(url, method: .get)
+      .validate()
+      .responseData { (response) in
+        print(Alamofire.request(url, method: .get))
+        switch response.result {
+        case .success(let value):
+          handler(value)
+          
+        case .failure(let error):
+          print("error = ", error.localizedDescription)
+        }
+        
+    }
   }
   
   //MARK: 네비게이션 액션
@@ -88,7 +168,7 @@ extension ItemViewController: UITableViewDataSource {
       case 1 :
         let size = CGFloat( ( Int(self.tableView.frame.maxY) / 4) * 1 )
         return size
-      
+        
       //MARK: 배송타입
       case 2 :
         let size = CGFloat( ( Int(self.tableView.frame.maxY) / 4) * 1 )
@@ -102,11 +182,12 @@ extension ItemViewController: UITableViewDataSource {
       default:
         return 50
       }
-    
+      
       //MARK: section 2 - 상세보기, 후기, 문의, 배송 교환
     } else {
       
-      return 315
+      let size = CGFloat( ( Int(self.tableView.frame.maxY) / 4) * 3 )
+      return size
     }
   }
   
@@ -115,7 +196,7 @@ extension ItemViewController: UITableViewDataSource {
     if section == 0 {
       return 4
     } else {
-      return 5
+      return itemDeTalier.count
     }
   }
   
@@ -128,20 +209,66 @@ extension ItemViewController: UITableViewDataSource {
       switch indexPath.row {
       case 0 :
         let cell = tableView.dequeueReusableCell(withIdentifier: "ScrollViewImageCell", for: indexPath) as! ScrollViewImageCell
+        
         return cell
         
       //MARK: 상품명 가격 정보
       case 1 :
         let cell = tableView.dequeueReusableCell(withIdentifier: "ItemTitleCell", for: indexPath) as! ItemTitleCell
+        
+        
+        let company = itemValue?.company ?? ""
+        let title = itemValue?.itemName ?? ""
+        let subtile = itemValue?.description.addedWords ?? ""
+        let discountRate = itemValue?.discountRate ?? 0.0
+        let saleMoney = itemValue?.salePrice ?? 0
+        let originMoney = itemValue?.originPrice ?? 0
+        switch discountRate {
+        case 0.05:
+          cell.disCount.text = " 5%"
+          cell.disCount.textColor = #colorLiteral(red: 0.1637313068, green: 0.7520731688, blue: 0.7333211303, alpha: 1)
+        case 0.1:
+          cell.disCount.text = "10%"
+          cell.disCount.textColor = #colorLiteral(red: 0.1637313068, green: 0.7520731688, blue: 0.7333211303, alpha: 1)
+        case 0.2:
+          cell.disCount.text = "20%"
+          cell.disCount.textColor = #colorLiteral(red: 0.1637313068, green: 0.7520731688, blue: 0.7333211303, alpha: 1)
+        case 0.25:
+          cell.disCount.text = "25%"
+          cell.disCount.textColor = #colorLiteral(red: 0.1637313068, green: 0.7520731688, blue: 0.7333211303, alpha: 1)
+        default:
+          cell.disCount.text = ""
+          cell.disCount.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+          break
+        }
+        cell.title.text = "[\(company)] \(title)"
+        cell.subTitle.text = subtile
+        cell.salePrice.text = String(saleMoney)
+        cell.originPrice.text = String(originMoney)
+        
         return cell
         
       //MARK: 배송타입
       case 2 :
         let cell = tableView.dequeueReusableCell(withIdentifier: "ItemDeliveryCell", for: indexPath) as! ItemDeliveryCell
+        
+        //MARK: 짤리는거는 나중에
+        cell.deliveryType.text = itemValue?.description.deliveryType
+        cell.getItemDay.text = itemValue?.description.receiveDay
+        
+        let rule = itemValue?.description.regularDelivery ?? false
+        var ruleText = "정기배송"
+        if rule {
+          ruleText = "가능"
+        } else {
+          ruleText = "불가능"
+        }
+        cell.deliveryRule.text = ruleText
         return cell
         
       //MARK: 다른상품
       case 3 :
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "OtherItemCell", for: indexPath) as! OtherItemCell
         return cell
         
@@ -150,13 +277,21 @@ extension ItemViewController: UITableViewDataSource {
         return cell
       }
     } else {
-      let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+      let cell = tableView.dequeueReusableCell(withIdentifier: "ItemDetailCell", for: indexPath) as! ItemDetailCell
+      requestImage(url: itemDeTalier[indexPath.row]) { (Data) in
+        
+        guard let img = UIImage(data: Data) else { fatalError("Bad data") }
+        cell.imageView?.image = img
+      }
+      
+      //MARK: 이미지 늘어남 해결 안됨
+      cell.imageView?.clipsToBounds = true
+      cell.imageView?.contentMode = .scaleAspectFit
+      
       return cell
     }
-    
+   
   }
-  
-  
 }
 
 extension ItemViewController: UITableViewDelegate {

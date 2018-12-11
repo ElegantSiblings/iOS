@@ -8,11 +8,27 @@
 
 import UIKit
 
+import FBSDKLoginKit
+
+//import FBSDKLoginKit
+
 class LoginViewController: UIViewController {
-
-    override func viewDidLoad() {
+  
+  override func viewDidLoad() {
         super.viewDidLoad()
-
+    
+  }
+  
+  @IBAction func btnLoginFacebook(_ sender: Any) {
+    
+    let loginManager = FBSDKLoginManager()
+    loginManager.logIn(withReadPermissions: ["public_profile","email"], from: self, handler: { (result, error) in
+      if (error == nil) {
+        let fblofinresult: FBSDKLoginManagerLoginResult = result!
+         print((fblofinresult.grantedPermissions.contains("emil")))
+       
+      }
+    })
   }
   
   @IBAction func btnClose(_ sender: Any) {

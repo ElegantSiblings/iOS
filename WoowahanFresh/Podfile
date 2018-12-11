@@ -17,9 +17,9 @@ pod 'RealmSwift'
 #pod 'FacebookLogin'
 #pod 'FacebookShare'
 
-# pod 'FBSDKCoreKit'  
-# pod 'FBSDKLoginKit'
-# pod 'FBSDKShareKit'
+pod 'FBSDKCoreKit'  
+pod 'FBSDKLoginKit'
+pod 'FBSDKShareKit'
 
 # pod 'FBSDKPlacesKit'
 # pod 'FBSDKMessengerShareKit'
