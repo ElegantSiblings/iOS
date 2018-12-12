@@ -80,6 +80,16 @@
                                     <action selector="btnSignUp:" destination="mgo-Fh-zBI" eventType="touchUpInside" id="kNn-r7-Ury"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이메일" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bn3-fR-qfZ">
+                                <rect key="frame" x="16" y="294" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" textContentType="tel"/>
+                                <connections>
+                                    <outlet property="delegate" destination="mgo-Fh-zBI" id="ijs-Es-g3h"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="nrf-G8-gvz"/>
@@ -92,11 +102,12 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="texFieldPasswordCheck" destination="Cs9-vK-d4F" id="gpx-kL-b8Q"/>
-                        <outlet property="textFieldFistName" destination="r19-tR-5bp" id="5cx-75-zo6"/>
-                        <outlet property="textFieldLastName" destination="Jf7-BE-TIV" id="RXh-ve-8CU"/>
-                        <outlet property="textFieldPassword" destination="ZHJ-mg-4gC" id="96E-da-exJ"/>
-                        <outlet property="textFieldUsername" destination="rEE-fZ-GW3" id="Ey5-Uc-95W"/>
+                        <outlet property="texFieldPasswordCheck" destination="Cs9-vK-d4F" id="0qW-w3-wzU"/>
+                        <outlet property="textFieldEmail" destination="bn3-fR-qfZ" id="PTk-U3-Xpg"/>
+                        <outlet property="textFieldFirstName" destination="r19-tR-5bp" id="ybe-bZ-fmq"/>
+                        <outlet property="textFieldId" destination="rEE-fZ-GW3" id="asl-Ko-rrb"/>
+                        <outlet property="textFieldLastName" destination="Jf7-BE-TIV" id="ye5-Qq-ima"/>
+                        <outlet property="textFieldPassword" destination="ZHJ-mg-4gC" id="gQt-Xz-UWp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LsC-CX-B0r" userLabel="First Responder" sceneMemberID="firstResponder"/>

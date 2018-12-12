@@ -9,7 +9,6 @@
 import UIKit
 import Alamofire
 
-
 class ItemViewController: UIViewController {
   
   @IBOutlet weak var tableView: UITableView!
@@ -40,10 +39,11 @@ class ItemViewController: UIViewController {
       return
     }
     
-    requestItemPK(pk: itemPkOptionalRemove) { (ItemDetails) in
+    requestItem.detailInfo(pk: itemPkOptionalRemove) { (ItemDetails) in
       self.tableView.reloadData()
       
       let count = self.itemValue?.itemimageSet.count ?? 0
+      self.itemValue = ItemDetails
       
       for idx in 0..<count {
         if self.itemValue?.itemimageSet[idx].photoType == "T" {
@@ -53,41 +53,11 @@ class ItemViewController: UIViewController {
         } else {
           let urlString = self.itemValue?.itemimageSet[idx].photo ?? "nil"
           self.itemDeTalier.append(urlString)
+          
+        }
         
-        }
-          
       }
-      print(self.itemDeTalier.count)
-      print(self.itemThumbnail.count)
       self.tableView.reloadData()
-      
-    }
-  }
-  
-    
-  //MARK: item_pk 요청
-  func requestItemPK(
-    pk: String,
-    handler: @escaping (ItemDetails) -> Void
-    ) {
-    let url = "https://api.elegantsiblings.xyz/item/"
-    
-    let params: Parameters = [
-      "item_pk": pk
-      //"is_ios" : "true"
-    ]
-    
-    Alamofire.request(url, method: .get, parameters: params)
-      .validate()
-      .responseData { response in
-        switch response.result {
-        case .success(let value):
-          self.itemValue = try! JSONDecoder().decode(ItemDetails.self, from: value)
-          handler(self.itemValue!)
-          
-        case .failure(let error):
-          print(error)
-        }
     }
   }
   
@@ -96,7 +66,6 @@ class ItemViewController: UIViewController {
     Alamofire.request(url, method: .get)
       .validate()
       .responseData { (response) in
-        print(Alamofire.request(url, method: .get))
         switch response.result {
         case .success(let value):
           handler(value)
@@ -109,11 +78,6 @@ class ItemViewController: UIViewController {
   }
   
   //MARK: 네비게이션 액션
-  @IBAction func btnBack(_ sender: Any) {
-    self.dismiss(animated: true) {
-      print("close")
-    }
-  }
   
   @IBAction func btnShare(_ sender: Any) {
     print("공유")
@@ -126,14 +90,25 @@ class ItemViewController: UIViewController {
   //MARK: 하단 버튼 액션
   
   @IBAction func btnHeart(_ sender: Any) {
-    print("버튼 하트")
+    if SingleUserInfo.sharedInstance.token.isEmpty {
+      Alert.loginCheck(viewController: self)
+    } else {
+      
+    }
   }
   
+  //MARK: 장바구니 담기 버튼,
   @IBAction func btnAddShoppingList(_ sender: Any) {
-    print("쇼핑 리스트 담기")
+    
+    if SingleUserInfo.sharedInstance.token.isEmpty {
+      Alert.loginCheck(viewController: self)
+    } else {
+      let tempInt = Int(itemPk ?? "0")
+      guard let removeOtionalInt = tempInt else { return }
+      requestCart.addItem(item_pk: removeOtionalInt)
+      Alert.addItem(viewController: self)
+    }
   }
-  
-  
   
 }
 
@@ -291,7 +266,7 @@ extension ItemViewController: UITableViewDataSource {
       
       return cell
     }
-   
+    
   }
 }
 

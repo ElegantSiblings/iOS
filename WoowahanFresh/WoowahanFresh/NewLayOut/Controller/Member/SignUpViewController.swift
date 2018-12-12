@@ -11,21 +11,27 @@ import Alamofire
 
 class SignUpViewController: UIViewController {
   
-  @IBOutlet weak var textFieldUsername: UITextField!
+  @IBOutlet weak var textFieldId: UITextField!
+  
+  
   @IBOutlet weak var textFieldPassword: UITextField!
   @IBOutlet weak var texFieldPasswordCheck: UITextField!
-  @IBOutlet weak var textFieldFistName: UITextField!
+  
+  @IBOutlet weak var textFieldFirstName: UITextField!
+  
   @IBOutlet weak var textFieldLastName: UITextField!
   
+  @IBOutlet weak var textFieldEmail: UITextField!
   
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    textFieldUsername.delegate = self
+    textFieldId.delegate = self
     textFieldPassword.delegate = self
     texFieldPasswordCheck.delegate = self
-    textFieldFistName.delegate = self
+    textFieldFirstName.delegate = self
     textFieldLastName.delegate = self
+    textFieldEmail.delegate = self
   }
   
   
@@ -37,7 +43,7 @@ class SignUpViewController: UIViewController {
   
   @IBAction func btnSignUp(_ sender: Any) {
     
-    guard let emailisEmpty = textFieldUsername.text?.isEmpty,
+    guard let emailisEmpty = textFieldId.text?.isEmpty,
       let passisEmpty = textFieldPassword.text?.isEmpty else { return }
     
     if emailisEmpty {
@@ -46,42 +52,84 @@ class SignUpViewController: UIViewController {
       print("비밀번호 입력하세요 팝업 띄우기")
     }
     
-    requestItemPK()
-    
+    requestSignUp()
   }
   
   //MARK: post 요청
-  func requestItemPK() {
-  //handler: @escaping () -> Void {
+  func requestSignUp() {
+    //handler: @escaping () -> Void {
     let url = "https://api.elegantsiblings.xyz/members/signup/"
     
-    guard let username = textFieldUsername.text else { return }
-    guard let passwd = textFieldPassword.text else { return }
-    guard let firstname = textFieldFistName.text else { return }
-    guard let lastname = textFieldLastName.text else { return }
+    guard let username = textFieldId.text else { return }
+    guard let password = textFieldPassword.text else { return }
+    guard let first_name = textFieldFirstName.text else { return }
+    guard let last_name = textFieldLastName.text else { return }
+    guard let email = textFieldEmail.text else { return }
     
     let params: Parameters = [
       "username": username,
-      "password": passwd,
-      "first_name": firstname,
-      "last_name": lastname,
+      "password": password,
+      "first_name": first_name,
+      "last_name": last_name,
+      "email": email,
       "img_profile": ""
     ]
     
     Alamofire.request(url, method: .post, parameters: params)
       .validate()
       .responseJSON { response in
-        switch response.result {
-        case .success(let value):
-          print("==== success ====")
-          print(value)
-        case .failure(let error):
-          print("==== failure ====")
-          print(error)
+        
+        if response.response?.statusCode == 200 {
+          switch response.result {
+          case .success(let value):
+            print("=========")
+            print(value)
+            //MARK: 회원가입이 완료 되었습니다 알람
+            self.alertSingUpFinish()
+          case .failure(let error):
+            print(error)
+          }
+        } else if response.response?.statusCode == 400 {
+          guard let code = response.response?.statusCode else { return }
+          print(code)
+          
+          //MARK: 아이디가 중복 되었습니다 알람
+          self.alertBedRequest()
+        } else {
+          guard let code = response.response?.statusCode else { return }
+          print(code)
         }
     }
   }
   
+  //MARK: 알림 창 - Status 200
+  func alertSingUpFinish() {
+    let alert = UIAlertController(title: "회원가입이 완료되었습니다.", message: nil, preferredStyle: .alert)
+    
+    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+      self.dismiss(animated: true, completion: {
+        print("close")
+      })
+    }))
+    
+    self.present(alert, animated: true)
+  }
+  
+  //MARK: 알림 창 - Status 400
+  func alertBedRequest() {
+    let alert = UIAlertController(title: "아이디가 중복 되었습니다.", message: nil, preferredStyle: .alert)
+    
+    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+      alert.dismiss(animated: true, completion: {
+        print("Alert Close")
+      })
+    }))
+    
+    self.present(alert, animated: true)
+  }
+  
+  
+  //MARK: 터치 시 키보드 하이드
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
     
     self.view.endEditing(true)
@@ -93,3 +141,8 @@ class SignUpViewController: UIViewController {
 extension SignUpViewController: UITextFieldDelegate {
   
 }
+
+
+
+
+

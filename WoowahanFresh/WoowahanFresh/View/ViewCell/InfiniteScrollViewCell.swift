@@ -8,6 +8,7 @@
 
 import UIKit
 
+import Alamofire
 import RealmSwift
 
 class InfiniteScrollViewCell: UITableViewCell {
@@ -28,10 +29,12 @@ class InfiniteScrollViewCell: UITableViewCell {
     
     self.addSubview(scrollView)
     
-    let pageImages = ["x",
-                      "x",
-                      "x",
-                      "x"]
+    let pageImages = ["https://s3.ap-northeast-2.amazonaws.com/wps-9th-chajeehyung-practice/media/items/sub_banner_left_01.jpg",
+                      "https://s3.ap-northeast-2.amazonaws.com/wps-9th-chajeehyung-practice/media/items/sub_banner_left_02.jpg",
+                      "https://s3.ap-northeast-2.amazonaws.com/wps-9th-chajeehyung-practice/media/items/sub_banner_left_03.jpg",
+                      "https://s3.ap-northeast-2.amazonaws.com/wps-9th-chajeehyung-practice/media/items/sub_banner_left_04.jpg",
+                      "https://s3.ap-northeast-2.amazonaws.com/wps-9th-chajeehyung-practice/media/items/sub_banner_left_05.jpg"]
+    ////
     
     for images in pageImages {
       addPageToScrollView(with: images)
@@ -44,15 +47,33 @@ class InfiniteScrollViewCell: UITableViewCell {
       origin: CGPoint(x: scrollView.contentSize.width, y: 0),
       size: scrollView.frame.size
     )
+    requestImage(url: image) { (Data) in
+      
+      let imageView = UIImageView(frame: pageFrame)
+      imageView.image = UIImage(data: Data)
+      self.scrollView.addSubview(imageView)
+    }
     
-    let imageView = UIImageView(frame: pageFrame)
-    imageView.image = UIImage(named: image)
-    
-    scrollView.addSubview(imageView)
     
     scrollView.contentSize.width += self.frame.width
   }
   
+  //MARK: 이미지 데이터 요청
+  func requestImage(url: String, handler: @escaping (Data) -> Void) {
+    Alamofire.request(url, method: .get)
+      .validate()
+      .responseData { (response) in
+        print(Alamofire.request(url, method: .get))
+        switch response.result {
+        case .success(let value):
+          handler(value)
+          
+        case .failure(let error):
+          print("error = ", error.localizedDescription)
+        }
+        
+    }
+  }
   
   override func setSelected(_ selected: Bool, animated: Bool) {
     super.setSelected(selected, animated: animated)

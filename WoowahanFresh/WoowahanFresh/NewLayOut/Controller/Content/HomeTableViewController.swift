@@ -33,6 +33,9 @@ class HomeTableViewController: UIViewController {
     print("111")
   }
   
+  @IBAction func unwindToHomeTable(_ unwindSegue: UIStoryboardSegue) {
+  }
+  
 }
 
 extension HomeTableViewController: UITableViewDataSource {
@@ -58,7 +61,7 @@ extension HomeTableViewController: UITableViewDataSource {
     //MARK:
     if indexPath.section == 0 {
       let cell = tableView.dequeueReusableCell(withIdentifier: "InfiniteScrollViewCell", for: indexPath) as! InfiniteScrollViewCell
-      cell.textLabel?.text = "\(indexPath.section) & \(indexPath.row)"
+      //cell.textLabel?.text = "\(indexPath.section) & \(indexPath.row)"
       return cell
       
     } else if indexPath.section == 1 {
@@ -108,52 +111,54 @@ extension HomeTableViewController: UITableViewDelegate {
 
 extension HomeTableViewController: CategoriesHomeCellDelegate {
   func DidTabSubDish() {
+    //MARK: 네비게이션 바가 있는 스토리보드 데이터 전송
+    let storyboard = UIStoryboard(name: "DishCategoryList", bundle: nil)
+    let DishVC = storyboard.instantiateViewController(withIdentifier: "DishCategoryTableViewController") as! DishCategoryTableViewController
     
-    let storyboard = UIStoryboard(name: "SubDishList", bundle: nil)
-    let masterVC = storyboard.instantiateInitialViewController()!
-    //let nextVC = storyboard.instantiateViewController(withIdentifier: "DishTableViewController") as! DishTableViewController
-    
-    self.present(masterVC, animated: true, completion: {
-//      DispatchQueue.main.async {
-//        nextVC.testString = "밑반찬"
-//        nextVC.navigationItem.title = "밑반찬"
-    })
+    // 밑반찬 - 전체보기
+    DishVC.requestPK = "1"
+    navigationController?.pushViewController(DishVC, animated: true)
   }
   
   func DidTabMainDish() {
-    let storyboard = UIStoryboard(name: "SubDishList", bundle: nil)
-    let masterVC = storyboard.instantiateInitialViewController()!
+    //MARK: 네비게이션 바가 있는 스토리보드 데이터 전송
+    let storyboard = UIStoryboard(name: "DishCategoryList", bundle: nil)
+    let DishVC = storyboard.instantiateViewController(withIdentifier: "DishCategoryTableViewController") as! DishCategoryTableViewController
     
-    self.present(masterVC, animated: true, completion: {
-      masterVC.navigationItem.title = " 111 "
-    })
+    // 메인반찬 - 전체보기
+    // 8, 9, 10 안됨
+    DishVC.requestPK = "11"
+    navigationController?.pushViewController(DishVC, animated: true)
   }
   
   func DidTabSoup() {
-    let storyboard = UIStoryboard(name: "DishList", bundle: nil)
-    let masterVC = storyboard.instantiateInitialViewController()!
+    //MARK: 네비게이션 바가 있는 스토리보드 데이터 전송
+    let storyboard = UIStoryboard(name: "DishCategoryList", bundle: nil)
+    let DishVC = storyboard.instantiateViewController(withIdentifier: "DishCategoryTableViewController") as! DishCategoryTableViewController
     
-    self.present(masterVC, animated: true, completion: {
-      masterVC.navigationItem.title = " 111 "
-    })
+    // 국찌개탕 - 전체보기
+    DishVC.requestPK = "15"
+    navigationController?.pushViewController(DishVC, animated: true)
   }
   
   func DidTabKids() {
-    let storyboard = UIStoryboard(name: "DishList", bundle: nil)
-    let masterVC = storyboard.instantiateInitialViewController()!
+    //MARK: 네비게이션 바가 있는 스토리보드 데이터 전송
+    let storyboard = UIStoryboard(name: "DishCategoryList", bundle: nil)
+    let DishVC = storyboard.instantiateViewController(withIdentifier: "DishCategoryTableViewController") as! DishCategoryTableViewController
     
-    self.present(masterVC, animated: true, completion: {
-      masterVC.navigationItem.title = " 111 "
-    })
+    // 아이반찬 - 전체보기
+    DishVC.requestPK = "21"
+    navigationController?.pushViewController(DishVC, animated: true)
   }
   
   func DidTabRice() {
-    let storyboard = UIStoryboard(name: "DishList", bundle: nil)
-    let masterVC = storyboard.instantiateInitialViewController()!
+    //MARK: 네비게이션 바가 있는 스토리보드 데이터 전송
+    let storyboard = UIStoryboard(name: "DishCategoryList", bundle: nil)
+    let DishVC = storyboard.instantiateViewController(withIdentifier: "DishCategoryTableViewController") as! DishCategoryTableViewController
     
-    self.present(masterVC, animated: true, completion: {
-      masterVC.navigationItem.title = " 111 "
-    })
+    // 밥죽면 - 전체보기
+    DishVC.requestPK = "39"
+    navigationController?.pushViewController(DishVC, animated: true)
   }
   
   

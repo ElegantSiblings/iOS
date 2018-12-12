@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cBi-G3-PNe">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -13,34 +13,41 @@
         <!--장바구니-->
         <scene sceneID="KVr-dh-NAW">
             <objects>
-                <viewController id="d5J-cU-tyW" customClass="ShoppingListNavicationViewController" customModule="WoowahanFresh" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ShoppingListNavicationViewController" id="d5J-cU-tyW" customClass="ShoppingListNavicationViewController" customModule="WoowahanFresh" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="83s-9Y-O4o">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="쇼핑리스트" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YVX-g6-RYW">
-                                <rect key="frame" x="150.5" y="333" width="74" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zQ4-Al-DV6">
+                                <rect key="frame" x="0.0" y="88" width="375" height="641"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="d5J-cU-tyW" id="dHi-gD-16y"/>
+                                    <outlet property="delegate" destination="d5J-cU-tyW" id="ygJ-nI-nsp"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="YVX-g6-RYW" firstAttribute="centerX" secondItem="NAh-Pu-0bB" secondAttribute="centerX" id="FiX-bJ-NCe"/>
-                            <constraint firstItem="YVX-g6-RYW" firstAttribute="centerY" secondItem="NAh-Pu-0bB" secondAttribute="centerY" id="wKf-VU-qnJ"/>
+                            <constraint firstItem="zQ4-Al-DV6" firstAttribute="top" secondItem="NAh-Pu-0bB" secondAttribute="top" id="0Dk-t9-ZoL"/>
+                            <constraint firstItem="NAh-Pu-0bB" firstAttribute="bottom" secondItem="zQ4-Al-DV6" secondAttribute="bottom" id="41D-vJ-7Ui"/>
+                            <constraint firstItem="zQ4-Al-DV6" firstAttribute="leading" secondItem="NAh-Pu-0bB" secondAttribute="leading" id="hjc-gT-83m"/>
+                            <constraint firstItem="zQ4-Al-DV6" firstAttribute="trailing" secondItem="NAh-Pu-0bB" secondAttribute="trailing" id="qmj-eT-sbo"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NAh-Pu-0bB"/>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="장바구니" id="ZZa-Qh-17h">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="eJF-X0-0uf">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="x" id="eJF-X0-0uf">
                             <connections>
                                 <action selector="btnClose:" destination="d5J-cU-tyW" id="WrR-I6-KyE"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="zQ4-Al-DV6" id="qjx-cU-Y1M"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1pk-oi-nku" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -52,7 +59,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cBi-G3-PNe" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="duQ-yH-7rz">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -65,4 +72,7 @@
             <point key="canvasLocation" x="-23.199999999999999" y="-671.51424287856082"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="x" width="54" height="54"/>
+    </resources>
 </document>

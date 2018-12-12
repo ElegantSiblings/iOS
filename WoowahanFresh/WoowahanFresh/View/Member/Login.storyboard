@@ -44,6 +44,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.55634254220000001" green="0.97934550050000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="로그인"/>
+                                <connections>
+                                    <action selector="btnLogin:" destination="ofs-8U-bsS" eventType="touchUpInside" id="8ZM-sf-Mps"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hIf-W5-CnP">
                                 <rect key="frame" x="16" y="313" width="343" height="63"/>
@@ -91,6 +94,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="btnFacebookLogin" destination="ce4-PH-T1j" id="G2O-da-4EM"/>
+                        <outlet property="txtFieldID" destination="fj0-q0-vOf" id="C7N-oi-LTy"/>
+                        <outlet property="txtFieldPW" destination="OQn-xc-RHL" id="vx1-4Z-eXN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SG0-mV-eyr" userLabel="First Responder" sceneMemberID="firstResponder"/>

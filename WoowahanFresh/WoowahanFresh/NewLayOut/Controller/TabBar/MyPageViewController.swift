@@ -17,20 +17,31 @@ class MyPageViewController: UIViewController {
     
     tableView.delegate = self
     tableView.dataSource = self
+    tableView.separatorStyle = .none
+    tableView.sectionHeaderHeight = 5
+    //    tableView.sectionFooterHeight = 0
     tableView.register(UITableViewCell.self,
                        forCellReuseIdentifier: "Cell")
   }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    tableView.reloadData()
+    print("view Will Appear")
+    print(SingleUserInfo.sharedInstance.token)
+  }
+  
 }
 
 extension MyPageViewController: UITableViewDataSource {
   
   //MARK: Section 개수
   func numberOfSections(in tableView: UITableView) -> Int {
-    //MARK: section 1 - Cell 2, 로그인, 포인트
-    //      section 2 - Cell 2, 주문내역, 찜 상품
-    //      section 3 - if 로그인 - Cell 4,
+    //MARK: section 0 - Cell 2, 로그인, 포인트
+    //      section 1 - Cell 2, 주문내역, 찜 상품
+    //      section 2 - if 로그인 - Cell 4,
     //                - if 로그아웃 - Cell 5, + 로그아웃
-    //      section 4 - Cell 2, 새벽배송, 배민찬 고객센터
+    //      section 3 - Cell 2, 새벽배송, 배민찬 고객센터
     return 4
   }
   
@@ -43,7 +54,12 @@ extension MyPageViewController: UITableViewDataSource {
     } else if section == 1 {
       return 2
     } else if section == 2 {
-      return 4
+      //MARK: 로그아웃 상태 시 (토큰 없음)
+      if SingleUserInfo.sharedInstance.token.isEmpty {
+        return 4
+      } else {
+        return 5
+      }
     } else if section == 3 {
       return 2
     } else {
@@ -56,19 +72,20 @@ extension MyPageViewController: UITableViewDataSource {
     
     if indexPath.section == 0 {
       switch indexPath.row {
-        
       case 0 :
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        //MARK: 로그아웃 상태 시 (토큰 없음)
+        if SingleUserInfo.sharedInstance.token.isEmpty {
         cell.textLabel?.text = "로그인 해주세요"
+        } else {
+          cell.textLabel?.text = "\(SingleUserInfo.sharedInstance.username) 님 환영합니다."
+        }
         return cell
-        
       case 1 :
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         cell.textLabel?.text = "포인트 / 쿠폰함 / 회원등급"
         return cell
-        
       default:
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         return cell
@@ -133,13 +150,12 @@ extension MyPageViewController: UITableViewDataSource {
         return cell
       }
     } else {
-      
       let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-      
       return cell
     }
-    
-  }
+  } //cellForRowAt 끝
+  
+  //=== MyPageViewController 끝 중괄호
 }
 
 extension MyPageViewController: UITableViewDelegate {
@@ -149,32 +165,13 @@ extension MyPageViewController: UITableViewDelegate {
     print("\(indexPath.section) + \(indexPath.row)")
     
     if indexPath.section == 0 ||
-      indexPath.section == 1 {
-      
+      indexPath.section == 1,
+      SingleUserInfo.sharedInstance.token.isEmpty {
       let storyboard = UIStoryboard(name: "Login", bundle: nil)
       let masterVC = storyboard.instantiateInitialViewController()!
-      //let nextVC = storyboard.instantiateViewController(withIdentifier: "DishTableViewController") as! DishTableViewController
-      
       self.present(masterVC, animated: true, completion: {
-        //      DispatchQueue.main.async {
-        //        nextVC.testString = "밑반찬"
-        //        nextVC.navigationItem.title = "밑반찬"
       })
-      
     }
     
-    
-    
-    /*
-    let storyboard = UIStoryboard(name: "Item", bundle: nil)
-    let masterVC = storyboard.instantiateInitialViewController()!
-    //let nextVC = storyboard.instantiateViewController(withIdentifier: "DishTableViewController") as! DishTableViewController
-    
-    self.present(masterVC, animated: true, completion: {
-      //      DispatchQueue.main.async {
-      //        nextVC.testString = "밑반찬"
-      //        nextVC.navigationItem.title = "밑반찬"
-    })
-    */
   }
 }

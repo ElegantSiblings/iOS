@@ -4,6 +4,7 @@
 
 import Foundation
 
+//MARK: 아이템 분류 정보
 struct ItemList: Codable {
   let currentCategories: CurrentCategories
   let subCategories: [CurrentCategories]
@@ -48,7 +49,7 @@ struct ItemListElement: Codable {
 }
 
 
-///////
+//MARK: 아이템 상세정보
 struct ItemDetails: Codable {
   let itemPk, company, itemName: String
   let originPrice, salePrice: Int
@@ -108,6 +109,26 @@ struct ItemimageSet: Codable {
   }
 }
 
+//MARK: 로그인 정보
+struct UserInfo: Codable {
+  let user: User
+  let token: String
+}
+
+struct User: Codable {
+  let userPk, username, firstName, lastName: String
+  let email: String
+  let imgProfile: JSONNull?
+  
+  enum CodingKeys: String, CodingKey {
+    case userPk = "user_pk"
+    case username
+    case firstName = "first_name"
+    case lastName = "last_name"
+    case email
+    case imgProfile = "img_profile"
+  }
+}
 
 
 // MARK: Encode/decode helpers
