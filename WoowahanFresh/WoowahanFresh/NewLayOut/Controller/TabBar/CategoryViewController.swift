@@ -22,8 +22,6 @@ class CategoryViewController: UIViewController {
     tableView.dataSource = self
     tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
     
-    //    tableView.backgroundColor = .green
-    
     items = [ "전체보기", "무침", "나물", "볶음", "조림", "젓갈・장・소스", "세트"]
     
     

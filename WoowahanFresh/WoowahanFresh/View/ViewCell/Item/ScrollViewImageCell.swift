@@ -28,10 +28,7 @@ class ScrollViewImageCell: UITableViewCell {
     
     self.addSubview(scrollView)
     
-    let pageImages = ["x",
-                      "x",
-                      "x",
-                      "x"]
+    let pageImages = [String]()
     
     for images in pageImages {
       addPageToScrollView(with: images)

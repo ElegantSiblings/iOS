@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Sub Dish Table View Controller-->
+        <!--Dish Category Table View Controller-->
         <scene sceneID="LQ4-hV-5zd">
             <objects>
-                <viewController storyboardIdentifier="SubDishTableViewController" id="lnY-LZ-25y" customClass="SubDishTableViewController" customModule="WoowahanFresh" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DishCategoryTableViewController" id="lnY-LZ-25y" customClass="DishCategoryTableViewController" customModule="WoowahanFresh" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="h2W-Jg-bWx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -40,6 +40,7 @@
                         <barButtonItem key="leftBarButtonItem" title="Item" image="arrow" id="Jxh-yN-4Fn">
                             <connections>
                                 <action selector="btnBack:" destination="lnY-LZ-25y" id="E8v-iR-aYg"/>
+                                <segue destination="vuu-yD-Q5g" kind="unwind" unwindAction="unwindToHomeTable:" id="yyE-TH-VIs"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="shopping" id="LWV-zU-IRV"/>
@@ -49,6 +50,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6gh-Qa-sg2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="vuu-yD-Q5g" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1060" y="161.46926536731635"/>
         </scene>

@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--카테고리-->
+        <!--Category View Controller-->
         <scene sceneID="UJi-yT-yRm">
             <objects>
                 <viewController storyboardIdentifier="CategoryViewController" id="Gri-ij-C0K" customClass="CategoryViewController" customModule="WoowahanFresh" customModuleProvider="target" sceneMemberID="viewController">
@@ -157,7 +157,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TGE-Aj-Q2A"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="카테고리" image="category" id="sMt-ig-NlD"/>
+                    <navigationItem key="navigationItem" id="au5-8f-DFU"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="RXy-0H-SFP" id="6Em-Xz-G5h"/>
@@ -165,10 +165,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O4Q-r7-qYF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="255" y="109"/>
+            <point key="canvasLocation" x="1192.8" y="108.39580209895054"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="category" width="36" height="36"/>
-    </resources>
 </document>

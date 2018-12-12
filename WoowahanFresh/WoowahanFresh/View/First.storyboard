@@ -13,7 +13,7 @@
         <!--First View Controller-->
         <scene sceneID="lIT-9x-8xN">
             <objects>
-                <viewController id="GGC-DM-Fgn" customClass="FirstViewController" customModule="WoowahanFresh" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FirstViewController" id="GGC-DM-Fgn" customClass="FirstViewController" customModule="WoowahanFresh" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Li9-6o-gPJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -83,7 +83,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tB1-v0-FYC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7224" y="-491"/>
+            <point key="canvasLocation" x="7230" y="-610"/>
         </scene>
         <!--MyPage-->
         <scene sceneID="qjK-gI-PdS">
@@ -93,7 +93,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Fb-Xi-3k8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7225" y="-423"/>
+            <point key="canvasLocation" x="7310" y="-558"/>
         </scene>
         <!--Search-->
         <scene sceneID="fU7-WN-Sl7">
