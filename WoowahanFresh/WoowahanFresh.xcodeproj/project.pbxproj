@@ -52,6 +52,11 @@
 		E857FEC921BE35B7003EEB2D /* itemPkDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E857FEC821BE35B7003EEB2D /* itemPkDelegate.swift */; };
 		E857FECC21BE515A003EEB2D /* ItemDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E857FECA21BE515A003EEB2D /* ItemDetailCell.swift */; };
 		E857FECD21BE515A003EEB2D /* ItemDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E857FECB21BE515A003EEB2D /* ItemDetailCell.xib */; };
+		E85A847021C0F08F004FF211 /* requestCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85A846F21C0F08F004FF211 /* requestCategory.swift */; };
+		E85A847521C0F979004FF211 /* DeletionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85A847321C0F979004FF211 /* DeletionCell.swift */; };
+		E85A847621C0F979004FF211 /* DeletionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E85A847421C0F979004FF211 /* DeletionCell.xib */; };
+		E85A847921C0F998004FF211 /* AddItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85A847721C0F998004FF211 /* AddItemCell.swift */; };
+		E85A847A21C0F998004FF211 /* AddItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E85A847821C0F998004FF211 /* AddItemCell.xib */; };
 		E876B8DC21B28BE600C86C4D /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E876B8DB21B28BE600C86C4D /* Search.storyboard */; };
 		E876B8DE21B28C2600C86C4D /* ShoppingList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E876B8DD21B28C2600C86C4D /* ShoppingList.storyboard */; };
 		E876B8E121B3910900C86C4D /* SearchNavicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E876B8E021B3910900C86C4D /* SearchNavicationViewController.swift */; };
@@ -127,6 +132,11 @@
 		E857FEC821BE35B7003EEB2D /* itemPkDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = itemPkDelegate.swift; sourceTree = "<group>"; };
 		E857FECA21BE515A003EEB2D /* ItemDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailCell.swift; sourceTree = "<group>"; };
 		E857FECB21BE515A003EEB2D /* ItemDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemDetailCell.xib; sourceTree = "<group>"; };
+		E85A846F21C0F08F004FF211 /* requestCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = requestCategory.swift; sourceTree = "<group>"; };
+		E85A847321C0F979004FF211 /* DeletionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeletionCell.swift; sourceTree = "<group>"; };
+		E85A847421C0F979004FF211 /* DeletionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeletionCell.xib; sourceTree = "<group>"; };
+		E85A847721C0F998004FF211 /* AddItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemCell.swift; sourceTree = "<group>"; };
+		E85A847821C0F998004FF211 /* AddItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddItemCell.xib; sourceTree = "<group>"; };
 		E876B8DB21B28BE600C86C4D /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		E876B8DD21B28C2600C86C4D /* ShoppingList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ShoppingList.storyboard; sourceTree = "<group>"; };
 		E876B8E021B3910900C86C4D /* SearchNavicationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNavicationViewController.swift; sourceTree = "<group>"; };
@@ -295,6 +305,7 @@
 			children = (
 				E827B37C21C0C1340024363C /* requestCart.swift */,
 				E827B38121C0CD620024363C /* requestItem.swift */,
+				E85A846F21C0F08F004FF211 /* requestCategory.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -358,6 +369,34 @@
 			path = Member;
 			sourceTree = "<group>";
 		};
+		E85A847121C0F6C0004FF211 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				E8A7957F21B4CE14007E9CEA /* InfiniteScrollViewCell.swift */,
+				E811E81321BA30750076F1FE /* InfiniteScrollViewCell.xib */,
+				E8A795D121B62F5F007E9CEA /* CategoriesHomeCell.swift */,
+				E8A795D221B62F5F007E9CEA /* CategoriesHomeCell.xib */,
+				E8FCD6E921B6889500209322 /* ImageViewCell.swift */,
+				E8FCD6EA21B6889500209322 /* ImageViewCell.xib */,
+				E8FCD6ED21B6892600209322 /* CollectionCategoriesCell.swift */,
+				E8FCD6EE21B6892600209322 /* CollectionCategoriesCell.xib */,
+				E8984C6921BA39C20090571E /* ItemCell.swift */,
+				E8984C6A21BA39C20090571E /* ItemCell.xib */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		E85A847221C0F6D3004FF211 /* ShoppingList */ = {
+			isa = PBXGroup;
+			children = (
+				E85A847321C0F979004FF211 /* DeletionCell.swift */,
+				E85A847421C0F979004FF211 /* DeletionCell.xib */,
+				E85A847721C0F998004FF211 /* AddItemCell.swift */,
+				E85A847821C0F998004FF211 /* AddItemCell.xib */,
+			);
+			path = ShoppingList;
+			sourceTree = "<group>";
+		};
 		E876B8DA21B28BB500C86C4D /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
@@ -379,17 +418,9 @@
 		E876B8E421B39B5900C86C4D /* ViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				E85A847221C0F6D3004FF211 /* ShoppingList */,
+				E85A847121C0F6C0004FF211 /* Home */,
 				E831169221BD23AB003CF96E /* Item */,
-				E8A7957F21B4CE14007E9CEA /* InfiniteScrollViewCell.swift */,
-				E811E81321BA30750076F1FE /* InfiniteScrollViewCell.xib */,
-				E8A795D121B62F5F007E9CEA /* CategoriesHomeCell.swift */,
-				E8A795D221B62F5F007E9CEA /* CategoriesHomeCell.xib */,
-				E8FCD6E921B6889500209322 /* ImageViewCell.swift */,
-				E8FCD6EA21B6889500209322 /* ImageViewCell.xib */,
-				E8FCD6ED21B6892600209322 /* CollectionCategoriesCell.swift */,
-				E8FCD6EE21B6892600209322 /* CollectionCategoriesCell.xib */,
-				E8984C6921BA39C20090571E /* ItemCell.swift */,
-				E8984C6A21BA39C20090571E /* ItemCell.xib */,
 			);
 			path = ViewCell;
 			sourceTree = "<group>";
@@ -556,6 +587,7 @@
 				E8A795D421B62F5F007E9CEA /* CategoriesHomeCell.xib in Resources */,
 				E8E9406121ABD0070017620A /* LaunchScreen.storyboard in Resources */,
 				E819696A21AE7073001670E0 /* Assets.xcassets in Resources */,
+				E85A847621C0F979004FF211 /* DeletionCell.xib in Resources */,
 				E8FCD6EC21B6889500209322 /* ImageViewCell.xib in Resources */,
 				E895682421BF8384004E56AC /* SignUp.storyboard in Resources */,
 				E811E80D21BA23E40076F1FE /* DishCategoryList.storyboard in Resources */,
@@ -566,6 +598,7 @@
 				E8E9405C21ABD0050017620A /* Main.storyboard in Resources */,
 				E8A795D821B63EB7007E9CEA /* ItemList.storyboard in Resources */,
 				E8FCD6F021B6892600209322 /* CollectionCategoriesCell.xib in Resources */,
+				E85A847A21C0F998004FF211 /* AddItemCell.xib in Resources */,
 				E876B8DE21B28C2600C86C4D /* ShoppingList.storyboard in Resources */,
 				E831168721BD1871003CF96E /* Item.storyboard in Resources */,
 				E857FECD21BE515A003EEB2D /* ItemDetailCell.xib in Resources */,
@@ -614,10 +647,8 @@
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
-				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
-				"${BUILT_PRODUCTS_DIR}/FacebookShare/FacebookShare.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 			);
@@ -629,10 +660,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookShare.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 			);
@@ -651,6 +680,7 @@
 				E8A795D321B62F5F007E9CEA /* CategoriesHomeCell.swift in Sources */,
 				E827B38221C0CD620024363C /* requestItem.swift in Sources */,
 				E857FEC721BDFE8A003EEB2D /* Observer.swift in Sources */,
+				E85A847521C0F979004FF211 /* DeletionCell.swift in Sources */,
 				E823E1C021B0DEAB0076592C /* BrandCollectionViewController.swift in Sources */,
 				E831169F21BD264B003CF96E /* OtherItemCell.swift in Sources */,
 				E823E1C421B0DEE60076592C /* EventCollectionViewController.swift in Sources */,
@@ -671,6 +701,7 @@
 				E831168B21BD194B003CF96E /* ItemViewController.swift in Sources */,
 				E823E1D821B0E53F0076592C /* CategoryViewController.swift in Sources */,
 				E8A795DA21B64155007E9CEA /* ItemListViewController.swift in Sources */,
+				E85A847921C0F998004FF211 /* AddItemCell.swift in Sources */,
 				E895682621BF8635004E56AC /* SignUpViewController.swift in Sources */,
 				E876B8E121B3910900C86C4D /* SearchNavicationViewController.swift in Sources */,
 				E8FCD6EF21B6892600209322 /* CollectionCategoriesCell.swift in Sources */,
@@ -687,6 +718,7 @@
 				E8FCD73E21B7A45B00209322 /* Constants.swift in Sources */,
 				E857FEC921BE35B7003EEB2D /* itemPkDelegate.swift in Sources */,
 				E831169521BD23D0003CF96E /* ItemTitleCell.swift in Sources */,
+				E85A847021C0F08F004FF211 /* requestCategory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -29,6 +29,8 @@ class ShoppingListNavicationViewController: UIViewController {
     //    tableView.sectionFooterHeight = 0
     tableView.register(UITableViewCell.self,
                        forCellReuseIdentifier: "Cell")
+    tableView.register(UITableViewCell.self,
+                       forCellReuseIdentifier: "deletionCell")
   }
   
   @IBAction func btnClose(_ sender: Any) {
@@ -52,6 +54,11 @@ extension ShoppingListNavicationViewController: UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    if indexPath.row == 2{
+      let cell = tableView.dequeueReusableCell(withIdentifier: "deletionCell", for: indexPath)
+      cell.textLabel?.text = "deletionCell"
+      return cell
+    }
     
     let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
     cell.backgroundColor = #colorLiteral(red: 0.1215686277, green: 0.01176470611, blue: 0.4235294163, alpha: 1)

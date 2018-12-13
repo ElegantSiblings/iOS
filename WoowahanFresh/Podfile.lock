@@ -14,16 +14,9 @@ PODS:
     - FacebookCore (~> 0.5)
     - FBSDKCoreKit (~> 4.37)
     - FBSDKLoginKit (~> 4.37)
-  - FacebookShare (0.5.0):
-    - Bolts (~> 1.9)
-    - FacebookCore (~> 0.5)
-    - FBSDKCoreKit (~> 4.37)
-    - FBSDKShareKit (~> 4.37)
   - FBSDKCoreKit (4.38.1):
     - Bolts (~> 1.9)
   - FBSDKLoginKit (4.38.1):
-    - FBSDKCoreKit
-  - FBSDKShareKit (4.38.1):
     - FBSDKCoreKit
   - Realm (3.11.2):
     - Realm/Headers (= 3.11.2)
@@ -35,7 +28,6 @@ DEPENDENCIES:
   - Alamofire
   - FacebookCore
   - FacebookLogin
-  - FacebookShare
   - RealmSwift
 
 SPEC REPOS:
@@ -44,10 +36,8 @@ SPEC REPOS:
     - Bolts
     - FacebookCore
     - FacebookLogin
-    - FacebookShare
     - FBSDKCoreKit
     - FBSDKLoginKit
-    - FBSDKShareKit
     - Realm
     - RealmSwift
 
@@ -56,13 +46,11 @@ SPEC CHECKSUMS:
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
   FacebookCore: 74288d0add931d361b1596beae787ab72c438249
   FacebookLogin: ebcf34714a1cb9f0759d9f071cfb01ed500996cf
-  FacebookShare: 963b4bb1124a64a395b1e428163d70b5774116e8
   FBSDKCoreKit: 8d47857400e2f5bdea697a80daff882e91c84ef6
   FBSDKLoginKit: 4621c690d9dd8628031a4791497062183ea34b0d
-  FBSDKShareKit: 6ffe22f0a0618eb7424d4104ab0ef3ce9643d42a
   Realm: 864477d028db77f7c5a0cba64a4892ad53db128a
   RealmSwift: 12b8262fc08020b47de4fd88eb3d5c9425b34ec7
 
-PODFILE CHECKSUM: 16da93feca70cb970d2113772599ec62c7fe2d26
+PODFILE CHECKSUM: 1642ebc5b01b2bfb94f58709f294730701ee8e0b
 
 COCOAPODS: 1.5.3
