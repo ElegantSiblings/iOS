@@ -29,14 +29,15 @@ class DishCategoryTableViewController: UIViewController {
     
     tableView.register(UITableViewCell.self,
                        forCellReuseIdentifier: "Cell")
+    print("======")
+    print("======")
+    print("======")
+    print("=============", requestPK)
     
-    print(requestPK)
-    requestCategoryPK(pk: requestPK) { (ItemList) in
+    requestCategory.listInfo(pk: requestPK) { [weak self] (ItemList) in
       
-      let imageCount = ItemList.currentCategories.photo.count
-      
-      print(imageCount)
-      
+      guard let self = self else { return }
+      self.itemValue = ItemList
       self.tableView.reloadData()
     }
     
@@ -52,7 +53,7 @@ func requestImage(url: String, handler: @escaping (Data) -> Void) {
   Alamofire.request(url, method: .get)
     .validate()
     .responseData { (response) in
-      print(Alamofire.request(url, method: .get))
+//      print(Alamofire.request(url, method: .get))
       switch response.result {
       case .success(let value):
         handler(value)
@@ -64,31 +65,7 @@ func requestImage(url: String, handler: @escaping (Data) -> Void) {
   }
 }
 
-//MARK: category_pk 요청
-func requestCategoryPK(
-  pk: String,
-  handler: @escaping (ItemList) -> Void
-  ) {
-  let url = "https://api.elegantsiblings.xyz/categories/"
-  
-  //?category_pk=2&is_ios=true
-  let params: Parameters = [
-    "category_pk": pk,
-    //"is_ios" : "true"
-  ]
-  
-  Alamofire.request(url, method: .get, parameters: params)
-    .validate()
-    .responseData { response in
-      switch response.result {
-      case .success(let value):
-        self.itemValue = try! JSONDecoder().decode(ItemList.self, from: value)
-        handler(self.itemValue!)
-      case .failure(let error):
-        print(error)
-      }
-  }
-}
+
 
 }
 
@@ -109,8 +86,6 @@ extension DishCategoryTableViewController: UITableViewDataSource, ItemCellDelega
       return 1
     } else if section == 1{
       guard let cellCount = itemValue?.itemList.count else { return 0 }
-      
-      print("Cell의 갯수", cellCount)
       return cellCount
     } else {
       return 1
@@ -127,13 +102,14 @@ extension DishCategoryTableViewController: UITableViewDataSource, ItemCellDelega
       return cell
       
     } else if indexPath.section == 1 {
+      
       let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as! ItemCell
       
       //MARK: Item pk
       cell.itemPkNumber = itemValue?.itemList[indexPath.row].itemPk ?? "nil"
-      
+      let temp = itemValue?.itemList[indexPath.row].itemPk ?? "nil"
       //MARK: Item 제목 회사 + 아이템 이름
-      cell.titel.text = "[\(itemValue?.itemList[indexPath.row].company ?? "nil") ] " + "\(itemValue?.itemList[indexPath.row].itemName ?? "nil")]"
+      cell.titel.text = "(\(temp)) [\(itemValue?.itemList[indexPath.row].company ?? "nil") ] " + "\(itemValue?.itemList[indexPath.row].itemName ?? "nil")]"
       //MARK: Item 세일가격
       cell.salePrice.text = String(itemValue?.itemList[indexPath.row].salePrice ?? 0)
       //MARK: Item 원래 가격
@@ -167,7 +143,7 @@ extension DishCategoryTableViewController: UITableViewDataSource, ItemCellDelega
       if let url = itemValue?.itemList[indexPath.row].listThumbnail {
         
         requestImage(url: url) { (Data) in
-          print("이미지 요청 콜백", Data)
+          //print("이미지 요청 콜백", Data)
           cell.listThumbnail.image = UIImage(data: Data)
         }
       }
