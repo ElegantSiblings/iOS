@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IYu-Om-wLf">
-                                <rect key="frame" x="0.0" y="132" width="375" height="646"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <searchBar key="tableHeaderView" contentMode="redraw" id="zbE-Is-Cr0">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -30,12 +30,32 @@
                                     </connections>
                                 </searchBar>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="HP0-2p-6le">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="pOt-X8-M48" detailTextLabel="EAn-5t-LUH" imageView="0vL-xF-cyX" style="IBUITableViewCellStyleSubtitle" id="HP0-2p-6le">
                                         <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HP0-2p-6le" id="qGO-62-kHQ">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pOt-X8-M48">
+                                                    <rect key="frame" x="108" y="5" width="33.333333333333336" height="20.333333333333332"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EAn-5t-LUH">
+                                                    <rect key="frame" x="108.00000000000001" y="25.333333333333332" width="43.666666666666664" height="14.333333333333334"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="BMC" id="0vL-xF-cyX">
+                                                    <rect key="frame" x="15" y="0.0" width="78" height="42"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </imageView>
+                                            </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
@@ -48,7 +68,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="IYu-Om-wLf" firstAttribute="leading" secondItem="5I0-oI-U9t" secondAttribute="leading" id="BVu-yw-8Zx"/>
-                            <constraint firstItem="IYu-Om-wLf" firstAttribute="top" secondItem="5I0-oI-U9t" secondAttribute="top" constant="88" id="D5P-jd-K42"/>
+                            <constraint firstItem="IYu-Om-wLf" firstAttribute="top" secondItem="5I0-oI-U9t" secondAttribute="top" id="D5P-jd-K42"/>
                             <constraint firstItem="5I0-oI-U9t" firstAttribute="bottom" secondItem="IYu-Om-wLf" secondAttribute="bottom" id="bBv-jH-uTL"/>
                             <constraint firstItem="5I0-oI-U9t" firstAttribute="trailing" secondItem="IYu-Om-wLf" secondAttribute="trailing" id="dWh-4M-iOk"/>
                         </constraints>
@@ -73,4 +93,7 @@
             <point key="canvasLocation" x="-231.19999999999999" y="152.95566502463055"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="BMC" width="78" height="42"/>
+    </resources>
 </document>
