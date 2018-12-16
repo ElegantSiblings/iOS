@@ -62,7 +62,8 @@ class LoginViewController: UIViewController {
         print(error)
       case .cancelled:
         print("User cancelled login")
-      case .success(let grantedPermissions, let declinedPermissions, let accessToken):
+      case .success(let accessToken):
+        //(let grantedPermissions, let declinedPermissions, let accessToken):
         print("====> accessToken")
         print(accessToken)
         print("Logged in!")

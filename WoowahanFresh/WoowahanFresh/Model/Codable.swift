@@ -130,6 +130,27 @@ struct User: Codable {
   }
 }
 
+//MARK: 검색 결과
+
+typealias SearchResult = [SearchResultElement]
+
+struct SearchResultElement: Codable {
+  let itemPk, company, itemName: String
+  let originPrice, salePrice: Int
+  let discountRate: Double
+  let listThumbnail: String
+  
+  enum CodingKeys: String, CodingKey {
+    case itemPk = "item_pk"
+    case company
+    case itemName = "item_name"
+    case originPrice = "origin_price"
+    case salePrice = "sale_price"
+    case discountRate = "discount_rate"
+    case listThumbnail = "list_thumbnail"
+  }
+}
+
 
 // MARK: Encode/decode helpers
 

@@ -1,27 +1,24 @@
 //
-//  requestCategory.swift
+//  requestSearch.swift
 //  WoowahanFresh
 //
-//  Created by qbbang on 12/12/2018.
+//  Created by qbbang on 16/12/2018.
 //  Copyright © 2018 qbbang. All rights reserved.
 //
 
 import Foundation
 import Alamofire
 
-struct requestCategory {
+struct requestSearch {
   
-  static var listItem: ItemList?
-  static func listInfo(
-    pk: String,
-    handler: @escaping (ItemList) -> Void
-    ) {
-    let url = "https://api.elegantsiblings.xyz/categories/"
-    
-    //?category_pk=2&is_ios=true
+  //MARK: 상품 상세정보
+  static var serchItem: SearchResult?
+  
+  static func serchItem(keyword: String, handler: @escaping (SearchResult) -> Void) {
+   
+    let url = "https://api.elegantsiblings.xyz/search/"
     let params: Parameters = [
-      "category_pk": pk,
-      //"is_ios" : "true"
+      "search_str": keyword
     ]
     
     Alamofire.request(url, method: .get, parameters: params)
@@ -30,8 +27,8 @@ struct requestCategory {
         switch response.result {
         case .success(let value):
           do {
-          listItem = try JSONDecoder().decode(ItemList.self, from: value)
-          handler(listItem!)
+          serchItem = try JSONDecoder().decode(SearchResult.self, from: value)
+          handler(serchItem!)
           } catch {
             print(error)
           }
@@ -40,5 +37,4 @@ struct requestCategory {
         }
     }
   }
-  
 }

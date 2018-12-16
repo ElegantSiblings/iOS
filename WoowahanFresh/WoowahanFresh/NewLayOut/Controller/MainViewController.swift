@@ -77,8 +77,11 @@ class MainViewController: UIViewController {
       
       let storyboard = UIStoryboard(name: "First", bundle: nil)
       let firstVC = storyboard.instantiateInitialViewController()!
-      self.present(firstVC, animated: false)
+//      navigationController?.presentationController.
+//      self.present(firstVC, animated: false)
       
+      self.navigationController?.pushViewController(firstVC, animated: false)
+      //setViewControllers([firstVC], animated: false)
       /*
       let storyboard = UIStoryboard(name: "First", bundle: nil)
       
