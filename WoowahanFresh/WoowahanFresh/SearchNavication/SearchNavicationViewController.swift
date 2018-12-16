@@ -18,7 +18,7 @@ class SearchNavicationViewController: UIViewController {
         super.viewDidLoad()
     
     navigationItem.title = "상품 검색"
-    tableView.rowHeight = 300
+    tableView.rowHeight = 150
     tableView.delegate = self
     tableView.dataSource = self
     searchBar.delegate = self
@@ -57,10 +57,11 @@ extension SearchNavicationViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
     let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-    cell.textLabel.text = "111"
-    cell.textLabel?.text = "[\(searchValue[indexPath.row].company)] "
-    cell.imageView?.image = UIImage(named: "btnKidDish")
-    
+    cell.textLabel?.text = "[\(searchValue[indexPath.row].company)] \(searchValue[indexPath.row].itemName)"
+    cell.detailTextLabel?.text = "\(searchValue[indexPath.row].salePrice)"
+    requestImage.ImageData(url: searchValue[indexPath.row].listThumbnail) { (Data) in
+      cell.imageView?.image = UIImage(data: Data)
+    }
    
     
     return cell
