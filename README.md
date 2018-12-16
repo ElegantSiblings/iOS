@@ -169,3 +169,24 @@ f.g Update, 파일명 \n 상세내용
   ```git commit --amend```
 
 [참고 링크 - gmlwjd9405.github.io](https://gmlwjd9405.github.io/2018/05/25/git-add-cancle.html)
+
+
+
+
+
+---
+
+
+
+장바구니 
+
+
+
+결제 시 
+
+장바구니 pk 를 보내고
+
+결제 200 떨어지면 
+
+장바구니 리스트 삭제
+
