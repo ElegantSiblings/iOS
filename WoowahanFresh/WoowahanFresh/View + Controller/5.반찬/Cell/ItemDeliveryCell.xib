@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="ItemDeliveryCell" selectionStyle="default" indentationWidth="10" rowHeight="182" id="KGk-i7-Jjw" customClass="ItemDeliveryCell" customModule="WoowahanFresh" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="182"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="181.66666666666666"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="배송타입" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3rY-2H-F7t">
+                        <rect key="frame" x="16" y="14" width="59" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="iPh-VG-FBT"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                        <color key="textColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="배송타입" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6j5-6t-4eD">
+                        <rect key="frame" x="112" y="14" width="59" height="20"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="수령요일" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="de4-7i-Jzi">
+                        <rect key="frame" x="112" y="64" width="59" height="20"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="수령요일" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IN2-Nq-r1Z">
+                        <rect key="frame" x="16" y="64" width="59" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="3Zk-nK-IhF"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                        <color key="textColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="정기배송" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="So5-e3-ie4">
+                        <rect key="frame" x="16" y="117" width="59" height="20"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                        <color key="textColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zmf-nd-7eS">
+                        <rect key="frame" x="0.0" y="9" width="375" height="0.0"/>
+                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                        <size key="shadowOffset" width="0.0" height="0.0"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="정기배송" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bJr-gO-a33">
+                        <rect key="frame" x="112" y="116" width="59" height="20"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="3rY-2H-F7t" firstAttribute="leading" secondItem="IN2-Nq-r1Z" secondAttribute="leading" id="0Nu-sE-l14"/>
+                    <constraint firstItem="6j5-6t-4eD" firstAttribute="leading" secondItem="3rY-2H-F7t" secondAttribute="trailing" constant="37" id="6Fn-bt-bbc"/>
+                    <constraint firstItem="3rY-2H-F7t" firstAttribute="baseline" secondItem="6j5-6t-4eD" secondAttribute="baseline" id="7X6-Hx-gSD"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="bJr-gO-a33" secondAttribute="bottom" constant="1" id="CFr-L4-r6L"/>
+                    <constraint firstItem="IN2-Nq-r1Z" firstAttribute="leading" secondItem="So5-e3-ie4" secondAttribute="leading" id="FLV-kj-Xnc"/>
+                    <constraint firstItem="IN2-Nq-r1Z" firstAttribute="baseline" secondItem="de4-7i-Jzi" secondAttribute="baseline" id="FSm-84-Ghv"/>
+                    <constraint firstItem="So5-e3-ie4" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="GSK-Kc-oeE"/>
+                    <constraint firstItem="IN2-Nq-r1Z" firstAttribute="firstBaseline" secondItem="de4-7i-Jzi" secondAttribute="firstBaseline" id="N8y-lE-Lj8"/>
+                    <constraint firstItem="So5-e3-ie4" firstAttribute="top" secondItem="IN2-Nq-r1Z" secondAttribute="bottom" constant="33" id="TA4-UU-DOG"/>
+                    <constraint firstItem="Zmf-nd-7eS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="YEf-k1-xYr"/>
+                    <constraint firstItem="bJr-gO-a33" firstAttribute="top" secondItem="de4-7i-Jzi" secondAttribute="bottom" constant="32" id="g3q-qT-fAy"/>
+                    <constraint firstItem="3rY-2H-F7t" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="giS-yu-6RA"/>
+                    <constraint firstItem="IN2-Nq-r1Z" firstAttribute="top" secondItem="3rY-2H-F7t" secondAttribute="bottom" constant="30" id="kXJ-AH-U1K"/>
+                    <constraint firstItem="3rY-2H-F7t" firstAttribute="top" secondItem="Zmf-nd-7eS" secondAttribute="bottom" constant="5" id="lz6-2k-LT2"/>
+                    <constraint firstItem="6j5-6t-4eD" firstAttribute="leading" secondItem="de4-7i-Jzi" secondAttribute="leading" id="o6n-Ne-DdA"/>
+                    <constraint firstItem="de4-7i-Jzi" firstAttribute="leading" secondItem="bJr-gO-a33" secondAttribute="leading" id="r2Y-nc-xyw"/>
+                    <constraint firstItem="3rY-2H-F7t" firstAttribute="firstBaseline" secondItem="6j5-6t-4eD" secondAttribute="firstBaseline" id="ts0-hR-YBn"/>
+                    <constraint firstAttribute="trailing" secondItem="Zmf-nd-7eS" secondAttribute="trailing" id="vh4-uF-bVF"/>
+                    <constraint firstItem="Zmf-nd-7eS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-46" id="ymK-Xw-bKc"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="deliveryRule" destination="bJr-gO-a33" id="2aL-9Q-lhZ"/>
+                <outlet property="deliveryType" destination="6j5-6t-4eD" id="mb3-5J-ie6"/>
+                <outlet property="getItemDay" destination="de4-7i-Jzi" id="F4o-LD-C6Y"/>
+            </connections>
+            <point key="canvasLocation" x="101.59999999999999" y="110.09852216748769"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -1,24 +1,24 @@
 //
-//  requestItem.swift
+//  requestSearch.swift
 //  WoowahanFresh
 //
-//  Created by qbbang on 12/12/2018.
+//  Created by qbbang on 16/12/2018.
 //  Copyright © 2018 qbbang. All rights reserved.
 //
 
 import Foundation
 import Alamofire
 
-struct requestItem {
+struct requestSearch {
   
   //MARK: 상품 상세정보
-  static var detailItem: ItemDetails?
+  static var serchItem: SearchResult?
   
-  static func detailInfo(pk: String, handler: @escaping (ItemDetails) -> Void) {
-    let url = "https://api.elegantsiblings.xyz/item/"
+  static func serchItem(keyword: String, handler: @escaping (SearchResult) -> Void) {
+   
+    let url = "https://api.elegantsiblings.xyz/search/"
     let params: Parameters = [
-      "item_pk": pk
-      //"is_ios" : "true"
+      "search_str": keyword
     ]
     
     Alamofire.request(url, method: .get, parameters: params)
@@ -26,14 +26,12 @@ struct requestItem {
       .responseData { response in
         switch response.result {
         case .success(let value):
-          
           do {
-          detailItem = try JSONDecoder().decode(ItemDetails.self, from: value)
-          handler(detailItem!)
+          serchItem = try JSONDecoder().decode(SearchResult.self, from: value)
+          handler(serchItem!)
           } catch {
             print(error)
           }
-          
         case .failure(let error):
           print(error)
         }

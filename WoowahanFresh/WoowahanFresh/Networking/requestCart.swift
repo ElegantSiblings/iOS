@@ -11,6 +11,9 @@ import Alamofire
 
 struct requestCart {
   
+  
+  static var shoppingList: ShoppingList?
+  
   //MARK: 장바구니 담기 요청
   static func addItem(item_pk: Int) {
     //handler: @escaping () -> Void {
@@ -53,8 +56,7 @@ struct requestCart {
   }
   
   //MARK: 장바구니 조회
-  static func hitsItem() {
-    //handler: @escaping () -> Void {
+  static func hitsItem(handler: @escaping (ShoppingList) -> Void) {
     let url = "https://api.elegantsiblings.xyz/cart/"
     
     let header: HTTPHeaders = [
@@ -64,12 +66,17 @@ struct requestCart {
     Alamofire.request(url, method: .get,
                       headers: header)
       .validate()
-      .responseJSON { response in
+      .responseData { response in
         if response.response?.statusCode == 200 {
           switch response.result {
           case .success(let value):
-            print("=========")
-            print(value)
+            do {
+              shoppingList = try JSONDecoder().decode(ShoppingList.self, from: value)
+              handler(shoppingList!)
+            } catch {
+              print(error)
+            }
+            
           case .failure(let error):
             print(error)
           }
@@ -83,3 +90,4 @@ struct requestCart {
     }
   }
 }
+

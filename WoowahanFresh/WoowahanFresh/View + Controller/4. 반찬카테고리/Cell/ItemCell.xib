@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="ItemCell" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="ItemCell" customModule="WoowahanFresh" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="315"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="314.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="G8D-MT-ozV">
+                        <rect key="frame" x="16" y="11" width="343" height="203.5"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[채움반찬] 느타리굴소스복음 (2인분) 170g 입니다" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M1Z-R3-RA2" userLabel="[company] + Item_name">
+                        <rect key="frame" x="16" y="205" width="343" height="71.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4000" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lND-A7-QzV">
+                        <rect key="frame" x="16" y="283.5" width="45.5" height="20.5"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                        <color key="textColor" red="0.37294507026672363" green="0.74524956941604614" blue="0.72941499948501587" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4500원" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3vN-pf-DRW">
+                        <rect key="frame" x="71.5" y="282.5" width="47" height="21.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mUq-iQ-Deu" userLabel="heart">
+                        <rect key="frame" x="314" y="19" width="36" height="36"/>
+                        <state key="normal" image="heart"/>
+                        <connections>
+                            <action selector="btnHeart:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="8fI-f2-9zZ"/>
+                        </connections>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GPz-ka-2TU" userLabel="discount_rate">
+                        <rect key="frame" x="16" y="11" width="59" height="34"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jGa-4Z-ahc" userLabel="shopping">
+                        <rect key="frame" x="260.5" y="268" width="89.5" height="36"/>
+                        <color key="backgroundColor" red="0.37294507026672363" green="0.74524956941604614" blue="0.72941499948501587" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <state key="normal" image="shopping"/>
+                        <connections>
+                            <action selector="btnShopping:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="8gu-nc-RPu"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="mUq-iQ-Deu" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="8" id="0nJ-hq-sZ3"/>
+                    <constraint firstItem="lND-A7-QzV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="1f0-uR-NGW"/>
+                    <constraint firstItem="lND-A7-QzV" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="4uA-8o-QFT"/>
+                    <constraint firstAttribute="trailing" secondItem="GPz-ka-2TU" secondAttribute="trailing" constant="300" id="6qM-p4-ZQZ"/>
+                    <constraint firstItem="M1Z-R3-RA2" firstAttribute="top" secondItem="mUq-iQ-Deu" secondAttribute="bottom" constant="150" id="B9U-w6-Qku"/>
+                    <constraint firstAttribute="bottom" secondItem="G8D-MT-ozV" secondAttribute="bottom" constant="100" id="EWr-gP-xQR"/>
+                    <constraint firstItem="G8D-MT-ozV" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="EyS-zk-wiB"/>
+                    <constraint firstItem="M1Z-R3-RA2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="IIN-LJ-U7T"/>
+                    <constraint firstItem="G8D-MT-ozV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="ILP-Cc-1JD"/>
+                    <constraint firstItem="3vN-pf-DRW" firstAttribute="top" secondItem="M1Z-R3-RA2" secondAttribute="bottom" constant="6" id="Iwo-2J-DHJ"/>
+                    <constraint firstItem="lND-A7-QzV" firstAttribute="top" secondItem="M1Z-R3-RA2" secondAttribute="bottom" constant="7" id="LcH-6o-UiL"/>
+                    <constraint firstItem="jGa-4Z-ahc" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="Td4-c3-QtB"/>
+                    <constraint firstItem="jGa-4Z-ahc" firstAttribute="leading" secondItem="3vN-pf-DRW" secondAttribute="trailing" constant="142" id="ULA-8a-L2C"/>
+                    <constraint firstItem="G8D-MT-ozV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="VFh-t9-byK"/>
+                    <constraint firstItem="GPz-ka-2TU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="auk-6b-tX4"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="M1Z-R3-RA2" secondAttribute="trailing" id="awe-8k-n6D"/>
+                    <constraint firstItem="3vN-pf-DRW" firstAttribute="leading" secondItem="lND-A7-QzV" secondAttribute="trailing" constant="10" id="clG-Gk-K50"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="mUq-iQ-Deu" secondAttribute="trailing" constant="9" id="cv0-yZ-RqA"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="3vN-pf-DRW" secondAttribute="bottom" id="fs3-Yj-TTi"/>
+                    <constraint firstItem="M1Z-R3-RA2" firstAttribute="top" secondItem="GPz-ka-2TU" secondAttribute="bottom" constant="160" id="hqa-nx-77b"/>
+                    <constraint firstItem="GPz-ka-2TU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="njU-YX-H2Q"/>
+                    <constraint firstItem="jGa-4Z-ahc" firstAttribute="top" secondItem="G8D-MT-ozV" secondAttribute="bottom" constant="53.5" id="tKR-nC-dz0"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="jGa-4Z-ahc" secondAttribute="trailing" constant="9" id="ubN-Bg-52y"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="btnheart" destination="mUq-iQ-Deu" id="gdc-Kl-URC"/>
+                <outlet property="discountRate" destination="GPz-ka-2TU" id="Xik-uC-S03"/>
+                <outlet property="listThumbnail" destination="G8D-MT-ozV" id="TLb-ag-Whr"/>
+                <outlet property="originPrice" destination="3vN-pf-DRW" id="22p-ZU-NZL"/>
+                <outlet property="salePrice" destination="lND-A7-QzV" id="uz4-Y5-cr9"/>
+                <outlet property="titel" destination="M1Z-R3-RA2" id="Bjc-Wd-tjC"/>
+            </connections>
+            <point key="canvasLocation" x="124" y="231.63418290854574"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="heart" width="36" height="36"/>
+        <image name="shopping" width="36" height="36"/>
+    </resources>
+</document>

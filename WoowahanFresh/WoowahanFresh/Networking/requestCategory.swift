@@ -1,5 +1,5 @@
 //
-//  requestItem.swift
+//  requestCategory.swift
 //  WoowahanFresh
 //
 //  Created by qbbang on 12/12/2018.
@@ -9,15 +9,18 @@
 import Foundation
 import Alamofire
 
-struct requestItem {
+struct requestCategory {
   
-  //MARK: 상품 상세정보
-  static var detailItem: ItemDetails?
-  
-  static func detailInfo(pk: String, handler: @escaping (ItemDetails) -> Void) {
-    let url = "https://api.elegantsiblings.xyz/item/"
+  static var listItem: ItemList?
+  static func listInfo(
+    pk: String,
+    handler: @escaping (ItemList) -> Void
+    ) {
+    let url = "https://api.elegantsiblings.xyz/categories/"
+    
+    //?category_pk=2&is_ios=true
     let params: Parameters = [
-      "item_pk": pk
+      "category_pk": pk,
       //"is_ios" : "true"
     ]
     
@@ -26,17 +29,16 @@ struct requestItem {
       .responseData { response in
         switch response.result {
         case .success(let value):
-          
           do {
-          detailItem = try JSONDecoder().decode(ItemDetails.self, from: value)
-          handler(detailItem!)
+          listItem = try JSONDecoder().decode(ItemList.self, from: value)
+          handler(listItem!)
           } catch {
             print(error)
           }
-          
         case .failure(let error):
           print(error)
         }
     }
   }
+  
 }
