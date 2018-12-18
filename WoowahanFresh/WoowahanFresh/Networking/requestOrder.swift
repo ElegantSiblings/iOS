@@ -12,13 +12,15 @@ import Alamofire
 struct requestOrder {
   
   
-  static var orderList: OrderList?
+  static var orderResult: OrderResult?
   
   static func isPayment(address: String, date: String,
                         price: Int, orderItemList: [Int],
-                        handler: @escaping (OrderList) -> Void) {
+                        handler: @escaping (OrderResult) -> Void) {
     let url = "https://api.elegantsiblings.xyz/new/order/"
+//    let url = "https://api.elegantsiblings.xyz/new/order/&address=dddd&date=2018-12-25&price=37230&orderItemList=[49,50,51,52]"
     
+//    amount=1&item_pk=6
     let params: Parameters = [
       "address": address,
       "delivery_date": date,
@@ -36,17 +38,23 @@ struct requestOrder {
     
     Alamofire.request(url, method: .post,
                       parameters: params,
+                      encoding: JSONEncoding.default,
                       headers: header)
       .validate()
       .responseData { response in
+        let requestData = response.request?.httpBody
+        let printData = String(data: requestData!, encoding: .utf8)
+        print("요청 바디 :", printData ?? "nil")
         if response.response?.statusCode == 200 {
           switch response.result {
           case .success(let value):
+            print("성공")
+            print(value)
             do {
-              orderList = try JSONDecoder().decode(OrderList.self, from: value)
-              handler(orderList!)
+              orderResult = try JSONDecoder().decode(OrderResult.self, from: value)
+              handler(orderResult!)
             } catch {
-              print(error)
+              print("Error :", error)
             }
           case .failure(let error):
             print(error)
@@ -54,10 +62,12 @@ struct requestOrder {
         } else if response.response?.statusCode == 400 {
           guard let code = response.response?.statusCode else { return }
           print(code)
-          
+//          MARK: 응답 data 인코딩
+//          let dataa = response.data
+//          let tempp = String(data: dataa!, encoding: .utf8)
+//          print("error 메시지", tempp ?? "nil")
         } else {
           guard let code = response.response?.statusCode else { return }
-          
           print(code)
         }
     }

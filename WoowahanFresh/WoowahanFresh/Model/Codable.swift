@@ -10,21 +10,24 @@ struct ItemList: Codable {
   let subCategories: [CurrentCategories]
   let itemList: [ItemListElement]
   let pageList: [JSONAny]
+  let page: JSONNull?
   
   enum CodingKeys: String, CodingKey {
     case currentCategories = "current_categories"
     case subCategories = "sub_categories"
     case itemList = "item_list"
     case pageList = "page_list"
+    case page
   }
 }
 
 struct CurrentCategories: Codable {
-  let categoryPk, mainCategory, subCategory: String
+  let pk: Int
+  let mainCategory, subCategory: String
   let photo: String
   
   enum CodingKeys: String, CodingKey {
-    case categoryPk = "category_pk"
+    case pk
     case mainCategory = "main_category"
     case subCategory = "sub_category"
     case photo
@@ -32,22 +35,22 @@ struct CurrentCategories: Codable {
 }
 
 struct ItemListElement: Codable {
-  let itemPk, company, itemName: String
+  let pk: Int
+  let itemName, company: String
   let originPrice, salePrice: Int
   let discountRate: Double
   let listThumbnail: String
   
   enum CodingKeys: String, CodingKey {
-    case itemPk = "item_pk"
-    case company
+    case pk
     case itemName = "item_name"
+    case company
     case originPrice = "origin_price"
     case salePrice = "sale_price"
     case discountRate = "discount_rate"
     case listThumbnail = "list_thumbnail"
   }
 }
-
 
 //MARK: 아이템 상세정보
 struct ItemDetails: Codable {
@@ -131,24 +134,36 @@ struct User: Codable {
 }
 
 //MARK: 검색 결과
-typealias SearchResult = [SearchResultElement]
-
-struct SearchResultElement: Codable {
-  let itemPk, company, itemName: String
-  let originPrice, salePrice: Int
-  let discountRate: Double
-  let listThumbnail: String
+struct SearchList: Codable {
+  let items: [SearchItem]
+  let pageList: [JSONAny]
+  let page: JSONNull?
   
   enum CodingKeys: String, CodingKey {
-    case itemPk = "item_pk"
-    case company
+    case items
+    case pageList = "page_list"
+    case page
+  }
+}
+
+struct SearchItem: Codable {
+  let pk: Int
+  let itemName, company: String
+  let originPrice, salePrice: Int
+  let discountRate: Double
+  let listThumbnail: String?
+  
+  enum CodingKeys: String, CodingKey {
+    case pk
     case itemName = "item_name"
+    case company
     case originPrice = "origin_price"
     case salePrice = "sale_price"
     case discountRate = "discount_rate"
     case listThumbnail = "list_thumbnail"
   }
 }
+
 
 //MARK: 장바구니 결과
 typealias ShoppingList = [ShoppingListElement]
@@ -198,43 +213,40 @@ struct UserShoppingList: Codable {
 }
 
 //MARK: 주문 결과
-struct OrderList: Codable {
-  let orderPk, userPk, orderDateTime, deliveryDate: String
+struct OrderResult: Codable {
+  let pk, user: Int
+  let orderDateTime, deliveryDate: String
   let totalPrice: Int
+  let address: String
   let cartItems: [CartItem]
   
   enum CodingKeys: String, CodingKey {
-    case orderPk = "order_pk"
-    case userPk = "user_pk"
+    case pk, user
     case orderDateTime = "order_date_time"
     case deliveryDate = "delivery_date"
     case totalPrice = "total_price"
+    case address
     case cartItems = "cart_items"
   }
 }
 
 struct CartItem: Codable {
-  let cartItemPk: String
-  let user: Users
+  let pk, user: Int
   let item: Items
   let amount: Int
-  
-  enum CodingKeys: String, CodingKey {
-    case cartItemPk = "cart_item_pk"
-    case user, item, amount
-  }
 }
 
 struct Items: Codable {
-  let itemPk, company, itemName: String
+  let pk: Int
+  let itemName, company: String
   let originPrice, salePrice: Int
   let discountRate: Double
   let listThumbnail: String
   
   enum CodingKeys: String, CodingKey {
-    case itemPk = "item_pk"
-    case company
+    case pk
     case itemName = "item_name"
+    case company
     case originPrice = "origin_price"
     case salePrice = "sale_price"
     case discountRate = "discount_rate"
@@ -242,20 +254,7 @@ struct Items: Codable {
   }
 }
 
-struct Users: Codable {
-  let userPk, username, firstName, lastName: String
-  let email: String
-  let imgProfile: JSONNull?
-  
-  enum CodingKeys: String, CodingKey {
-    case userPk = "user_pk"
-    case username
-    case firstName = "first_name"
-    case lastName = "last_name"
-    case email
-    case imgProfile = "img_profile"
-  }
-}
+
 
 // MARK: Encode/decode helpers
 

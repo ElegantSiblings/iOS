@@ -26,13 +26,19 @@ class ItemCell: UITableViewCell {
   @IBOutlet weak var originPrice: UILabel!
   @IBOutlet weak var btnheart: UIButton!
   var delegate: ItemCellDelegate?
-  var itemPkNumber = "String"
+  var itemPkNumber = 0
   
   override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+//    self.focusStyle = .custom
     
     }
+  
+  override func layoutSubviews() {
+    super.layoutSubviews()
+    //shareCodeLblSuperView.addDashedBorderToView(self.shareCodeLblSuperView, viewBorderColor: UIColor.whiteColor(), borderWidth: 1.0)//Not worked
+  }
   
   @IBAction func btnCell(_ sender: Any) {
     delegate?.DidTabCell()

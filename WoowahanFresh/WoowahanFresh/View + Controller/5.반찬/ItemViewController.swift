@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Alamofire
 
 class ItemViewController: UIViewController {
   
@@ -35,12 +34,6 @@ class ItemViewController: UIViewController {
     tableView.register(UINib(nibName: "OtherItemCell", bundle: nil), forCellReuseIdentifier: "OtherItemCell")
     tableView.register(UINib(nibName: "ItemDetailCell", bundle: nil), forCellReuseIdentifier: "ItemDetailCell")
     tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
-
-    
-    tableView.rowHeight = UITableView.automaticDimension
-    tableView.estimatedRowHeight = 500
-    
-    
     
     guard let itemPkOptionalRemove = itemPk else {
       return
@@ -66,30 +59,6 @@ class ItemViewController: UIViewController {
       print(self.itemDeTalier.count)
       print(self.itemThumbnail.count)
       print("========+++++++")
-    }
-  }
-  
-  override func viewWillAppear(_ animated: Bool) {
-    
-    // 최소 사이즈
-    tableView.estimatedRowHeight = 150
-    tableView.rowHeight = UITableView.automaticDimension
-    
-  }
-  
-  //MARK: 이미지 데이터 요청
-  func requestImage(url: String, handler: @escaping (Data) -> Void) {
-    Alamofire.request(url, method: .get)
-      .validate()
-      .responseData { (response) in
-        switch response.result {
-        case .success(let value):
-          handler(value)
-          
-        case .failure(let error):
-          print("error = ", error.localizedDescription)
-        }
-        
     }
   }
   
@@ -144,8 +113,8 @@ extension ItemViewController: UITableViewDataSource {
     }
   }
   
-
-  /*MARK: taview 높이
+  
+  //MARK: taview 높이
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     
     if indexPath.section == 0 {
@@ -182,7 +151,7 @@ extension ItemViewController: UITableViewDataSource {
       return size
     }
   }
- */
+  
   
   //MARK: Cell의 갯수
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -205,10 +174,10 @@ extension ItemViewController: UITableViewDataSource {
       case 0 :
         let cell = tableView.dequeueReusableCell(withIdentifier: "ScrollViewImageCell", for: indexPath) as! ScrollViewImageCell
         
-////        let urlimageOne = itemThumbnail[0]
-//        requestImage(url: urlimageOne) { (Data) in
-//          cell.thumbnailImage.image = UIImage(data: Data)
-//        }
+        ////        let urlimageOne = itemThumbnail[0]
+        //        requestImage(url: urlimageOne) { (Data) in
+        //          cell.thumbnailImage.image = UIImage(data: Data)
+        //        }
         cell.textLabel?.text = "\(indexPath.section) \(indexPath.row)"
         return cell
         
@@ -281,21 +250,11 @@ extension ItemViewController: UITableViewDataSource {
       }
     } else {
       let cell = tableView.dequeueReusableCell(withIdentifier: "ItemDetailCell", for: indexPath) as! ItemDetailCell
+      let tempUrl = itemDeTalier[indexPath.row] 
       
-      requestImage(url: itemDeTalier[indexPath.row]) { (Data) in
-        
-        guard let img = UIImage(data: Data) else { fatalError("Bad data") }
-        cell.imageView?.image = img
+      requestImage.ImageData(url: tempUrl) { (Data) in
+        cell.imageView?.image = UIImage(data: Data)
       }
-      
-      //cell.textLabel?.text = "\(indexPath.section) \(indexPath.row)"
-      //MARK: 이미지 늘어남 해결 안됨
-//      cell.imageView?.clipsToBounds = true
-//      cell.imageView?.contentMode = .scaleAspectFit
-      
-//      cell.sizeToFit()
-//      cell.layoutIfNeeded()
-      
       return cell
     }
     

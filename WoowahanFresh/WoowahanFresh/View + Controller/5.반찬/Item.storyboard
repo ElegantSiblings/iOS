@@ -65,7 +65,7 @@
                     <navigationItem key="navigationItem" id="BHM-1q-8y3">
                         <barButtonItem key="leftBarButtonItem" image="arrow" id="r3d-Vb-UkL">
                             <connections>
-                                <segue destination="qkO-ya-oYe" kind="unwind" unwindAction="unwindTo:" id="F9H-Tn-Afs"/>
+                                <segue destination="qkO-ya-oYe" kind="unwind" unwindAction="unwindToDishCategory:" id="elA-aw-EDX"/>
                             </connections>
                         </barButtonItem>
                         <rightBarButtonItems>

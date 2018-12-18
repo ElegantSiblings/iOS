@@ -8,32 +8,28 @@
 
 import UIKit
 
-var sectionData = ["", "", "이럴 땐 이 상품", "이 시간 베스트", "배민찬 추천", "이런 것도 있어요",
-                   "오늘의 반찬가게", "후기로 검증된 인기반찬", "곧 할인 종료!"]
 
 class HomeTableViewController: UIViewController {
   
   @IBOutlet weak var tableView: UITableView!
   override func viewDidLoad() {
     super.viewDidLoad()
+    print("====================")
+    print("DishCategoryTableViewController")
+    print("====================")
     
-    
+    //MARK: 테이블뷰 설정
     tableView.delegate = self
     tableView.dataSource = self
     tableView.separatorStyle = .none
-    
     tableView.register(UINib(nibName: "InfiniteScrollViewCell", bundle: nil), forCellReuseIdentifier: "InfiniteScrollViewCell")
     tableView.register(UINib(nibName: "CategoriesHomeCell", bundle: nil), forCellReuseIdentifier: "CategoriesHomeCell")
     tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
-    
-    tableView.reloadData()
   }
   
-  func pageChange() {
-    print("111")
-  }
-  
+  //MARK: DishCategoryView에서 HomeTableView로 돌아옴
   @IBAction func unwindToHomeTable(_ unwindSegue: UIStoryboardSegue) {
+    print("DishCategoryView에서 HomeTableView로 돌아옴")
   }
   
 }
@@ -127,7 +123,7 @@ extension HomeTableViewController: CategoriesHomeCellDelegate {
     
     // 메인반찬 - 전체보기
     // 8, 9, 10 안됨
-    DishVC.requestPK = "11"
+    DishVC.requestPK = "8"
     navigationController?.pushViewController(DishVC, animated: true)
   }
   

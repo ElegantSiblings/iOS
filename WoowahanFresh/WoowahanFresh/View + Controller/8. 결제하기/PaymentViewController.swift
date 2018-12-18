@@ -32,24 +32,24 @@ class PaymentViewController: UIViewController {
         for idx in 0..<ShoppingList.count {
           print("idx : ", ShoppingList[idx].cartItemPk)
           tempPrice = tempPrice + ShoppingList[idx].item.salePrice
-          
+
         }
         print(tempPrice)
-        
-        print(ShoppingList)
+
+//        print(ShoppingList)
       }
     }
   
   //TODO: 결제하기 배송지 입력하기
   @IBAction func btn결제하기(_ sender: Any) {
     
-    _address = "충청남도 천안시 입장면"
+    _address = "New York"
     
     print("결제하기 버튼", _orderItemList)
     requestOrder.isPayment(address: _address,
                            date: _deliveryDate,
                            price: _totalPrice,
-                           orderItemList: _orderItemList) { (OrderList) in
+                           orderItemList: _orderItemList) { (OrderResult) in
                             print("성공")
     }
     

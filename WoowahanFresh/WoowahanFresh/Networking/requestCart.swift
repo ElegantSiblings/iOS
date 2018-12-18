@@ -27,8 +27,6 @@ struct requestCart {
     let header: HTTPHeaders = [
       "Authorization": "Token \(SingleUserInfo.sharedInstance.token)"
     ]
-    //조회는 get
-    //아이템 추가는 post
     
     Alamofire.request(url, method: .post,
                       parameters: params,
@@ -50,6 +48,9 @@ struct requestCart {
         } else {
           guard let code = response.response?.statusCode else { return }
           
+          guard let requestData = response.request?.httpBody else { return }
+          let printData = String(data: requestData, encoding: .utf8)
+          print("카드 요청 바디 :", printData ?? "nil")
           print(code)
         }
     }

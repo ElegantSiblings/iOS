@@ -16,22 +16,24 @@ struct requestCategory {
     pk: String,
     handler: @escaping (ItemList) -> Void
     ) {
-    let url = "https://api.elegantsiblings.xyz/categories/"
+    //    let url = "https://api.elegantsiblings.xyz/categories/"
+    let url = "https://api.elegantsiblings.xyz/new/categories/"
+    let requestUrl = url + pk
     
     //?category_pk=2&is_ios=true
     let params: Parameters = [
-      "category_pk": pk,
-      //"is_ios" : "true"
+      "is_ios" : "true"
     ]
     
-    Alamofire.request(url, method: .get, parameters: params)
+    Alamofire.request(requestUrl, method: .get, parameters: params)
       .validate()
       .responseData { response in
         switch response.result {
         case .success(let value):
           do {
-          listItem = try JSONDecoder().decode(ItemList.self, from: value)
-          handler(listItem!)
+            //print(value)
+            listItem = try JSONDecoder().decode(ItemList.self, from: value)
+            handler(listItem!)
           } catch {
             print(error)
           }

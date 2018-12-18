@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" allowsMultipleSelectionDuringEditing="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vSv-oa-LYl">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vSv-oa-LYl">
                                 <rect key="frame" x="0.0" y="88" width="375" height="690"/>
                                 <color key="backgroundColor" red="0.37294507026672363" green="0.74524956941604614" blue="0.72941499948501587" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>
@@ -39,8 +39,7 @@
                     <navigationItem key="navigationItem" id="4VL-Q0-5IQ">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="arrow" id="Jxh-yN-4Fn">
                             <connections>
-                                <action selector="btnBack:" destination="lnY-LZ-25y" id="E8v-iR-aYg"/>
-                                <segue destination="vuu-yD-Q5g" kind="unwind" unwindAction="unwindToHomeTable:" id="yyE-TH-VIs"/>
+                                <segue destination="vuu-yD-Q5g" kind="unwind" unwindAction="unwindToHomeTable:" id="MuF-kb-3fY"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="shopping" id="LWV-zU-IRV"/>
