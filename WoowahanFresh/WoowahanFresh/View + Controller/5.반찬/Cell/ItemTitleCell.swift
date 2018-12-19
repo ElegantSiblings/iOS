@@ -33,6 +33,9 @@ class ItemTitleCell: UITableViewCell {
     salePrice.translatesAutoresizingMaskIntoConstraints = false
     
     originPrice.translatesAutoresizingMaskIntoConstraints = false
+    
+    self.layer.borderWidth = 1.0
+    self.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

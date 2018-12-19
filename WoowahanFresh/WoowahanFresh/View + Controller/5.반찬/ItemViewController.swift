@@ -26,6 +26,7 @@ class ItemViewController: UIViewController {
     tableView.delegate = self
     tableView.dataSource = self
     tableView.separatorStyle = .none
+    
     //MARK: Section1 - 상품 정보 Custom Cell. 4개
     
     tableView.register(ScrollViewImageCell.self, forCellReuseIdentifier: "ScrollViewImageCell")
@@ -85,6 +86,104 @@ class ItemViewController: UIViewController {
     }
   }
   
+  //MARK: 테이블뷰 헤더 CustomView
+  func setBtnHeader(inView: UIView) {
+    //: 높이는 heightForRowAtIndexPath 지정, 너비는 셀과 같음
+    let btnDetails = UIButton(type: UIButton.ButtonType.system)
+    let btnComment = UIButton(type: UIButton.ButtonType.system)
+    let btnInquire = UIButton(type: UIButton.ButtonType.system)
+    let btnTrade = UIButton(type: UIButton.ButtonType.system)
+    
+    //부모 뷰에서 불러올때 프레임을 직접 잡아주지 않으면 0 0 으로 옴
+    print("view size ",view.frame.size)
+    
+    btnDetails.setTitle("상세정보", for: .normal)
+    btnComment.setTitle("후기", for: .normal)
+    btnInquire.setTitle("문의", for: .normal)
+    btnTrade.setTitle("배송/교환", for: .normal)
+    
+    inView.addSubview(btnDetails)
+    inView.addSubview(btnComment)
+    inView.addSubview(btnInquire)
+    inView.addSubview(btnTrade)
+    
+    inView.backgroundColor = .white
+    //MARK: btn 배경색
+    btnDetails.backgroundColor = .white
+    btnComment.backgroundColor = .white
+    btnInquire.backgroundColor = .white
+    btnTrade.backgroundColor = .white
+
+    //MARK: btn 테두리
+    btnDetails.layer.borderWidth = 1.0
+    btnDetails.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+    btnComment.layer.borderWidth = 1.0
+    btnComment.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+    btnInquire.layer.borderWidth = 1.0
+    btnInquire.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+    btnTrade.layer.borderWidth = 1.0
+    btnTrade.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+    
+    //MARK: btn 액션
+    btnDetails.addTarget(self, action: #selector(didTapDetails), for: .touchUpInside)
+    btnComment.addTarget(self, action: #selector(didTapComment), for: .touchUpInside)
+    btnInquire.addTarget(self, action: #selector(didTapInquire), for: .touchUpInside)
+    btnTrade.addTarget(self, action: #selector(didTapTrade(_:)), for: .touchUpInside)
+    
+    //MARK: 코드 오토레이아웃 설정
+    btnDetails.translatesAutoresizingMaskIntoConstraints = false
+    btnComment.translatesAutoresizingMaskIntoConstraints = false
+    btnInquire.translatesAutoresizingMaskIntoConstraints = false
+    btnTrade.translatesAutoresizingMaskIntoConstraints = false
+    
+    //MARK: topAnchor, leadingAnchor +
+    btnDetails.topAnchor.constraint(equalTo: inView.topAnchor, constant: 10).isActive = true
+    btnDetails.leadingAnchor.constraint(equalTo: inView.leadingAnchor, constant: 10).isActive = true
+    btnDetails.bottomAnchor.constraint(equalTo: inView.bottomAnchor, constant: -10).isActive = true
+    
+    btnComment.topAnchor.constraint(equalTo: inView.topAnchor, constant: 10).isActive = true
+    btnComment.leadingAnchor.constraint(equalTo: btnDetails.trailingAnchor, constant: 10).isActive = true
+    btnComment.bottomAnchor.constraint(equalTo: inView.bottomAnchor, constant: -10).isActive = true
+    
+    btnInquire.topAnchor.constraint(equalTo: inView.topAnchor, constant: 10).isActive = true
+    btnInquire.leadingAnchor.constraint(equalTo: btnComment.trailingAnchor, constant: 10).isActive = true
+    btnInquire.bottomAnchor.constraint(equalTo: inView.bottomAnchor, constant: -10).isActive = true
+    
+    btnTrade.topAnchor.constraint(equalTo: inView.topAnchor, constant: 10).isActive = true
+    btnTrade.leadingAnchor.constraint(equalTo: btnInquire.trailingAnchor, constant: 10).isActive = true
+    btnTrade.trailingAnchor.constraint(equalTo: inView.trailingAnchor, constant: -10).isActive = true
+    btnTrade.bottomAnchor.constraint(equalTo: inView.bottomAnchor, constant: -10).isActive = true
+    
+    //MARK: 기기의 넓이
+    let originWidth = UIScreen.main.bounds.width
+    //MARK: - 50은, 스페이스가 5개라 빼줌
+    let objWidth = (originWidth - 50) / 4
+    btnDetails.widthAnchor.constraint(equalToConstant: objWidth).isActive = true
+    btnComment.widthAnchor.constraint(equalToConstant: objWidth).isActive = true
+    btnInquire.widthAnchor.constraint(equalToConstant: objWidth).isActive = true
+    btnTrade.widthAnchor.constraint(equalToConstant: objWidth).isActive = true
+  }
+  
+  
+  
+  @objc func didTapDetails(_ sender: UIButton) {
+    print("didTapDetails")
+//    tableView.reloadSections([1, 2, 3], with: .none)
+    tableView.reloadSections([1], with: UITableView.RowAnimation.none)
+  }
+  @objc func didTapComment(_ sender: UIButton) {
+    print("didTapComment")
+    tableView.reloadSections([1], with: UITableView.RowAnimation.none)
+  }
+  @objc func didTapInquire(_ sender: UIButton) {
+    print("didTapInquire")
+    
+    tableView.reloadSections([1], with: UITableView.RowAnimation.none)
+  }
+  @objc func didTapTrade(_ sender: UIButton) {
+    print("didTapTrade")
+  }
+  
 }
 
 extension ItemViewController: UITableViewDataSource, ScrollViewImageCellDelegate {
@@ -94,54 +193,38 @@ extension ItemViewController: UITableViewDataSource, ScrollViewImageCellDelegate
     return 2
   }
   
-  //MARK: Section의 이름
-  func tableView(_ tableView: UITableView,
-                 titleForHeaderInSection section: Int) -> String? {
+  func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    
+    //MARK: 상세정보, 후기, 문의, 배송/교환
     if section == 1 {
-      return "test"
-    } else {
-      return ""
+      
+      let view = UIView()
+      setBtnHeader(inView: view)
+      return view
     }
+    
+    return nil
   }
   
+  //MARK: Section의 높이
+  func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    return 50
+  }
   
-  //MARK: taview 높이
-//  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//    
-//    if indexPath.section == 0 {
-//      
-//      //MARK: 상품 이미지
-//      switch indexPath.row {
-//      case 0 :
-//        let size = CGFloat( ( Int(self.tableView.frame.maxY) / 4) * 2 )
-//        return size
-//        
-//      //MARK: 상품명 가격 정보
-//      case 1 :
-//        let size = CGFloat( ( Int(self.tableView.frame.maxY) / 4) * 1 )
-//        return size
-//        
-//      //MARK: 배송타입
-//      case 2 :
-//        let size = CGFloat( ( Int(self.tableView.frame.maxY) / 4) * 1 )
-//        return size
-//        
-//      //MARK: 다른상품
-//      case 3 :
-//        let size = CGFloat( ( Int(self.tableView.frame.maxY) / 4) * 2 )
-//        return size
-//        
-//      default:
-//        return 50
-//      }
-//      
-//      //MARK: section 2 - 상세보기, 후기, 문의, 배송 교환
-//    } else {
-//      
-//      let size = CGFloat( ( Int(self.tableView.frame.maxY) / 4) * 3 )
-//      return size
-//    }
-//  }
+  //  MARK: taview 높이
+  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    
+    if indexPath.section == 0, indexPath.row == 0 {
+      let size = CGFloat( ( Int(self.tableView.frame.maxY) / 4) * 2 )
+      return size
+    } else if indexPath.section == 1{
+      let size = CGFloat( ( Int(self.tableView.frame.maxY) / 4) * 3 )
+      return size
+      
+    } else {
+      return UITableView.automaticDimension
+    }
+  }
   
   
   //MARK: Cell의 갯수
@@ -149,8 +232,6 @@ extension ItemViewController: UITableViewDataSource, ScrollViewImageCellDelegate
     if section == 0 {
       return 4
     } else {
-      print("itemDeTalier.count ===")
-      print(itemDeTalier.count)
       return itemDeTalier.count
     }
   }
@@ -177,6 +258,10 @@ extension ItemViewController: UITableViewDataSource, ScrollViewImageCellDelegate
         let discountRate = itemValue?.discountRate ?? 0.0
         let saleMoney = itemValue?.salePrice ?? 0
         let originMoney = itemValue?.originPrice ?? 0
+        let cencelString =  NSMutableAttributedString(string: "\(originMoney)")
+        cencelString.addAttribute(NSAttributedString.Key.strikethroughStyle,
+                                  value: NSUnderlineStyle.single.rawValue,
+                                  range: NSMakeRange(0, cencelString.length))
         switch discountRate {
         case 0.05:
           cell.disCount.text = " 5%"
@@ -198,8 +283,7 @@ extension ItemViewController: UITableViewDataSource, ScrollViewImageCellDelegate
         cell.title.text = "[\(company)] \(title)"
         cell.subTitle.text = subtile
         cell.salePrice.text = String(saleMoney)
-        cell.originPrice.text = String(originMoney)
-        cell.textLabel?.text = "\(indexPath.section) \(indexPath.row)"
+        cell.originPrice.attributedText = cencelString
         return cell
         
       //MARK: 배송타입
@@ -218,19 +302,16 @@ extension ItemViewController: UITableViewDataSource, ScrollViewImageCellDelegate
           ruleText = "불가능"
         }
         cell.deliveryRule.text = ruleText
-        cell.textLabel?.text = "\(indexPath.section) \(indexPath.row)"
         return cell
         
       //MARK: 다른상품
       case 3 :
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "OtherItemCell", for: indexPath) as! OtherItemCell
-        cell.textLabel?.text = "\(indexPath.section) \(indexPath.row)"
         return cell
         
       default:
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = "\(indexPath.section) \(indexPath.row)"
         return cell
       }
     } else {

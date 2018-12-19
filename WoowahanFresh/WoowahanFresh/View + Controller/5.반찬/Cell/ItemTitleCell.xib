@@ -20,7 +20,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="755" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="wPO-PB-IiU">
-                        <rect key="frame" x="5" y="5" width="365" height="171.66666666666666"/>
+                        <rect key="frame" x="16" y="5" width="354" height="171.66666666666666"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="760" text="[회사명] 상품명" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RWi-f4-v1g" userLabel="제목">
                                 <rect key="frame" x="0.0" y="0.0" width="105.33333333333333" height="20.333333333333332"/>
@@ -31,28 +31,28 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="added_words" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wGJ-CH-fa0" userLabel="추가정보?">
                                 <rect key="frame" x="0.0" y="25.333333333333336" width="100.66666666666667" height="20.333333333333336"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="255" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2fn-hK-EJj">
-                                <rect key="frame" x="0.0" y="50.666666666666657" width="197" height="121"/>
+                                <rect key="frame" x="0.0" y="50.666666666666657" width="270" height="121"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="할인율" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JnE-Ll-r53">
-                                        <rect key="frame" x="0.0" y="50.333333333333336" width="59" height="20.333333333333336"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <rect key="frame" x="0.0" y="47.333333333333336" width="83.333333333333329" height="26.333333333333336"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
+                                        <color key="textColor" red="0.37294507030000001" green="0.74524956939999998" blue="0.72941499949999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="할인금액" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iDW-X0-YT1">
-                                        <rect key="frame" x="69" y="50.333333333333336" width="59" height="20.333333333333336"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="93.333333333333343" y="46.333333333333336" width="83.333333333333343" height="28.666666666666664"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="원금" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PtA-Xs-9Yt">
-                                        <rect key="frame" x="138" y="50.333333333333336" width="59" height="20.333333333333336"/>
+                                        <rect key="frame" x="186.66666666666666" y="50.333333333333336" width="83.333333333333343" height="20.333333333333336"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -64,7 +64,7 @@
                     <constraint firstAttribute="bottom" secondItem="wPO-PB-IiU" secondAttribute="bottom" constant="5" id="4Fc-Tq-edX"/>
                     <constraint firstItem="wPO-PB-IiU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="6EG-bO-5iW"/>
                     <constraint firstAttribute="trailing" secondItem="wPO-PB-IiU" secondAttribute="trailing" constant="5" id="OS1-We-rlv"/>
-                    <constraint firstItem="wPO-PB-IiU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="fHp-Ho-w4l"/>
+                    <constraint firstItem="wPO-PB-IiU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="fHp-Ho-w4l"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

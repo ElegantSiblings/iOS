@@ -47,7 +47,7 @@
                         <viewLayoutGuide key="safeArea" id="qFG-ig-hbL"/>
                     </view>
                     <navigationItem key="navigationItem" id="VcH-Vf-Hcu">
-                        <barButtonItem key="leftBarButtonItem" title="na" image="BMC" id="wX4-QA-ZOO"/>
+                        <barButtonItem key="leftBarButtonItem" image="BMC" id="wX4-QA-ZOO"/>
                         <rightBarButtonItems>
                             <barButtonItem title="shopping" image="shopping" id="ejy-qT-IIn">
                                 <connections>
@@ -79,7 +79,7 @@
         <scene sceneID="MQl-d2-OJH">
             <objects>
                 <viewControllerPlaceholder storyboardName="Category" id="8D7-ay-9wU" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="category" id="lGD-Yt-jVm"/>
+                    <tabBarItem key="tabBarItem" title="카테고리" image="category" id="lGD-Yt-jVm"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tB1-v0-FYC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -89,7 +89,7 @@
         <scene sceneID="qjK-gI-PdS">
             <objects>
                 <viewControllerPlaceholder storyboardName="MyPage" id="Yuq-e7-N5f" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="mypage" id="Rgc-O9-kOv"/>
+                    <tabBarItem key="tabBarItem" title="마이페이지" image="my" id="Rgc-O9-kOv"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Fb-Xi-3k8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -189,15 +189,16 @@
             </objects>
             <point key="canvasLocation" x="10114" y="-363"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--홈-->
         <scene sceneID="HeO-Lz-YrW">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6Bv-dU-dBa" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="home" id="4BU-D8-L7a"/>
+                    <tabBarItem key="tabBarItem" title="홈" image="home" id="4BU-D8-L7a"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3WM-Dv-7fe">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -230,10 +231,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="BMC" width="78" height="42"/>
-        <image name="category" width="54" height="54"/>
-        <image name="home" width="54" height="54"/>
-        <image name="mypage" width="54" height="54"/>
+        <image name="BMC" width="164.33332824707031" height="84.333335876464844"/>
+        <image name="category" width="26.666666030883789" height="26.666666030883789"/>
+        <image name="home" width="26.666666030883789" height="26.666666030883789"/>
+        <image name="my" width="26.666666030883789" height="26.666666030883789"/>
         <image name="search" width="54" height="54"/>
         <image name="shopping" width="54" height="54"/>
     </resources>

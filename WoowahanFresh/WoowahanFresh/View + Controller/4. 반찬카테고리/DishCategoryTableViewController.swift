@@ -152,9 +152,6 @@ extension DishCategoryTableViewController: UITableViewDataSource, btnArrayCellDe
       default :
         break
       }
-      
-      //      cell.textLabel?.text = "\(count)"
-      //      cell.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
       return cell
       
       //MARK: Section idx2, CustomCell - ItemCell
