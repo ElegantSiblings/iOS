@@ -16,10 +16,7 @@ class DishCategoryTableViewController: UIViewController {
   var ListValue: ItemList?
   //MARK: HomeTableView에서 넘어는 pk를 담는 변수
   var requestPK: String = ""
-  var delegatePk = 0
-  
-  var tempimageList: [UIImage] = []
-  
+  var didSelectPk = 0
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -67,7 +64,7 @@ class DishCategoryTableViewController: UIViewController {
 }
 
 //MARK: 테이블뷰 자료 표현 + ItemCell 클릭 델리게이트
-extension DishCategoryTableViewController: UITableViewDataSource, ItemCellDelegate {
+extension DishCategoryTableViewController: UITableViewDataSource, btnArrayCellDelegate {
   
   //MARK: Section 개수
   func numberOfSections(in tableView: UITableView) -> Int {
@@ -113,7 +110,7 @@ extension DishCategoryTableViewController: UITableViewDataSource, ItemCellDelega
     if indexPath.section == 0 {
       let cell = tableView.dequeueReusableCell(withIdentifier: "ImageViewCell", for: indexPath) as! ImageViewCell
       let tempBanner = ListValue?.currentCategories.photo ?? "nil"
-      requestImage.ImageData(url: tempBanner) { (Data) in
+      requestImage.imageData(url: tempBanner) { (Data) in
         cell.bannerImage.image = UIImage(data: Data)
       }
       return cell
@@ -122,11 +119,42 @@ extension DishCategoryTableViewController: UITableViewDataSource, ItemCellDelega
     } else if indexPath.section == 1 {
       let cell = tableView.dequeueReusableCell(withIdentifier: "btnArrayCell", for: indexPath) as! btnArrayCell
       
+      //MARK: btnArray 델리게이트 설정
+      cell.delegateBtn = self
       let count = ListValue?.subCategories.count ?? 0
-      print("요청 Pk", requestPK)
-      print("서브 카테고리 개수 :", count)
-//      cell.textLabel?.text = "\(count)"
-//      cell.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+      //MARK: 개수에 따른 UI조작
+      switch count {
+      case 4: cell.btnTwoList.setTitle(ListValue?.subCategories[1].subCategory, for: .normal)
+        cell.btnThreeList.setTitle(ListValue?.subCategories[2].subCategory, for: .normal)
+        cell.btnFourList.setTitle(ListValue?.subCategories[3].subCategory, for: .normal)
+        cell.btnFiveList.alpha = 0
+        cell.btnSixList.alpha = 0
+      case 5:
+        cell.btnTwoList.setTitle(ListValue?.subCategories[1].subCategory, for: .normal)
+        cell.btnThreeList.setTitle(ListValue?.subCategories[2].subCategory, for: .normal)
+        cell.btnFourList.setTitle(ListValue?.subCategories[3].subCategory, for: .normal)
+        cell.btnFiveList.setTitle(ListValue?.subCategories[4].subCategory, for: .normal)
+        cell.btnSixList.alpha = 0
+      case 6:
+        cell.btnTwoList.setTitle(ListValue?.subCategories[1].subCategory, for: .normal)
+        cell.btnThreeList.setTitle(ListValue?.subCategories[2].subCategory, for: .normal)
+        cell.btnFourList.setTitle(ListValue?.subCategories[3].subCategory, for: .normal)
+        cell.btnFiveList.setTitle(ListValue?.subCategories[4].subCategory, for: .normal)
+        cell.btnSixList.setTitle(ListValue?.subCategories[5].subCategory, for: .normal)
+      case 7:
+        cell.btnTwoList.setTitle(ListValue?.subCategories[1].subCategory, for: .normal)
+        cell.btnThreeList.setTitle(ListValue?.subCategories[2].subCategory, for: .normal)
+        cell.btnFourList.setTitle(ListValue?.subCategories[3].subCategory, for: .normal)
+        cell.btnFiveList.setTitle(ListValue?.subCategories[4].subCategory, for: .normal)
+        cell.btnSixList.setTitle(ListValue?.subCategories[5].subCategory, for: .normal)
+        cell.btnSevenList.alpha = 1
+        cell.btnSevenList.setTitle(ListValue?.subCategories[6].subCategory, for: .normal)
+      default :
+        break
+      }
+      
+      //      cell.textLabel?.text = "\(count)"
+      //      cell.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
       return cell
       
       //MARK: Section idx2, CustomCell - ItemCell
@@ -150,8 +178,6 @@ extension DishCategoryTableViewController: UITableViewDataSource, ItemCellDelega
       
       //MARK: Item pk
       cell.itemPkNumber = tempPk
-      delegatePk = tempPk
-      
       //MARK: Item 제목 회사 + 아이템 이름
       cell.titel.text = "<\(tempPk)>[\(tempComany)] \(tempItemName)"
       
@@ -162,7 +188,6 @@ extension DishCategoryTableViewController: UITableViewDataSource, ItemCellDelega
       cell.originPrice.attributedText = cencelString
       
       //MARK: Item discount
-      
       switch tempDiscount {
       case 0:
         break
@@ -182,10 +207,10 @@ extension DishCategoryTableViewController: UITableViewDataSource, ItemCellDelega
       }
       
       //MARK: Item Thumbnail
-      
-      requestImage.ImageData(url: inputUrl) { (Data) in
+      requestImage.imageData(url: inputUrl) { (Data) in
         cell.listThumbnail.image = UIImage(data: Data)
       }
+      
       return cell
       
       //MARK: 그 외 케이스 없음
@@ -207,9 +232,12 @@ extension DishCategoryTableViewController: UITableViewDataSource, ItemCellDelega
       return size
       
     case 1 :
-//      let size = CGFloat( ( Int(self.view.frame.maxY) / 5) * 1 )
-//      return size
-      return 200
+      let count = ListValue?.subCategories.count ?? 0
+      if count < 7 {
+        return 86
+      } else {
+        return 130
+      }
       
     case 2 :
       let size = CGFloat( ( Int(self.view.frame.maxY) / 5) * 2 )
@@ -220,25 +248,129 @@ extension DishCategoryTableViewController: UITableViewDataSource, ItemCellDelega
     }
   }
   
-  func DidTabCell() {
-    print("DidTabCell")
-    
-    print("pk: ", delegatePk)
-    let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell") as! ItemCell
-    //
-    print("pk: ", cell.itemPkNumber)
+  //MARK: section idx1 btnArray 델리게이크 기능들
+  func DidTabbtnAllList() {
+    let subPk = String(ListValue?.subCategories[0].pk ?? 0)
+    ListValue = nil
+    requestCategory.listInfo(pk: subPk) { [weak self] (ItemList) in
+      guard let self = self else { return }
+      self.ListValue = ItemList
+      self.tableView.reloadData()
+    }
   }
   
-  func DidTabHeart() {
-    print("heart")
+  func DidTabbtnTwoList() {
+    let subPk = String(ListValue?.subCategories[1].pk ?? 0)
+    ListValue = nil
+    requestCategory.listInfo(pk: subPk) { [weak self] (ItemList) in
+      guard let self = self else { return }
+      self.ListValue = ItemList
+      self.tableView.reloadData()
+    }
   }
   
-  func DidTabShopping() {
-    print("Shopping")
+  func DidTabbtnThreeList() {
+    let subPk = String(ListValue?.subCategories[2].pk ?? 0)
+    ListValue = nil
+    requestCategory.listInfo(pk: subPk) { [weak self] (ItemList) in
+      guard let self = self else { return }
+      self.ListValue = ItemList
+      self.tableView.reloadData()
+    }
+  }
+  
+  func DidTabbtnFourList() {
+    let subPk = String(ListValue?.subCategories[3].pk ?? 0)
+    ListValue = nil
+    requestCategory.listInfo(pk: subPk) { [weak self] (ItemList) in
+      guard let self = self else { return }
+      self.ListValue = ItemList
+      self.tableView.reloadData()
+    }
+  }
+  
+  func DidTabbtnFiveList() {
+    let count = ListValue?.subCategories.count ?? 0
+    if count < 5 {
+      print("눌리면 에러?")
+    } else {
+      
+      let subPk = String(ListValue?.subCategories[4].pk ?? 0)
+      ListValue = nil
+      requestCategory.listInfo(pk: subPk) { [weak self] (ItemList) in
+        guard let self = self else { return }
+        self.ListValue = ItemList
+        self.tableView.reloadData()
+      }
+    }
+  }
+  
+  func DidTabbtnSixList() {
+    let count = ListValue?.subCategories.count ?? 0
+    if count < 6 {
+      print("눌리면 에러?")
+    } else {
+      
+      let subPk = String(ListValue?.subCategories[5].pk ?? 0)
+      ListValue = nil
+      requestCategory.listInfo(pk: subPk) { [weak self] (ItemList) in
+        guard let self = self else { return }
+        self.ListValue = ItemList
+        self.tableView.reloadData()
+      }
+    }
+  }
+  
+  func DidTabbtnSevenList() {
+    let count = ListValue?.subCategories.count ?? 0
+    if count < 7 {
+      print("눌리면 에러?")
+    } else {
+      
+      let subPk = String(ListValue?.subCategories[6].pk ?? 0)
+      ListValue = nil
+      requestCategory.listInfo(pk: subPk) { [weak self] (ItemList) in
+        guard let self = self else { return }
+        self.ListValue = ItemList
+        self.tableView.reloadData()
+      }
+    }
+  }
+  
+  func DidTabbtnEightList() {
+    let count = ListValue?.subCategories.count ?? 0
+    if count < 8 {
+      print("눌리면 에러?")
+    } else {
+      
+      let subPk = String(ListValue?.subCategories[7].pk ?? 0)
+      ListValue = nil
+      requestCategory.listInfo(pk: subPk) { [weak self] (ItemList) in
+        guard let self = self else { return }
+        self.ListValue = ItemList
+        self.tableView.reloadData()
+      }
+    }
+  }
+  
+  func DidTabbtnNineList() {
+    let count = ListValue?.subCategories.count ?? 0
+    if count < 9 {
+      print("눌리면 에러?")
+    } else {
+      
+      let subPk = String(ListValue?.subCategories[8].pk ?? 0)
+      ListValue = nil
+      requestCategory.listInfo(pk: subPk) { [weak self] (ItemList) in
+        guard let self = self else { return }
+        self.ListValue = ItemList
+        self.tableView.reloadData()
+      }
+    }
   }
 }
 
-extension DishCategoryTableViewController: UITableViewDelegate {
+extension DishCategoryTableViewController: UITableViewDelegate, ItemCellDelegate {
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     
@@ -246,16 +378,30 @@ extension DishCategoryTableViewController: UITableViewDelegate {
       //MARK: 네비게이션 바가 있는 스토리보드 데이터 전송
       let storyboard = UIStoryboard(name: "Item", bundle: nil)
       let ItemVC = storyboard.instantiateViewController(withIdentifier: "ItemViewController") as! ItemViewController
-      let didSelectPk = ListValue?.itemList[indexPath.row].pk ?? 0000
+      self.didSelectPk = ListValue?.itemList[indexPath.row].pk ?? 0000
       print("didSelect: ", didSelectPk)
       
       ItemVC.itemPk = String(didSelectPk)
       navigationController?.pushViewController(ItemVC, animated: true)
     }
-    
-    
   }
   
+  //MARK: section idx2 itemCell 델리게이트 기능들
+  
+  func DidTabHeart() {
+    print("heart")
+  }
+  
+  //TODO: 셀을 이전에 클릭하면 pk값을 알수 없음
+  func DidTabShopping() {
+    if SingleUserInfo.sharedInstance.token.isEmpty {
+      Alert.loginCheck(viewController: self)
+    } else {
+      let tempDidSelectpk = String(didSelectPk)
+      requestCart.addItem(item_pk: tempDidSelectpk)
+      Alert.addItem(viewController: self)
+    }
+  }
 }
 
 

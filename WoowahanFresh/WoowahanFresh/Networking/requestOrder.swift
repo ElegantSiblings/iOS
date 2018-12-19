@@ -18,17 +18,13 @@ struct requestOrder {
                         price: Int, orderItemList: [Int],
                         handler: @escaping (OrderResult) -> Void) {
     let url = "https://api.elegantsiblings.xyz/new/order/"
-//    let url = "https://api.elegantsiblings.xyz/new/order/&address=dddd&date=2018-12-25&price=37230&orderItemList=[49,50,51,52]"
     
-//    amount=1&item_pk=6
     let params: Parameters = [
       "address": address,
       "delivery_date": date,
       "total_price": price,
       "cart_item_pk": orderItemList
     ]
-    
-    print("params : ", params)
     
     let header: HTTPHeaders = [
       "Authorization": "Token \(SingleUserInfo.sharedInstance.token)"

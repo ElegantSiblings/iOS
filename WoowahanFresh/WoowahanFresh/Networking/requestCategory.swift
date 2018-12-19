@@ -16,11 +16,9 @@ struct requestCategory {
     pk: String,
     handler: @escaping (ItemList) -> Void
     ) {
-    //    let url = "https://api.elegantsiblings.xyz/categories/"
     let url = "https://api.elegantsiblings.xyz/new/categories/"
     let requestUrl = url + pk
     
-    //?category_pk=2&is_ios=true
     let params: Parameters = [
       "is_ios" : "true"
     ]

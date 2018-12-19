@@ -27,14 +27,14 @@ class PaymentViewController: UIViewController {
         // Do any additional setup after loading the view.
       
       requestCart.hitsItem { (ShoppingList) in
-        print(ShoppingList.count)
-        var tempPrice = 0
-        for idx in 0..<ShoppingList.count {
-          print("idx : ", ShoppingList[idx].cartItemPk)
-          tempPrice = tempPrice + ShoppingList[idx].item.salePrice
+//        print(ShoppingList.count)
+//        var tempPrice = 0
+//        for idx in 0..<ShoppingList.count {
+//          print("idx : ", ShoppingList[idx].cartItemPk)
+//          tempPrice = tempPrice + ShoppingList[idx].item.salePrice
 
-        }
-        print(tempPrice)
+//        }
+//        print(tempPrice)
 
 //        print(ShoppingList)
       }

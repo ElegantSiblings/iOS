@@ -66,7 +66,7 @@ extension SearchNavicationViewController: UITableViewDataSource {
     
     cell.textLabel?.text = "[\(tempCompany)] " + tempItemName
     cell.detailTextLabel?.text = String(tempSalePrice)
-    requestImage.ImageData(url: tempUrl) { (Data) in
+    requestImage.imageData(url: tempUrl) { (Data) in
       cell.imageView?.image = UIImage(data: Data)
     }
     

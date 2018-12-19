@@ -54,7 +54,8 @@ struct ItemListElement: Codable {
 
 //MARK: 아이템 상세정보
 struct ItemDetails: Codable {
-  let itemPk, company, itemName: String
+  let pk: Int
+  let company, itemName: String
   let originPrice, salePrice: Int
   let discountRate: Double
   let description: Description
@@ -62,8 +63,7 @@ struct ItemDetails: Codable {
   let commentSet: [JSONAny]
   
   enum CodingKeys: String, CodingKey {
-    case itemPk = "item_pk"
-    case company
+    case pk, company
     case itemName = "item_name"
     case originPrice = "origin_price"
     case salePrice = "sale_price"
@@ -75,7 +75,8 @@ struct ItemDetails: Codable {
 }
 
 struct Description: Codable {
-  let itemPk, descriptionPk, addedWords: String
+  let pk, item: Int
+  let addedWords: String
   let point: Int
   let deliveryType, receiveDay: String
   let regularDelivery: Bool
@@ -83,8 +84,7 @@ struct Description: Codable {
   let ingredient, allergyMaterial, caution: String
   
   enum CodingKeys: String, CodingKey {
-    case itemPk = "item_pk"
-    case descriptionPk = "description_pk"
+    case pk, item
     case addedWords = "added_words"
     case point
     case deliveryType = "delivery_type"
@@ -99,19 +99,23 @@ struct Description: Codable {
 }
 
 struct ItemimageSet: Codable {
-  let itemPk, itemImagePk, photoType: String
+  let pk, item: Int
+  let photoType: PhotoType
   let imageOrder: Int
   let photo: String
   
   enum CodingKeys: String, CodingKey {
-    case itemPk = "item_pk"
-    case itemImagePk = "item_image_pk"
+    case pk, item
     case photoType = "photo_type"
     case imageOrder = "image_order"
     case photo
   }
 }
 
+enum PhotoType: String, Codable {
+  case d = "D"
+  case t = "T"
+}
 //MARK: 로그인 정보
 struct UserInfo: Codable {
   let user: User
@@ -166,30 +170,26 @@ struct SearchItem: Codable {
 
 
 //MARK: 장바구니 결과
+
 typealias ShoppingList = [ShoppingListElement]
 
 struct ShoppingListElement: Codable {
-  let cartItemPk: String
-  let user: UserShoppingList
-  let item: Item
+  let pk, user: Int
+  let item: ShopItem
   let amount: Int
-  
-  enum CodingKeys: String, CodingKey {
-    case cartItemPk = "cart_item_pk"
-    case user, item, amount
-  }
 }
 
-struct Item: Codable {
-  let itemPk, company, itemName: String
+struct ShopItem: Codable {
+  let pk: Int
+  let itemName, company: String
   let originPrice, salePrice: Int
   let discountRate: Double
   let listThumbnail: String
   
   enum CodingKeys: String, CodingKey {
-    case itemPk = "item_pk"
-    case company
+    case pk
     case itemName = "item_name"
+    case company
     case originPrice = "origin_price"
     case salePrice = "sale_price"
     case discountRate = "discount_rate"
@@ -197,20 +197,6 @@ struct Item: Codable {
   }
 }
 
-struct UserShoppingList: Codable {
-  let userPk, username, firstName, lastName: String
-  let email: String
-  let imgProfile: JSONNull?
-  
-  enum CodingKeys: String, CodingKey {
-    case userPk = "user_pk"
-    case username
-    case firstName = "first_name"
-    case lastName = "last_name"
-    case email
-    case imgProfile = "img_profile"
-  }
-}
 
 //MARK: 주문 결과
 struct OrderResult: Codable {

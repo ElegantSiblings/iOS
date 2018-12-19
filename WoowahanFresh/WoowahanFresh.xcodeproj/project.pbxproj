@@ -45,7 +45,6 @@
 		E831168721BD1871003CF96E /* Item.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E831168621BD1871003CF96E /* Item.storyboard */; };
 		E831168B21BD194B003CF96E /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E831168A21BD194B003CF96E /* ItemViewController.swift */; };
 		E831169021BD2136003CF96E /* ScrollViewImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E831168E21BD2136003CF96E /* ScrollViewImageCell.swift */; };
-		E831169121BD2136003CF96E /* ScrollViewImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E831168F21BD2136003CF96E /* ScrollViewImageCell.xib */; };
 		E831169521BD23D0003CF96E /* ItemTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E831169321BD23D0003CF96E /* ItemTitleCell.swift */; };
 		E831169621BD23D0003CF96E /* ItemTitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E831169421BD23D0003CF96E /* ItemTitleCell.xib */; };
 		E831169921BD23F4003CF96E /* ItemDeliveryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E831169721BD23F4003CF96E /* ItemDeliveryCell.swift */; };
@@ -138,7 +137,6 @@
 		E831168621BD1871003CF96E /* Item.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Item.storyboard; sourceTree = "<group>"; };
 		E831168A21BD194B003CF96E /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
 		E831168E21BD2136003CF96E /* ScrollViewImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewImageCell.swift; sourceTree = "<group>"; };
-		E831168F21BD2136003CF96E /* ScrollViewImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScrollViewImageCell.xib; sourceTree = "<group>"; };
 		E831169321BD23D0003CF96E /* ItemTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTitleCell.swift; sourceTree = "<group>"; };
 		E831169421BD23D0003CF96E /* ItemTitleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemTitleCell.xib; sourceTree = "<group>"; };
 		E831169721BD23F4003CF96E /* ItemDeliveryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDeliveryCell.swift; sourceTree = "<group>"; };
@@ -255,7 +253,6 @@
 			isa = PBXGroup;
 			children = (
 				E831168E21BD2136003CF96E /* ScrollViewImageCell.swift */,
-				E831168F21BD2136003CF96E /* ScrollViewImageCell.xib */,
 				E831169321BD23D0003CF96E /* ItemTitleCell.swift */,
 				E831169421BD23D0003CF96E /* ItemTitleCell.xib */,
 				E831169721BD23F4003CF96E /* ItemDeliveryCell.swift */,
@@ -740,7 +737,6 @@
 				E857FECD21BE515A003EEB2D /* ItemDetailCell.xib in Resources */,
 				E8A6DC7D21C7885F00070850 /* DeliveryDay.storyboard in Resources */,
 				E823E1C821B0DF500076592C /* Content.storyboard in Resources */,
-				E831169121BD2136003CF96E /* ScrollViewImageCell.xib in Resources */,
 				E823E1D521B0E0F00076592C /* Event.storyboard in Resources */,
 				E824F40221AFFBCB001CBC88 /* First.storyboard in Resources */,
 			);

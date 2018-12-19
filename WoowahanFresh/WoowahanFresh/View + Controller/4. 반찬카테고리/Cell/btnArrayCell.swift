@@ -7,8 +7,22 @@
 //
 
 import UIKit
+protocol btnArrayCellDelegate {
+  
+  func DidTabbtnAllList()
+  func DidTabbtnTwoList()
+  func DidTabbtnThreeList()
+  func DidTabbtnFourList()
+  func DidTabbtnFiveList()
+  func DidTabbtnSixList()
+  func DidTabbtnSevenList()
+  func DidTabbtnEightList()
+  func DidTabbtnNineList()
+}
 
 class btnArrayCell: UITableViewCell {
+  
+  var delegateBtn: btnArrayCellDelegate?
   
   @IBOutlet weak var btnAllList: UIButton!
   @IBOutlet weak var btnTwoList: UIButton!
@@ -31,34 +45,45 @@ class btnArrayCell: UITableViewCell {
     btnSevenList.alpha = 0
     btnEightList.alpha = 0
     btnNineList.alpha = 0
+    
   }
   
   @IBAction func btnAllList(_ sender: Any) {
+    delegateBtn?.DidTabbtnAllList()
   }
   
   @IBAction func btnTwoList(_ sender: Any) {
+    delegateBtn?.DidTabbtnTwoList()
   }
   
   @IBAction func btnThreeList(_ sender: Any) {
+    delegateBtn?.DidTabbtnThreeList()
   }
   
   @IBAction func btnFourList(_ sender: Any) {
+    delegateBtn?.DidTabbtnFourList()
   }
   
   @IBAction func btnFiveList(_ sender: Any) {
+    delegateBtn?.DidTabbtnFiveList()
   }
   
   @IBAction func btnSixList(_ sender: Any) {
+    delegateBtn?.DidTabbtnSixList()
+    
   }
   
   @IBAction func btnSevenList(_ sender: Any) {
+    delegateBtn?.DidTabbtnSevenList()
   }
   
   
   @IBAction func btnEightList(_ sender: Any) {
+    delegateBtn?.DidTabbtnEightList()
   }
   
   @IBAction func btnNineList(_ sender: Any) {
+    delegateBtn?.DidTabbtnNineList()
   }
   
   override func setSelected(_ selected: Bool, animated: Bool) {

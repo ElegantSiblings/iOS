@@ -15,13 +15,10 @@ struct requestItem {
   static var detailItem: ItemDetails?
   
   static func detailInfo(pk: String, handler: @escaping (ItemDetails) -> Void) {
-    let url = "https://api.elegantsiblings.xyz/item/"
-    let params: Parameters = [
-      "item_pk": pk
-      //"is_ios" : "true"
-    ]
+    let url = "https://api.elegantsiblings.xyz/new/item/"
+    let requestUrl = url + pk
     
-    Alamofire.request(url, method: .get, parameters: params)
+    Alamofire.request(requestUrl, method: .get)
       .validate()
       .responseData { response in
         switch response.result {

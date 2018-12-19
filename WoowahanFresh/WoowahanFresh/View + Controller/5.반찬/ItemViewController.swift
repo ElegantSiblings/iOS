@@ -13,10 +13,9 @@ class ItemViewController: UIViewController {
   @IBOutlet weak var tableView: UITableView!
   
   var timer = Timer()
-  var itemPk: String? = nil
+  var itemPk: String = ""
   var itemValue: ItemDetails?
   var itemThumbnail: [String] = []
-  //var itemThumbnailImage: [UIImage] = []
   var itemDeTalier: [String] = []
   
   
@@ -28,37 +27,30 @@ class ItemViewController: UIViewController {
     tableView.dataSource = self
     tableView.separatorStyle = .none
     //MARK: Section1 - 상품 정보 Custom Cell. 4개
-    tableView.register(UINib(nibName: "ScrollViewImageCell", bundle: nil), forCellReuseIdentifier: "ScrollViewImageCell")
+    
+    tableView.register(ScrollViewImageCell.self, forCellReuseIdentifier: "ScrollViewImageCell")
     tableView.register(UINib(nibName: "ItemTitleCell", bundle: nil), forCellReuseIdentifier: "ItemTitleCell")
     tableView.register(UINib(nibName: "ItemDeliveryCell", bundle: nil), forCellReuseIdentifier: "ItemDeliveryCell")
     tableView.register(UINib(nibName: "OtherItemCell", bundle: nil), forCellReuseIdentifier: "OtherItemCell")
     tableView.register(UINib(nibName: "ItemDetailCell", bundle: nil), forCellReuseIdentifier: "ItemDetailCell")
     tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
     
-    guard let itemPkOptionalRemove = itemPk else {
-      return
-    }
-    
-    requestItem.detailInfo(pk: itemPkOptionalRemove) { (ItemDetails) in
+    requestItem.detailInfo(pk: itemPk) { (ItemDetails) in
+      print("콜백 성공")
       self.itemValue = ItemDetails
       let count = self.itemValue?.itemimageSet.count ?? 0
       
       for idx in 0..<count {
-        if ItemDetails.itemimageSet[idx].photoType == "T" {
+        if ItemDetails.itemimageSet[idx].photoType.rawValue == "T" {
           let urlString = ItemDetails.itemimageSet[idx].photo
-          print(urlString)
           self.itemThumbnail.append(urlString)
-        } else {
+        } else if ItemDetails.itemimageSet[idx].photoType.rawValue == "D" {
           let urlString = ItemDetails.itemimageSet[idx].photo
-          print(urlString)
           self.itemDeTalier.append(urlString)
         }
       }
+      
       self.tableView.reloadData()
-      print("========+++++++")
-      print(self.itemDeTalier.count)
-      print(self.itemThumbnail.count)
-      print("========+++++++")
     }
   }
   
@@ -88,16 +80,15 @@ class ItemViewController: UIViewController {
     if SingleUserInfo.sharedInstance.token.isEmpty {
       Alert.loginCheck(viewController: self)
     } else {
-      let tempInt = Int(itemPk ?? "0")
-      guard let removeOtionalInt = tempInt else { return }
-      requestCart.addItem(item_pk: removeOtionalInt)
+      requestCart.addItem(item_pk: itemPk)
       Alert.addItem(viewController: self)
     }
   }
   
 }
 
-extension ItemViewController: UITableViewDataSource {
+extension ItemViewController: UITableViewDataSource, ScrollViewImageCellDelegate {
+  
   //MARK: Section 개수
   func numberOfSections(in tableView: UITableView) -> Int {
     return 2
@@ -115,42 +106,42 @@ extension ItemViewController: UITableViewDataSource {
   
   
   //MARK: taview 높이
-  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    
-    if indexPath.section == 0 {
-      
-      //MARK: 상품 이미지
-      switch indexPath.row {
-      case 0 :
-        let size = CGFloat( ( Int(self.tableView.frame.maxY) / 4) * 2 )
-        return size
-        
-      //MARK: 상품명 가격 정보
-      case 1 :
-        let size = CGFloat( ( Int(self.tableView.frame.maxY) / 4) * 1 )
-        return size
-        
-      //MARK: 배송타입
-      case 2 :
-        let size = CGFloat( ( Int(self.tableView.frame.maxY) / 4) * 1 )
-        return size
-        
-      //MARK: 다른상품
-      case 3 :
-        let size = CGFloat( ( Int(self.tableView.frame.maxY) / 4) * 2 )
-        return size
-        
-      default:
-        return 50
-      }
-      
-      //MARK: section 2 - 상세보기, 후기, 문의, 배송 교환
-    } else {
-      
-      let size = CGFloat( ( Int(self.tableView.frame.maxY) / 4) * 3 )
-      return size
-    }
-  }
+//  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//    
+//    if indexPath.section == 0 {
+//      
+//      //MARK: 상품 이미지
+//      switch indexPath.row {
+//      case 0 :
+//        let size = CGFloat( ( Int(self.tableView.frame.maxY) / 4) * 2 )
+//        return size
+//        
+//      //MARK: 상품명 가격 정보
+//      case 1 :
+//        let size = CGFloat( ( Int(self.tableView.frame.maxY) / 4) * 1 )
+//        return size
+//        
+//      //MARK: 배송타입
+//      case 2 :
+//        let size = CGFloat( ( Int(self.tableView.frame.maxY) / 4) * 1 )
+//        return size
+//        
+//      //MARK: 다른상품
+//      case 3 :
+//        let size = CGFloat( ( Int(self.tableView.frame.maxY) / 4) * 2 )
+//        return size
+//        
+//      default:
+//        return 50
+//      }
+//      
+//      //MARK: section 2 - 상세보기, 후기, 문의, 배송 교환
+//    } else {
+//      
+//      let size = CGFloat( ( Int(self.tableView.frame.maxY) / 4) * 3 )
+//      return size
+//    }
+//  }
   
   
   //MARK: Cell의 갯수
@@ -168,17 +159,11 @@ extension ItemViewController: UITableViewDataSource {
     
     //MARK: Section1 - 상품 정보 Custom Cell.
     if indexPath.section == 0 {
-      
       //MARK: 상품 이미지
       switch indexPath.row {
       case 0 :
         let cell = tableView.dequeueReusableCell(withIdentifier: "ScrollViewImageCell", for: indexPath) as! ScrollViewImageCell
-        
-        ////        let urlimageOne = itemThumbnail[0]
-        //        requestImage(url: urlimageOne) { (Data) in
-        //          cell.thumbnailImage.image = UIImage(data: Data)
-        //        }
-        cell.textLabel?.text = "\(indexPath.section) \(indexPath.row)"
+        cell.configure(with: itemThumbnail)
         return cell
         
       //MARK: 상품명 가격 정보
@@ -252,12 +237,18 @@ extension ItemViewController: UITableViewDataSource {
       let cell = tableView.dequeueReusableCell(withIdentifier: "ItemDetailCell", for: indexPath) as! ItemDetailCell
       let tempUrl = itemDeTalier[indexPath.row] 
       
-      requestImage.ImageData(url: tempUrl) { (Data) in
-        cell.imageView?.image = UIImage(data: Data)
+      requestImage.imageData(url: tempUrl) { (data) in
+        cell.detailImage.image = UIImage(data : data)
       }
       return cell
     }
     
+  }
+  
+  //MARK: section idx0, row0
+  func reload() {
+    print("1111")
+    self.tableView.reloadData()
   }
 }
 

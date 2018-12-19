@@ -21,15 +21,13 @@
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H0b-ux-6ZW">
                         <rect key="frame" x="16" y="5" width="343" height="535.66666666666663"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="343" id="K0e-Dr-5Qi"/>
-                        </constraints>
                     </imageView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="H0b-ux-6ZW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="0RV-kn-cUD"/>
-                    <constraint firstAttribute="bottom" secondItem="H0b-ux-6ZW" secondAttribute="bottom" constant="5" id="NkO-RC-TvU"/>
-                    <constraint firstItem="H0b-ux-6ZW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="iSC-Nc-WHQ"/>
+                    <constraint firstAttribute="trailing" secondItem="H0b-ux-6ZW" secondAttribute="trailing" constant="16" id="BHd-eQ-cSG"/>
+                    <constraint firstAttribute="bottom" secondItem="H0b-ux-6ZW" secondAttribute="bottom" constant="5" id="PXN-ai-eCE"/>
+                    <constraint firstItem="H0b-ux-6ZW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="iot-nw-1fY"/>
+                    <constraint firstItem="H0b-ux-6ZW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="ybF-JE-gzc"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="FPi-R6-hGE"/>
