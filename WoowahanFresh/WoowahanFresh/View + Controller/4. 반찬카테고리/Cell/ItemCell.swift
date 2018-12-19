@@ -12,7 +12,6 @@ import UIKit
 
 protocol ItemCellDelegate  {
   
-  func DidTabCell()
   func DidTabHeart()
   func DidTabShopping()
 }
@@ -26,16 +25,37 @@ class ItemCell: UITableViewCell {
   @IBOutlet weak var originPrice: UILabel!
   @IBOutlet weak var btnheart: UIButton!
   var delegate: ItemCellDelegate?
-  var itemPkNumber = "String"
+  var itemPkNumber = 0
   
   override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+//    self.focusStyle = .custom
+    
+    self.layer.borderWidth = 1.0
+    self.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+    
+//    btnheart.setImage(UIImage(named: "HeartRed"), for: .selected)
+//    btnheart.setImage(UIImage(named: "HeartNil"), for: .normal)
+//    
+//    btnheart.addTarget(self, action: #selector(BtnCheckbox.buttonClicked(_:)), for: .touchUpInside)
     
     }
   
-  @IBAction func btnCell(_ sender: Any) {
-    delegate?.DidTabCell()
+//  @objc func buttonClicked(_ sender: UIButton) {
+//    self.isSelected.toggle()
+//
+//    if btnheart.isSelected {
+//      //MARK: Alamofire - 활성화 요청
+//      print("isSelected On")
+//    } else {
+//      //MARK: Alamofire - 비활성화 요청
+//      print("isSelected OFF")
+//    }
+//  }
+
+  override func layoutSubviews() {
+    super.layoutSubviews()
   }
   
   @IBAction func btnHeart(_ sender: Any) {

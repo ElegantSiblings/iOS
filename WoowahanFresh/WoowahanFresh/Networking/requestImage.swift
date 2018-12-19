@@ -11,14 +11,13 @@ import Alamofire
 
 struct requestImage {
   //MARK: 이미지 데이터 요청
-  static func ImageData(url: String, handler: @escaping (Data) -> Void) {
+  static func imageData(url: String, handler: @escaping (Data) -> Void) {
     Alamofire.request(url, method: .get)
       .validate()
       .responseData { (response) in
         switch response.result {
         case .success(let value):
           handler(value)
-          
         case .failure(let error):
           print("error = ", error.localizedDescription)
         }

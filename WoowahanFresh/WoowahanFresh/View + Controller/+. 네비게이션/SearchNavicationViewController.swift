@@ -12,7 +12,7 @@ class SearchNavicationViewController: UIViewController {
   
   @IBOutlet weak var tableView: UITableView!
   @IBOutlet weak var searchBar: UISearchBar!
-  var searchValue = SearchResult()
+  var searchValue: SearchList?
   
   override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,8 +39,9 @@ extension SearchNavicationViewController: UISearchBarDelegate {
   //MARK: UISearchBar - 검색 버튼을 눌렀을 시 func
   func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
     guard let inputKeyword = self.searchBar.text else { return }
-    requestSearch.serchItem(keyword: inputKeyword) { (SearchResult) in
-      self.searchValue = SearchResult
+    
+    requestSearch.serchItem(keyword: inputKeyword) { (SearchList) in
+      self.searchValue = SearchList
       self.tableView.reloadData()
     }
   }
@@ -51,18 +52,23 @@ extension SearchNavicationViewController: UISearchBarDelegate {
 extension SearchNavicationViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     
-    return searchValue.count
+    let tempCoutn = searchValue?.items.count ?? 0
+    return tempCoutn
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
     let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-    cell.textLabel?.text = "[\(searchValue[indexPath.row].company)] \(searchValue[indexPath.row].itemName)"
-    cell.detailTextLabel?.text = "\(searchValue[indexPath.row].salePrice)"
-    requestImage.ImageData(url: searchValue[indexPath.row].listThumbnail) { (Data) in
+    let tempCompany = searchValue?.items[indexPath.row].company ?? "nil"
+    let tempItemName = searchValue?.items[indexPath.row].itemName ?? "nil"
+    let tempSalePrice = searchValue?.items[indexPath.row].salePrice ?? 0
+    let tempUrl = searchValue?.items[indexPath.row].listThumbnail ?? "nil"
+    
+    cell.textLabel?.text = "[\(tempCompany)] " + tempItemName
+    cell.detailTextLabel?.text = String(tempSalePrice)
+    requestImage.imageData(url: tempUrl) { (Data) in
       cell.imageView?.image = UIImage(data: Data)
     }
-   
     
     return cell
   }

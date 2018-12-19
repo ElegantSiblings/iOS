@@ -12,13 +12,14 @@ import Alamofire
 struct requestSearch {
   
   //MARK: 상품 상세정보
-  static var serchItem: SearchResult?
+  static var serchItem: SearchList?
   
-  static func serchItem(keyword: String, handler: @escaping (SearchResult) -> Void) {
+  static func serchItem(keyword: String, handler: @escaping (SearchList) -> Void) {
    
-    let url = "https://api.elegantsiblings.xyz/search/"
+    let url = "https://api.elegantsiblings.xyz/new/search/"
     let params: Parameters = [
-      "search_str": keyword
+      "search_str": keyword,
+      "is_ios": true
     ]
     
     Alamofire.request(url, method: .get, parameters: params)
@@ -27,7 +28,7 @@ struct requestSearch {
         switch response.result {
         case .success(let value):
           do {
-          serchItem = try JSONDecoder().decode(SearchResult.self, from: value)
+          serchItem = try JSONDecoder().decode(SearchList.self, from: value)
           handler(serchItem!)
           } catch {
             print(error)

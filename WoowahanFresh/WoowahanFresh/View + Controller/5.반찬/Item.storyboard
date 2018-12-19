@@ -28,16 +28,20 @@
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="63N-C5-Opt">
                                 <rect key="frame" x="0.0" y="728" width="75" height="50"/>
-                                <color key="backgroundColor" red="0.55634254220000001" green="0.97934550050000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" image="heart"/>
+                                <color key="backgroundColor" red="0.32243233919143677" green="0.69804644584655762" blue="0.69020026922225952" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="heartNil"/>
                                 <connections>
                                     <action selector="btnHeart:" destination="Dxd-SJ-BGd" eventType="touchUpInside" id="vMu-rK-keW"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k25-Gd-jm0">
                                 <rect key="frame" x="75" y="728" width="300" height="50"/>
-                                <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="장바구니 담기"/>
+                                <color key="backgroundColor" red="0.37294507030000001" green="0.74524956939999998" blue="0.72941499949999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="23"/>
+                                <state key="normal" title="장바구니 담기">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="btnAddShoppingList:" destination="Dxd-SJ-BGd" eventType="touchUpInside" id="BYK-fr-g4h"/>
                                 </connections>
@@ -65,7 +69,7 @@
                     <navigationItem key="navigationItem" id="BHM-1q-8y3">
                         <barButtonItem key="leftBarButtonItem" image="arrow" id="r3d-Vb-UkL">
                             <connections>
-                                <segue destination="qkO-ya-oYe" kind="unwind" unwindAction="unwindTo:" id="F9H-Tn-Afs"/>
+                                <segue destination="qkO-ya-oYe" kind="unwind" unwindAction="unwindToDishCategory:" id="elA-aw-EDX"/>
                             </connections>
                         </barButtonItem>
                         <rightBarButtonItems>
@@ -111,7 +115,7 @@
     </scenes>
     <resources>
         <image name="arrow" width="54" height="54"/>
-        <image name="heart" width="54" height="54"/>
+        <image name="heartNil" width="54" height="54"/>
         <image name="shopping" width="54" height="54"/>
     </resources>
 </document>

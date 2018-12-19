@@ -48,8 +48,6 @@ class ShoppingListNavicationViewController: UIViewController {
     tableView.register(UINib(nibName: "AddItemCell", bundle: nil), forCellReuseIdentifier: "AddItemCell")
     tableView.register(UINib(nibName: "HopeCell", bundle: nil), forCellReuseIdentifier: "HopeCell")
     
-    tableView.rowHeight = UITableView.automaticDimension
-    tableView.estimatedRowHeight = 800
   }
   
   @IBAction func btnClose(_ sender: Any) {
@@ -61,7 +59,6 @@ class ShoppingListNavicationViewController: UIViewController {
 
 
 extension ShoppingListNavicationViewController: UITableViewDelegate {
-  
 }
 
 extension ShoppingListNavicationViewController: UITableViewDataSource, HopeCellDelegate {
@@ -73,11 +70,9 @@ extension ShoppingListNavicationViewController: UITableViewDataSource, HopeCellD
     DeliveryDayVC.expectedPrice = order
     
     for idx in 0..<shoppingValue.count {
-      guard let cartPk = Int(shoppingValue[idx].cartItemPk) else { return }
-      print("===== 장바구니 담기", cartPk)
-      orderShoppingList.append(cartPk)
+      orderShoppingList.append(shoppingValue[idx].pk)
     }
-//    orderShoppingList.remove(at: 0)
+    
     DeliveryDayVC.orderItemList = orderShoppingList
     print("======orderShoppingList:", orderShoppingList)
     navigationController?.pushViewController(DeliveryDayVC, animated: true)
@@ -141,7 +136,6 @@ extension ShoppingListNavicationViewController: UITableViewDataSource, HopeCellD
       requestData(url: inputUrl) { (Data) in
         cell.imagethumbnail.image = UIImage(data: Data)
       }
-      cell.setNeedsLayout()
       return cell
     } else if indexPath.section == 2 {
       let cell = tableView.dequeueReusableCell(withIdentifier: "HopeCell", for: indexPath) as! HopeCell

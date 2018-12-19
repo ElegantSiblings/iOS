@@ -15,31 +15,30 @@ struct requestCart {
   static var shoppingList: ShoppingList?
   
   //MARK: 장바구니 담기 요청
-  static func addItem(item_pk: Int) {
+  static func addItem(item_pk: String) {
     //handler: @escaping () -> Void {
-    let url = "https://api.elegantsiblings.xyz/cart/"
-    
-    let params: Parameters = [
-      "item_pk": item_pk,
-      "amount": 1
-    ]
+    let url = "https://api.elegantsiblings.xyz/new/cart/"
     
     let header: HTTPHeaders = [
       "Authorization": "Token \(SingleUserInfo.sharedInstance.token)"
     ]
-    //조회는 get
-    //아이템 추가는 post
+    
+    print("itempk ==== ",item_pk)
+    let params: Parameters = [
+      "item": Int(item_pk)!,
+      "amount": 1
+    ]
     
     Alamofire.request(url, method: .post,
                       parameters: params,
+                      encoding: JSONEncoding.default,
                       headers: header)
       .validate()
-      .responseJSON { response in
+      .responseData { response in
         if response.response?.statusCode == 200 {
           switch response.result {
           case .success( _):
             print("=========")
-          //            print(value)
           case .failure(let error):
             print(error)
           }
@@ -47,9 +46,17 @@ struct requestCart {
           guard let code = response.response?.statusCode else { return }
           print(code)
           
+          //          MARK: 응답 data 인코딩
+          let dataa = response.data
+          let tempp = String(data: dataa!, encoding: .utf8)
+          print("400 메시지", tempp ?? "nil")
+          
         } else {
           guard let code = response.response?.statusCode else { return }
           
+          guard let requestData = response.request?.httpBody else { return }
+          let printData = String(data: requestData, encoding: .utf8)
+          print("카드 요청 바디 :", printData ?? "nil")
           print(code)
         }
     }
@@ -57,8 +64,7 @@ struct requestCart {
   
   //MARK: 장바구니 조회
   static func hitsItem(handler: @escaping (ShoppingList) -> Void) {
-    let url = "https://api.elegantsiblings.xyz/cart/"
-    
+    let url = "https://api.elegantsiblings.xyz/new/cart/"
     let header: HTTPHeaders = [
       "Authorization": "Token \(SingleUserInfo.sharedInstance.token)"
     ]
@@ -74,7 +80,7 @@ struct requestCart {
               shoppingList = try JSONDecoder().decode(ShoppingList.self, from: value)
               handler(shoppingList!)
             } catch {
-              print(error)
+              print("Error(장바구니 조회): ",error)
             }
             
           case .failure(let error):

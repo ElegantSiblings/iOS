@@ -5,7 +5,7 @@
 //  Created by qbbang on 12/12/2018.
 //  Copyright © 2018 qbbang. All rights reserved.
 //
-
+import Foundation
 import UIKit
 
 struct Alert {
@@ -24,13 +24,17 @@ struct Alert {
   //MARK: alert - 쇼핑 리스트 추가 완료
   static func addItem(viewController: UIViewController) {
     let alert = UIAlertController(title: "장바구니 담기 완료!", message: nil, preferredStyle: .alert)
-
+    
     alert.addAction(UIAlertAction(title: "확인", style: .default, handler: { action in
       alert.dismiss(animated: true)
     }))
-
+    
     alert.addAction(UIAlertAction(title: "장바구니 이동", style: .default, handler: { action in
       alert.dismiss(animated: true)
+      let storyboard = UIStoryboard(name: "ShoppingList", bundle: nil)
+      let ShoppingListVC = storyboard.instantiateViewController(withIdentifier: "ShoppingListNavicationViewController")
+      viewController.present(ShoppingListVC, animated: true)
+      
     }))
     
     viewController.present(alert, animated: true)

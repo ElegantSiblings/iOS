@@ -12,35 +12,53 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DeletionCell" rowHeight="44" id="KGk-i7-Jjw" customClass="DeletionCell" customModule="WoowahanFresh" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="DeletionCell" rowHeight="44" id="KGk-i7-Jjw" customClass="DeletionCell" customModule="WoowahanFresh" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="smj-ZD-UPr" customClass="BtnCheckbox" customModule="WoowahanFresh" customModuleProvider="target">
-                        <rect key="frame" x="16" y="4" width="35" height="35"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="smj-ZD-UPr" customClass="BtnCheckbox" customModule="WoowahanFresh" customModuleProvider="target">
+                        <rect key="frame" x="16" y="4" width="30" height="34.333333333333336"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="3cs-e0-ZbQ"/>
+                            <constraint firstAttribute="width" secondItem="smj-ZD-UPr" secondAttribute="height" multiplier="7:8" id="6K2-nF-wxi"/>
+                        </constraints>
                         <state key="normal" image="selected"/>
                     </button>
-                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jjH-uD-NVc">
-                        <rect key="frame" x="303" y="6" width="56" height="30"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jjH-uD-NVc">
+                        <rect key="frame" x="307" y="6" width="56" height="30"/>
                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="jjH-uD-NVc" secondAttribute="height" multiplier="28:15" id="BIE-uS-kUo"/>
+                            <constraint firstAttribute="width" constant="56" id="bc2-1x-QIh"/>
+                        </constraints>
                         <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                         <state key="normal" title="선택 삭제"/>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="전체 선택" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WuJ-Ag-NWF">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="전체 선택" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WuJ-Ag-NWF">
                         <rect key="frame" x="59" y="11" width="64" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="WuJ-Ag-NWF" secondAttribute="height" multiplier="64:21" id="ibS-mT-1Kc"/>
+                            <constraint firstAttribute="width" constant="64" id="oTd-TI-DHT"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="jjH-uD-NVc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="800-1A-kt8"/>
+                    <constraint firstAttribute="trailing" secondItem="jjH-uD-NVc" secondAttribute="trailing" constant="12" id="JxY-ys-Scn"/>
+                    <constraint firstItem="smj-ZD-UPr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Khs-1e-eAu"/>
+                    <constraint firstItem="smj-ZD-UPr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="mMk-6s-LGe"/>
+                    <constraint firstItem="WuJ-Ag-NWF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="qIg-gq-Nye"/>
+                    <constraint firstItem="WuJ-Ag-NWF" firstAttribute="leading" secondItem="smj-ZD-UPr" secondAttribute="trailing" constant="13" id="tLr-bC-iDJ"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <point key="canvasLocation" x="138.40000000000001" y="135.96059113300493"/>
         </tableViewCell>
     </objects>
     <resources>

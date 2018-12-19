@@ -14,16 +14,5 @@ class ItemDetailCell: UITableViewCell {
   
   override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-    // 이미지 프레임 벗어나는거 방지
-    detailImage.clipsToBounds = true
-    
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: false)
-
-        // Configure the view for the selected state
-    }
-    
 }

@@ -34,9 +34,9 @@ class DeliveryDayViewController: UIViewController {
     print("결제 예상금액 ", expectedPrice)
     print("orderItem ", orderItemList)
     
-//    requestCart.hitsItem { (ShoppingList) in
-//      self.shoppingValue = ShoppingList
-//    }
+    requestCart.hitsItem { (ShoppingList) in
+      self.shoppingValue = ShoppingList
+    }
     // Do any additional setup after loading the view.
   }
   

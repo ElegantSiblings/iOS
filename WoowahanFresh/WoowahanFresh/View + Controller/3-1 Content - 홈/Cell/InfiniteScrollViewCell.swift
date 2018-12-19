@@ -34,7 +34,6 @@ class InfiniteScrollViewCell: UITableViewCell {
                       "https://s3.ap-northeast-2.amazonaws.com/wps-9th-chajeehyung-practice/media/items/sub_banner_left_03.jpg",
                       "https://s3.ap-northeast-2.amazonaws.com/wps-9th-chajeehyung-practice/media/items/sub_banner_left_04.jpg",
                       "https://s3.ap-northeast-2.amazonaws.com/wps-9th-chajeehyung-practice/media/items/sub_banner_left_05.jpg"]
-    ////
     
     for images in pageImages {
       addPageToScrollView(with: images)
@@ -63,7 +62,6 @@ class InfiniteScrollViewCell: UITableViewCell {
     Alamofire.request(url, method: .get)
       .validate()
       .responseData { (response) in
-        print(Alamofire.request(url, method: .get))
         switch response.result {
         case .success(let value):
           handler(value)
@@ -71,7 +69,6 @@ class InfiniteScrollViewCell: UITableViewCell {
         case .failure(let error):
           print("error = ", error.localizedDescription)
         }
-        
     }
   }
   

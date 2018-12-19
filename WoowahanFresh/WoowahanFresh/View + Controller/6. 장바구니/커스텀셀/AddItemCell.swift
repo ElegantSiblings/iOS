@@ -30,8 +30,9 @@ class AddItemCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     
-    self.layer.borderWidth = 1.0
-    self.layer.borderColor = UIColor.init(red: 213, green: 213, blue: 213, alpha: 0.4).cgColor
+    self.layer.borderWidth = 5.0
+    self.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+    
     btnChangeCount.layer.borderWidth = 1.0
     btnChangeCount.layer.borderColor = UIColor.black.cgColor
     
