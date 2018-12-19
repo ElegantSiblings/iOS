@@ -18,7 +18,7 @@ class MyPageViewController: UIViewController {
     tableView.delegate = self
     tableView.dataSource = self
     tableView.separatorStyle = .none
-    tableView.sectionHeaderHeight = 5
+    tableView.sectionHeaderHeight = 1
     //    tableView.sectionFooterHeight = 0
     tableView.register(UITableViewCell.self,
                        forCellReuseIdentifier: "Cell")
@@ -108,6 +108,8 @@ extension MyPageViewController: UITableViewDataSource {
         
       }
     } else if indexPath.section == 2 {
+      
+      
       switch indexPath.row {
       case 0 :
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
@@ -127,6 +129,10 @@ extension MyPageViewController: UITableViewDataSource {
       case 3:
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         cell.textLabel?.text = "1:1 문의"
+        return cell
+      case 4:
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        cell.textLabel?.text = "로그아웃"
         return cell
         
       default:
@@ -171,6 +177,17 @@ extension MyPageViewController: UITableViewDelegate {
       let masterVC = storyboard.instantiateInitialViewController()!
       self.present(masterVC, animated: true, completion: {
       })
+    }
+    
+    if indexPath.section == 2,
+      indexPath.row == 4 {
+      print("로그아웃 버튼")
+      SingleUserInfo.sharedInstance.token = ""
+      SingleUserInfo.sharedInstance.username = ""
+      
+      UserDefaults.standard.removeObject(forKey: "UserLoginToken")
+      UserDefaults.standard.removeObject(forKey: "UserLoginName")
+      tableView.reloadSections([0,1,2], with: UITableView.RowAnimation.automatic)
     }
     
   }

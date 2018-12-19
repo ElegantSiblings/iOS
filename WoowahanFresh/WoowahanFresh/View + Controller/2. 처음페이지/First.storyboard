@@ -47,7 +47,9 @@
                         <viewLayoutGuide key="safeArea" id="qFG-ig-hbL"/>
                     </view>
                     <navigationItem key="navigationItem" id="VcH-Vf-Hcu">
-                        <barButtonItem key="leftBarButtonItem" image="BMC" id="wX4-QA-ZOO"/>
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="BMC" style="plain" id="wX4-QA-ZOO">
+                            <inset key="imageInsets" minX="-50" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem title="shopping" image="shopping" id="ejy-qT-IIn">
                                 <connections>
@@ -83,7 +85,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tB1-v0-FYC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7245" y="330"/>
+            <point key="canvasLocation" x="7296" y="330"/>
         </scene>
         <!--MyPage-->
         <scene sceneID="qjK-gI-PdS">
@@ -93,7 +95,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Fb-Xi-3k8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7692" y="330"/>
+            <point key="canvasLocation" x="7604" y="330"/>
         </scene>
         <!--Search-->
         <scene sceneID="fU7-WN-Sl7">
@@ -108,38 +110,56 @@
             <objects>
                 <viewController title="Top View" id="uEv-aX-xGC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="94z-yJ-VCz">
-                        <rect key="frame" x="0.0" y="0.0" width="415" height="48"/>
+                        <rect key="frame" x="0.0" y="0.0" width="415" height="44"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k3w-4R-Tvr">
-                                <rect key="frame" x="0.0" y="0.0" width="415" height="48"/>
+                                <rect key="frame" x="0.0" y="0.0" width="415" height="44"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="mPN-Zj-ces">
                                         <rect key="frame" x="0.0" y="0.0" width="417" height="38"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HXV-54-7DI" userLabel="홈">
                                                 <rect key="frame" x="0.0" y="0.0" width="52" height="38"/>
-                                                <state key="normal" title="홈"/>
+                                                <color key="tintColor" red="0.32243233919999997" green="0.69804644579999997" blue="0.69020026919999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" title="홈">
+                                                    <color key="titleColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nSP-cm-8PG">
                                                 <rect key="frame" x="73" y="0.0" width="52" height="38"/>
-                                                <state key="normal" title="베스트"/>
+                                                <color key="tintColor" red="0.32243233919999997" green="0.69804644579999997" blue="0.69020026919999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" title="베스트">
+                                                    <color key="titleColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J1s-CK-vFo">
                                                 <rect key="frame" x="146" y="0.0" width="52" height="38"/>
-                                                <state key="normal" title="알뜰쇼핑"/>
+                                                <color key="tintColor" red="0.32243233919999997" green="0.69804644579999997" blue="0.69020026919999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" title="알뜰쇼핑">
+                                                    <color key="titleColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P3C-78-cOQ">
                                                 <rect key="frame" x="219" y="0.0" width="52" height="38"/>
-                                                <state key="normal" title="브랜드관"/>
+                                                <color key="tintColor" red="0.32243233919999997" green="0.69804644579999997" blue="0.69020026919999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" title="브랜드관">
+                                                    <color key="titleColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dju-M8-eyJ">
                                                 <rect key="frame" x="292" y="0.0" width="52" height="38"/>
-                                                <state key="normal" title="테마존"/>
+                                                <color key="tintColor" red="0.32243233919999997" green="0.69804644579999997" blue="0.69020026919999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" title="테마존">
+                                                    <color key="titleColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YQ0-uk-kW3">
                                                 <rect key="frame" x="365" y="0.0" width="52" height="38"/>
-                                                <state key="normal" title="이벤트 "/>
+                                                <color key="tintColor" red="0.32243233919999997" green="0.69804644579999997" blue="0.69020026919999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" title="이벤트 ">
+                                                    <color key="titleColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -175,7 +195,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2wc-7e-t4p"/>
                     </view>
-                    <size key="freeformSize" width="415" height="48"/>
+                    <size key="freeformSize" width="415" height="44"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M1I-Co-4nl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -199,6 +219,7 @@
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -214,15 +235,18 @@
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="laI-8C-yWC" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wSI-IL-Neo">
+                    <tabBar key="tabBar" clipsSubviews="YES" contentMode="scaleAspectFill" insetsLayoutMarginsFromSafeArea="NO" itemPositioning="fill" id="wSI-IL-Neo">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="0.36917477850000002" green="0.74517530200000004" blue="0.73333710429999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" red="0.32243233919999997" green="0.69804644579999997" blue="0.69020026919999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBar>
                     <connections>
                         <segue destination="6Bv-dU-dBa" kind="relationship" relationship="viewControllers" id="Nz0-sO-M4A"/>
-                        <segue destination="8D7-ay-9wU" kind="relationship" relationship="viewControllers" id="WIx-3q-wFt"/>
-                        <segue destination="Yuq-e7-N5f" kind="relationship" relationship="viewControllers" id="Gpd-hU-1KE"/>
+                        <segue destination="8D7-ay-9wU" kind="relationship" relationship="viewControllers" id="0wR-BS-qAR"/>
+                        <segue destination="Yuq-e7-N5f" kind="relationship" relationship="viewControllers" id="Kqt-lT-xKl"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uAb-iE-Vop" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -235,7 +259,7 @@
         <image name="category" width="26.666666030883789" height="26.666666030883789"/>
         <image name="home" width="26.666666030883789" height="26.666666030883789"/>
         <image name="my" width="26.666666030883789" height="26.666666030883789"/>
-        <image name="search" width="54" height="54"/>
-        <image name="shopping" width="54" height="54"/>
+        <image name="search" width="26.666666030883789" height="26.666666030883789"/>
+        <image name="shopping" width="26.666666030883789" height="26.666666030883789"/>
     </resources>
 </document>

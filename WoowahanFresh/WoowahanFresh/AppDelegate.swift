@@ -20,6 +20,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
     
+    //MARK: 네비, 탭바 컬러변경
+    //FIXME: 왜 배경색이 안바뀌는거늬? -> 스토리보드 Bar Tint Color로 변경 하
+//    UINavigationBar.appearance().tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+//    UITabBar.appearance().tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+    
+    //MARK: 토큰 정보 저장
+    if UserDefaults.standard.object(forKey: "UserLogin") != nil {
+      print("AppDelegate : [forKey: \"UserLogin\"] 존재함")
+      
+      let tempToken = UserDefaults.standard.string(forKey: "UserLoginToken") ?? "nil"
+      let tempName = UserDefaults.standard.string(forKey: "UserLoginName") ?? "nil"
+      print("CheckToken :", tempToken)
+      print("CheckName :", tempName)
+      
+      SingleUserInfo.sharedInstance.token = tempToken
+      SingleUserInfo.sharedInstance.username = tempName
+      
+    }
+
     return true
 //    return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
   }

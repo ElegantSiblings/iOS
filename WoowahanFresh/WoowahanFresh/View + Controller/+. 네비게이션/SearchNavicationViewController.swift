@@ -15,7 +15,7 @@ class SearchNavicationViewController: UIViewController {
   var searchValue: SearchList?
   
   override func viewDidLoad() {
-        super.viewDidLoad()
+    super.viewDidLoad()
     
     navigationItem.title = "상품 검색"
     tableView.rowHeight = 150
@@ -25,7 +25,7 @@ class SearchNavicationViewController: UIViewController {
     
     tableView.register(UINib(nibName: "ItemCell", bundle: nil),
                        forCellReuseIdentifier: "ItemCell")
-    }
+  }
 }
 
 //MARK: UISearchBar - 델리게이트
@@ -77,4 +77,3 @@ extension SearchNavicationViewController: UITableViewDataSource {
 
 extension SearchNavicationViewController: UITableViewDelegate {
 }
-
