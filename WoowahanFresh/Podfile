@@ -8,7 +8,8 @@ target 'WoowahanFresh' do
   # Pods for WoowahanFresh
 
 pod 'Alamofire'
-pod 'RealmSwift'
+pod 'FSCalendar'
+
 #pod 'lottie-ios'
 #pod 'SwiftLint'
 #pod 'RxSwift'

@@ -9,7 +9,6 @@
 import UIKit
 
 import Alamofire
-import RealmSwift
 
 class MainViewController: UIViewController {
   
