@@ -37,10 +37,16 @@
                         <viewLayoutGuide key="safeArea" id="Ids-v0-7lA"/>
                     </view>
                     <navigationItem key="navigationItem" id="yqz-bI-i5d">
-                        <barButtonItem key="leftBarButtonItem" title="설정" id="11U-hZ-noh"/>
+                        <barButtonItem key="leftBarButtonItem" title="설정" image="setting" id="11U-hZ-noh">
+                            <color key="tintColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
                         <rightBarButtonItems>
-                            <barButtonItem title="장바구니" id="ohx-JL-F8L"/>
-                            <barButtonItem title="검색" id="Qy6-Ax-aOv"/>
+                            <barButtonItem title="장바구니" image="shopping" id="ohx-JL-F8L">
+                                <color key="tintColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </barButtonItem>
+                            <barButtonItem title="검색" image="search" id="Qy6-Ax-aOv">
+                                <color key="tintColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -71,4 +77,9 @@
             <point key="canvasLocation" x="-786.39999999999998" y="-3.6945812807881775"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="search" width="26.666666030883789" height="26.666666030883789"/>
+        <image name="setting" width="54" height="54"/>
+        <image name="shopping" width="26.666666030883789" height="26.666666030883789"/>
+    </resources>
 </document>
