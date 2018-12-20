@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class ShoppingListNavicationViewController: UIViewController {
   
   @IBOutlet weak var tableView: UITableView!

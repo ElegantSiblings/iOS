@@ -40,6 +40,7 @@
 		E824F40721B02360001CBC88 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E824F40621B02360001CBC88 /* HomeTableViewController.swift */; };
 		E824F40921B02626001CBC88 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E824F40821B02626001CBC88 /* ContentViewController.swift */; };
 		E8262C7F21CAB12B00D04044 /* ex+UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8262C7E21CAB12B00D04044 /* ex+UIButton.swift */; };
+		E8262C8321CADA7800D04044 /* PostCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8262C8221CADA7800D04044 /* PostCodeViewController.swift */; };
 		E827B37D21C0C1340024363C /* requestCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = E827B37C21C0C1340024363C /* requestCart.swift */; };
 		E827B38021C0C9F60024363C /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = E827B37F21C0C9F60024363C /* Alert.swift */; };
 		E827B38221C0CD620024363C /* requestItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E827B38121C0CD620024363C /* requestItem.swift */; };
@@ -133,6 +134,7 @@
 		E824F40621B02360001CBC88 /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		E824F40821B02626001CBC88 /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		E8262C7E21CAB12B00D04044 /* ex+UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ex+UIButton.swift"; sourceTree = "<group>"; };
+		E8262C8221CADA7800D04044 /* PostCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCodeViewController.swift; sourceTree = "<group>"; };
 		E827B37C21C0C1340024363C /* requestCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = requestCart.swift; sourceTree = "<group>"; };
 		E827B37F21C0C9F60024363C /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		E827B38121C0CD620024363C /* requestItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = requestItem.swift; sourceTree = "<group>"; };
@@ -593,6 +595,7 @@
 			children = (
 				E8A6DC8221C7B0EA00070850 /* PaymentViewController.swift */,
 				E8A6DC8421C7B0F500070850 /* Payment.storyboard */,
+				E8262C8221CADA7800D04044 /* PostCodeViewController.swift */,
 			);
 			name = "8. 결제하기";
 			path = "8. 결제하기";
@@ -826,6 +829,7 @@
 				E8A7958121B4CE14007E9CEA /* InfiniteScrollViewCell.swift in Sources */,
 				E8E9405921ABD0050017620A /* MainViewController.swift in Sources */,
 				E876B8E321B3911C00C86C4D /* ShoppingListNavicationViewController.swift in Sources */,
+				E8262C8321CADA7800D04044 /* PostCodeViewController.swift in Sources */,
 				E8FCD74021B7B46300209322 /* Codable.swift in Sources */,
 				E8E9405721ABD0050017620A /* AppDelegate.swift in Sources */,
 				E8A6DC8321C7B0EA00070850 /* PaymentViewController.swift in Sources */,
