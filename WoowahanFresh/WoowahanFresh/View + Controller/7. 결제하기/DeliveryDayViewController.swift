@@ -7,13 +7,25 @@
 //
 
 import UIKit
+import FSCalendar
 
 class DeliveryDayViewController: UIViewController {
+  
+  @IBOutlet weak var labelDate: UILabel!
   
   var sumPrice = 0
   var deliveryPrice = 0
   var expectedPrice = 0
   var orderItemList: [Int] = []
+  
+  var cal = Calendar.current
+  var currentDate = Date()
+  var requestDate = ""
+  var selectDate = "" {
+    didSet {
+      labelDate.text = selectDate
+    }
+  }
   
   var shoppingValue = ShoppingList()
   //MARK: 네비게이션 아이템 만들기
@@ -25,6 +37,11 @@ class DeliveryDayViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    let year = cal.component(.year, from: currentDate)
+    let month = cal.component(.month, from: currentDate)
+    let day = cal.component(.day, from: currentDate)
+    
+    labelDate.text = "\(year)-\(month)-\(day)"
     //MARK: 네비게이션 아이템 추가하기
     navigationItem.setRightBarButton(barItemClose, animated: true)
     
@@ -52,18 +69,24 @@ class DeliveryDayViewController: UIViewController {
     let storyboard = UIStoryboard(name: "Payment", bundle: nil)
     let PaymentVC = storyboard.instantiateViewController(withIdentifier: "PaymentViewController") as! PaymentViewController
     PaymentVC._totalPrice = self.expectedPrice
-    PaymentVC._deliveryDate = "2018-12-25"
+    PaymentVC._deliveryDate = requestDate
     PaymentVC._orderItemList = self.orderItemList
+    
+    print("보낼 때,", requestDate)
     navigationController?.pushViewController(PaymentVC, animated: true)
   }
-  /*
-   // MARK: - Navigation
-   
-   // In a storyboard-based application, you will often want to do a little preparation before navigation
-   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-   // Get the new view controller using segue.destination.
-   // Pass the selected object to the new view controller.
-   }
-   */
-  
+}
+
+extension DeliveryDayViewController: FSCalendarDelegate {
+  func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "YYYY-MM-dd"
+    let dateString = dateFormatter.string(from: date)
+    selectDate = dateString
+    requestDate = dateString
+    print(date)
+    print("선택",selectDate)
+    //    print(dateString)
+    //    print(date)
+  }
 }

@@ -52,11 +52,10 @@
             </objects>
             <point key="canvasLocation" x="156" y="-3.6945812807881775"/>
         </scene>
-        <!--마이페이지-->
+        <!--Navigation Controller-->
         <scene sceneID="vFo-LR-JZ0">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uOn-aX-wgn" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="마이페이지" image="mypage" id="Htw-d6-nZO"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Fb1-z3-3Gt">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
@@ -72,7 +71,4 @@
             <point key="canvasLocation" x="-786.39999999999998" y="-3.6945812807881775"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="mypage" width="54" height="54"/>
-    </resources>
 </document>

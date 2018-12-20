@@ -18,17 +18,13 @@ PODS:
     - Bolts (~> 1.9)
   - FBSDKLoginKit (4.38.1):
     - FBSDKCoreKit
-  - Realm (3.11.2):
-    - Realm/Headers (= 3.11.2)
-  - Realm/Headers (3.11.2)
-  - RealmSwift (3.11.2):
-    - Realm (= 3.11.2)
+  - FSCalendar (2.8.0)
 
 DEPENDENCIES:
   - Alamofire
   - FacebookCore
   - FacebookLogin
-  - RealmSwift
+  - FSCalendar
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -38,8 +34,7 @@ SPEC REPOS:
     - FacebookLogin
     - FBSDKCoreKit
     - FBSDKLoginKit
-    - Realm
-    - RealmSwift
+    - FSCalendar
 
 SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
@@ -48,9 +43,8 @@ SPEC CHECKSUMS:
   FacebookLogin: ebcf34714a1cb9f0759d9f071cfb01ed500996cf
   FBSDKCoreKit: 8d47857400e2f5bdea697a80daff882e91c84ef6
   FBSDKLoginKit: 4621c690d9dd8628031a4791497062183ea34b0d
-  Realm: 864477d028db77f7c5a0cba64a4892ad53db128a
-  RealmSwift: 12b8262fc08020b47de4fd88eb3d5c9425b34ec7
+  FSCalendar: 3a5ed3636e2ba1b83ebebfcf0c2603105a6f5efe
 
-PODFILE CHECKSUM: 1642ebc5b01b2bfb94f58709f294730701ee8e0b
+PODFILE CHECKSUM: 76e5fcba94ec36a99bb3f7b3e65dfef119654648
 
 COCOAPODS: 1.5.3

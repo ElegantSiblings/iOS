@@ -42,6 +42,9 @@ class LoginViewController: UIViewController {
         print("로그인 성공")
         SingleUserInfo.sharedInstance.token = (self.LoginValue?.token)!
         SingleUserInfo.sharedInstance.username = (self.LoginValue?.user.username)!
+        
+        UserDefaults.standard.set("\(SingleUserInfo.sharedInstance.token)", forKey: "UserLoginToken")
+        UserDefaults.standard.set("\(SingleUserInfo.sharedInstance.username)", forKey: "UserLoginName")
 
         self.dismiss(animated: true, completion: {
           print("close")

@@ -25,6 +25,7 @@ struct requestSearch {
     Alamofire.request(url, method: .get, parameters: params)
       .validate()
       .responseData { response in
+//        print(response.response?.statusCode)
         switch response.result {
         case .success(let value):
           do {

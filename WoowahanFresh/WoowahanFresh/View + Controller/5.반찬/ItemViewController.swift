@@ -193,6 +193,7 @@ extension ItemViewController: UITableViewDataSource, ScrollViewImageCellDelegate
     return 2
   }
   
+  //MARK: 헤더에 뷰 추가하기
   func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
     
     //MARK: 상세정보, 후기, 문의, 배송/교환
