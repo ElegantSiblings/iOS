@@ -4,8 +4,7 @@
 
 <iframe width="640" height="360" src="https://youtu.be/0xTYpg4B0pw" frameborder="0" gesture="media" allowfullscreen=""></iframe>
 
-[![Watch the video](./mp4/iOS_Web.mp4)]
-
+[![Watch the video]()](https://youtu.be/0xTYpg4B0p)
 
 ### [ API ⬌ iOS 구성 체크리스트 ]
 
