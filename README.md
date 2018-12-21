@@ -2,12 +2,9 @@
 
 ## 배달의 민족 반찬  by 이규현
 
-
-
 ```markdown
 <iframe width="872" height="491" src="https://www.youtube.com/embed/0xTYpg4B0pw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 ```
-
 ### [ API ⬌ iOS 구성 체크리스트 ]
 
 #####[API 문서 URL](https://baeminchan-project.gitbook.io/project/)
