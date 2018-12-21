@@ -9,6 +9,10 @@
 import UIKit
 import WebKit
 
+protocol didSetDelegate {
+  func tableViewReload()
+}
+
 class PaymentViewController: UIViewController {
   
   @IBOutlet weak var userName: UILabel!
@@ -19,6 +23,8 @@ class PaymentViewController: UIViewController {
   @IBOutlet weak var txtFieldAdrees: UITextField!
   
   @IBOutlet weak var btnOrder: UIButton!
+  
+  var delegateDidSet: didSetDelegate?
   
   //MARK: 현재 뷰에서 생성해야하는 값
   var _address = ""
@@ -31,6 +37,8 @@ class PaymentViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    //    navigationController?.navigationBar.items![0].title = ""
+    navigationController?.navigationBar.items![1].title = ""
     
     btnOrder.isHidden = true
     
@@ -50,21 +58,30 @@ class PaymentViewController: UIViewController {
     
   }
   
-  
   @IBAction func unwindToPaymentView(_ unwindSegue: UIStoryboardSegue) {
   }
   
   //TODO: 결제하기 배송지 입력하기
   @IBAction func btn결제하기(_ sender: Any) {
-    
-    _address = "New York"
-    
     print("결제하기 버튼", _orderItemList)
     requestOrder.isPayment(address: txtFieldAdrees.text!,
                            date: _deliveryDate,
                            price: _totalPrice,
                            orderItemList: _orderItemList) { (OrderResult) in
-                            print("성공")
+                            
+                            let storyboard = UIStoryboard(name: "OrderFinish", bundle: nil)
+                            let OrderVC = storyboard.instantiateViewController(withIdentifier: "OrderFinishViewController") as! OrderFinishViewController
+                            
+                            self.present(OrderVC, animated: true, completion: {
+                              print("totalPrice", OrderResult.totalPrice)
+                              let temp = String(OrderResult.totalPrice)
+                              let total = temp
+                              OrderVC.labelPrice.text = total
+                              OrderVC.labelDate.text = OrderResult.deliveryDate
+                              OrderVC.labelAdress.text = OrderResult.address
+                              OrderVC.orderPk = String(OrderResult.pk)
+                              print("OrderResult.pk : ", OrderResult.pk)
+                            })
     }
     
   }

@@ -57,7 +57,6 @@ extension HomeTableViewController: UITableViewDataSource {
     //MARK:
     if indexPath.section == 0 {
       let cell = tableView.dequeueReusableCell(withIdentifier: "InfiniteScrollViewCell", for: indexPath) as! InfiniteScrollViewCell
-      //cell.textLabel?.text = "\(indexPath.section) & \(indexPath.row)"
       return cell
       
     } else if indexPath.section == 1 {

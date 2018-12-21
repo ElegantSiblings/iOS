@@ -218,11 +218,11 @@ struct OrderResult: Codable {
 
 struct CartItem: Codable {
   let pk, user: Int
-  let item: Items
+  let item: Item
   let amount: Int
 }
 
-struct Items: Codable {
+struct Item: Codable {
   let pk: Int
   let itemName, company: String
   let originPrice, salePrice: Int
@@ -240,7 +240,47 @@ struct Items: Codable {
   }
 }
 
+//MARK: 특정 주문 조회
+struct OrderCheck: Codable {
+  let pk, user: Int
+  let orderDateTime, deliveryDate: String
+  let totalPrice: Int
+  let address: String
+  let cartItems: [CartItems]
+  
+  enum CodingKeys: String, CodingKey {
+    case pk, user
+    case orderDateTime = "order_date_time"
+    case deliveryDate = "delivery_date"
+    case totalPrice = "total_price"
+    case address
+    case cartItems = "cart_items"
+  }
+}
 
+struct CartItems: Codable {
+  let pk, user: Int
+  let item: ItemCheck
+  let amount: Int
+}
+
+struct ItemCheck: Codable {
+  let pk: Int
+  let itemName, company: String
+  let originPrice, salePrice: Int
+  let discountRate: Double
+  let listThumbnail: String
+  
+  enum CodingKeys: String, CodingKey {
+    case pk
+    case itemName = "item_name"
+    case company
+    case originPrice = "origin_price"
+    case salePrice = "sale_price"
+    case discountRate = "discount_rate"
+    case listThumbnail = "list_thumbnail"
+  }
+}
 
 // MARK: Encode/decode helpers
 

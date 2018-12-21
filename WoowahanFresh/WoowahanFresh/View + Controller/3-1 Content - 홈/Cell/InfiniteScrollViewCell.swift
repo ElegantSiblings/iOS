@@ -18,6 +18,7 @@ class InfiniteScrollViewCell: UITableViewCell {
   override func awakeFromNib() {
     super.awakeFromNib()
     // Initialization code
+    uiimageView.contentMode = .scaleToFill
     setupUI()
   }
   

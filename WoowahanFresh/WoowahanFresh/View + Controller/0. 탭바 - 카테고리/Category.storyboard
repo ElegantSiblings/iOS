@@ -24,84 +24,108 @@
                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a1w-dF-FQZ">
                                         <rect key="frame" x="0.0" y="0.0" width="117.66666666666667" height="30"/>
                                         <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
-                                        <state key="normal" title="밑반찬"/>
+                                        <state key="normal" title="밑반찬">
+                                            <color key="titleColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="btnSideDish:" destination="Gri-ij-C0K" eventType="touchUpInside" id="gFQ-gD-PS7"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h9f-kb-IHA" userLabel="메인반찬">
                                         <rect key="frame" x="0.0" y="55.666666666666657" width="117.66666666666667" height="30"/>
-                                        <state key="normal" title="메인반찬"/>
+                                        <state key="normal" title="메인반찬">
+                                            <color key="titleColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="btnMainDish:" destination="Gri-ij-C0K" eventType="touchUpInside" id="laY-hU-ldx"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="76x-QI-CV8" userLabel="국・찌개・탕">
                                         <rect key="frame" x="0.0" y="111.66666666666666" width="117.66666666666667" height="30"/>
-                                        <state key="normal" title="국・찌개・탕"/>
+                                        <state key="normal" title="국・찌개・탕">
+                                            <color key="titleColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="btnSoup:" destination="Gri-ij-C0K" eventType="touchUpInside" id="Z6C-Sp-HpM"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NAf-Ze-cp2" userLabel="아이반찬">
                                         <rect key="frame" x="0.0" y="167.33333333333334" width="117.66666666666667" height="30"/>
-                                        <state key="normal" title="아이반찬"/>
+                                        <state key="normal" title="아이반찬">
+                                            <color key="titleColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="btnKidDish:" destination="Gri-ij-C0K" eventType="touchUpInside" id="kzI-uh-1m1"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dxh-Cm-pU9" userLabel="육류 구이관">
                                         <rect key="frame" x="0.0" y="223.33333333333331" width="117.66666666666667" height="30"/>
-                                        <state key="normal" title="육류 구이관"/>
+                                        <state key="normal" title="육류 구이관">
+                                            <color key="titleColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="btnMeat:" destination="Gri-ij-C0K" eventType="touchUpInside" id="Ffv-Bi-R5c"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wmM-vv-opy" userLabel="김치・장아찌">
                                         <rect key="frame" x="0.0" y="279" width="117.66666666666667" height="30"/>
-                                        <state key="normal" title="김치・장아찌"/>
+                                        <state key="normal" title="김치・장아찌">
+                                            <color key="titleColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="btnKimchi:" destination="Gri-ij-C0K" eventType="touchUpInside" id="HQL-JT-Elv"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ayc-lx-XkL" userLabel="세계음식">
                                         <rect key="frame" x="0.0" y="335" width="117.66666666666667" height="30"/>
-                                        <state key="normal" title="세계음식"/>
+                                        <state key="normal" title="세계음식">
+                                            <color key="titleColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="btnGlobal:" destination="Gri-ij-C0K" eventType="touchUpInside" id="aJH-CX-vCu"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d9Y-tb-Rcc" userLabel="밥・죽・면">
                                         <rect key="frame" x="0.0" y="390.66666666666669" width="117.66666666666667" height="30"/>
-                                        <state key="normal" title="밥・죽・면"/>
+                                        <state key="normal" title="밥・죽・면">
+                                            <color key="titleColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="btnRice:" destination="Gri-ij-C0K" eventType="touchUpInside" id="0fB-rF-4Id"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ir-j4-HC4" userLabel="샐러드">
                                         <rect key="frame" x="0.0" y="446.66666666666663" width="117.66666666666667" height="30"/>
-                                        <state key="normal" title="샐러드"/>
+                                        <state key="normal" title="샐러드">
+                                            <color key="titleColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="btnSalad:" destination="Gri-ij-C0K" eventType="touchUpInside" id="uqL-Q0-YG6"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W8b-fM-Yco" userLabel="간식">
                                         <rect key="frame" x="0.0" y="502.33333333333337" width="117.66666666666667" height="30"/>
-                                        <state key="normal" title="간식"/>
+                                        <state key="normal" title="간식">
+                                            <color key="titleColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="btnSnack:" destination="Gri-ij-C0K" eventType="touchUpInside" id="gev-Os-WmL"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fje-92-XM0" userLabel="정기식단">
                                         <rect key="frame" x="0.0" y="558.33333333333337" width="117.66666666666667" height="30"/>
-                                        <state key="normal" title="정기식단"/>
+                                        <state key="normal" title="정기식단">
+                                            <color key="titleColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="btnRegularDiet:" destination="Gri-ij-C0K" eventType="touchUpInside" id="373-xf-2zR"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sn4-X3-f7f" userLabel="반찬브랜드">
                                         <rect key="frame" x="0.0" y="614" width="117.66666666666667" height="30"/>
-                                        <state key="normal" title="반찬브랜드"/>
+                                        <state key="normal" title="반찬브랜드">
+                                            <color key="titleColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="btnBrand:" destination="Gri-ij-C0K" eventType="touchUpInside" id="RIr-wJ-faZ"/>
                                         </connections>

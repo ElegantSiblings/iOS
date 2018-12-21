@@ -37,6 +37,11 @@ class DeliveryDayViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    navigationController?.navigationBar.items![0].title = ""
+    navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.370555222, green: 0.3705646992, blue: 0.3705595732, alpha: 1)
+    
+    barItemClose.tintColor = #colorLiteral(red: 0.370555222, green: 0.3705646992, blue: 0.3705595732, alpha: 1)
+    
     let year = cal.component(.year, from: currentDate)
     let month = cal.component(.month, from: currentDate)
     let day = cal.component(.day, from: currentDate)
