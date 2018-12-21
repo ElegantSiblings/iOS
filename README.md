@@ -2,12 +2,10 @@
 
 ## 배달의 민족 반찬  by 이규현
 
-<iframe width="640" height="360" src="https://youtu.be/0xTYpg4B0pw" frameborder="0" gesture="media" allowfullscreen=""></iframe>
 
-[![Watch the video](/iOS/mp4/iOS_Web.mp4)]
 
-```
-[![Watch the video]
+```markdown
+<iframe width="872" height="491" src="https://www.youtube.com/embed/0xTYpg4B0pw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 ```
 
 ### [ API ⬌ iOS 구성 체크리스트 ]
