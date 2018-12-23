@@ -5,13 +5,24 @@
 ```html
 <iframe width="872" height="491" src="https://www.youtube.com/embed/0xTYpg4B0pw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 ```
+
+----
+
+ 1. 네트워크 데이터 처리
+ 
+ 2. 테이블 뷰
+ 
+ 3. 콘테이너 뷰
+
+----
+
 ### [ API ⬌ iOS 구성 체크리스트 ]
 
-#####[API 문서 URL](https://baeminchan-project.gitbook.io/project/)
+##### [API 문서 URL](https://baeminchan-project.gitbook.io/project/)
 
 ##### MVP 선정 : 검색 / 장바구니 / 주문 
 
-#####사용된 Pods : Alamofire, FSCalendar, FacebookCore, FacebookLogin
+##### 사용된 Pods : Alamofire, FSCalendar, FacebookCore, FacebookLogin
 
 - 카테고리 조회 
   - [x] 카테고리 가져오기 : **[GET]** ⬌ requestCategory   
