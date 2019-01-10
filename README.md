@@ -2,16 +2,14 @@
 
 ## 배달의 민족 반찬  by 이규현
 
-```html
-<iframe src="https://www.youtube.com/embed/0xTYpg4B0pw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-```
+![](/mp4/iOS.gif)
 
 ----
 
  1. 네트워크 데이터 처리
- 
+
  2. 테이블 뷰
- 
+
  3. 콘테이너 뷰
 
 ----
