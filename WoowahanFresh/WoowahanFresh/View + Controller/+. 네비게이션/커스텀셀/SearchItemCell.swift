@@ -8,6 +8,7 @@
 
 import UIKit
 
+//FIXME: xib 걷어내고 코드로 작성요망
 class SearchItemCell: UITableViewCell {
 
     override func awakeFromNib() {
