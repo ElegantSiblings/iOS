@@ -12,7 +12,7 @@ GEM
     houston (2.4.0)
       commander (~> 4.4)
       json
-    json (2.1.0)
+    json (2.3.1)
     multipart-post (2.0.0)
     octokit (4.13.0)
       sawyer (~> 0.8.0, >= 0.5.3)
